@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>源码泄露总结 - 真寻の窝</title><meta description="菜鸡ctfer，努力想成为大佬中...(也许永远也不会吧)"><meta property="og:type" content="article"><meta property="og:title" content="源码泄露总结"><meta property="og:url" content="http://yoursite.com/2020/03/08/%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2%E6%80%BB%E7%BB%93/"><meta property="og:site_name" content="真寻の窝"><meta property="og:description" content="菜鸡ctfer，努力想成为大佬中...(也许永远也不会吧)"><meta property="og:locale" content="zh"><meta property="article:published_time" content="2020-03-08T04:18:19.000Z"><meta property="article:modified_time" content="2020-04-14T14:51:18.471Z"><meta property="article:author" content="mahiro"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="http://yoursite.com/img/avatar.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2020/03/08/%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2%E6%80%BB%E7%BB%93/"},"headline":"源码泄露总结","image":["http://yoursite.com/img/avatar.png"],"datePublished":"2020-03-08T04:18:19.000Z","dateModified":"2020-04-14T14:51:18.471Z","author":{"@type":"Person","name":"mahiro"},"description":"菜鸡ctfer，努力想成为大佬中...(也许永远也不会吧)"}</script><link rel="alternative" href="/atom.xml" title="真寻の窝" type="application/atom+xml"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css?family=Ubuntu:400,600|Source+Code+Pro|Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext|Inconsolata|Itim|Lobster.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/pace/1.0.2/pace.min.js"></script><link rel="stylesheet" href="/css/style.css"><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="/js/globalUtils.js"></script><script src="/js/md5.min.js"></script><link rel="stylesheet" href="/live2d/waifu.css"><script type="text/javascript" async src="/live2d/autoload.js"></script></head><body class="is-3-column has-navbar-fixed-top"><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="真寻の窝" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/media">影音</a><a class="navbar-item" href="/album">相册</a><a class="navbar-item" href="/friend">友链</a><a class="navbar-item" href="/self-talking">碎碎念</a><a class="navbar-item" href="/message">留言</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/mahiro424"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Katalog" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Suche" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-03-08T04:18:19.000Z">2020-03-08</time><a class="commentCountImg" href="/2020/03/08/%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2%E6%80%BB%E7%BB%93/#comment-container"><span class="display-none-class">e76533fb9f6a3e40dc3035b41e443b9a</span><img class="not-gallery-item" src="/img/chat.svg"> <span class="commentCount" id="e76533fb9f6a3e40dc3035b41e443b9a"> 99+</span>    </a><span class="level-item">9 minutes lesen (Über 1381 Worte)</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;&nbsp;<span id="busuanzi_value_page_pv">0</span> Besuche</span></div></div><h1 class="title is-3 is-size-4-mobile">源码泄露总结</h1><div class="content"><h1 id="网站源码泄露分类"><a href="#网站源码泄露分类" class="headerlink" title="网站源码泄露分类"></a>网站源码泄露分类</h1><h2 id="目录遍历"><a href="#目录遍历" class="headerlink" title="目录遍历"></a>目录遍历</h2><pre><code>由于配置错误导致网站的目录可被遍历，一般该类漏洞可以为后续利用提供一些信息上的帮助。</code></pre><h2 id="PHPINFO"><a href="#PHPINFO" class="headerlink" title="PHPINFO"></a>PHPINFO</h2><pre><code>phpinfo() 是php中查看相关信息的函数，当在页面中执行phpinfo()函数时，php会将自身的所有信息全部打印出来。在phpinfo中会泄露很多服务端的一些信息。</code></pre><h2 id="备份文件下载"><a href="#备份文件下载" class="headerlink" title="备份文件下载"></a>备份文件下载</h2><h3 id="网站源码"><a href="#网站源码" class="headerlink" title="网站源码"></a>网站源码</h3><pre><code>常用网站源码备份文件后缀：
+tar,tar.gz,zip,rar,bak,swp,txt,html
+常用网站备份文件名：
+web,website,backup,back,www,wwwroot,temp
+利用工具：
+dirmap,dirsearch,御剑等</code></pre><h3 id="bak文件"><a href="#bak文件" class="headerlink" title=".bak文件"></a>.bak文件</h3><pre><code>有些时候网站管理员可能为了方便，会在修改某个文件的时候先复制一份，将其命名为【xxx.bak】。而大部分Web Server对bak文件并不做任何处理，导致可以直接下载，从而获取到网站某个文件的源代码
+利用工具：
+dirmap,dirsearch,御剑等扫到后
+curl http://example.com/example.php.bak</code></pre><h3 id="vim缓存"><a href="#vim缓存" class="headerlink" title="vim缓存"></a>vim缓存</h3><pre><code>在使用vim时会创建临时缓存文件，关闭vim时缓存文件则会被删除，当vim异常退出后，因为未处理缓存文件，导致可以通过缓存文件恢复原始文件内容以example.php为例：第一次产生的交换文件名为【.example.php.swp】再次意外退出后，将会产生名为 【.example.php.swo】 的交换文件第三次产生的交换文件则为 【.example.php.swn】
+利用工具：
+dirmap,dirsearch,御剑等扫到后
+curl http:example.com/.example.php.swp
+或者
+wget http:example.com/.example.php.swp
+wim index.php 选择R恢复文件</code></pre><h3 id="DS-Store"><a href="#DS-Store" class="headerlink" title=".DS_Store"></a>.DS_Store</h3><pre><code>.DS_Store文件利用.DS_Store是Mac OS保存文件夹的自定义属性的隐藏文件。通过.DS_Store可以知道这个目录里面所有文件的清单。
+利用工具：
+dirmap,dirsearch,御剑等扫到后
+curl  http:example.com/.DS_Store
+或者用Python .DS_Store parser (https://github.com/gehaxelt/Python-dsstore))
+wget http:example.com/.DS_Store -q0 example/.DS_Store
+python main.py example/.DS_Store</code></pre><h2 id="Git泄露"><a href="#Git泄露" class="headerlink" title="Git泄露"></a>Git泄露</h2><h3 id="Log"><a href="#Log" class="headerlink" title="Log"></a>Log</h3><pre><code>查看历史版本
+利用工具：
+dirmap,dirsearch,御剑等扫到后
+python GitHack.py http:example.com/.git/
+git log
+第一种方法：
+git diff 该历史版本的前五位字符
+或者
+git diff HEAD^
+第二种方法
+git reset --hard 该历史版本的前五位字符
+或者
+git reset --hard HEAD^</code></pre><h3 id="Stash"><a href="#Stash" class="headerlink" title="Stash"></a>Stash</h3><pre><code>git栈
+利用工具：
+dirmap,dirsearch,御剑等扫到后
+python GitHack.py http:example.com/.git/
+第一种方法：
+git stash list
+git stash pop/git stash apply
+第二种方法：
+git stash list
+git stash show
+cat .git/refs/stash
+it diff 该历史版本的前五位字符</code></pre><h3 id="Index"><a href="#Index" class="headerlink" title="Index"></a>Index</h3><pre><code>index暂存区文件
+利用工具：
+dirmap,dirsearch,御剑等扫到后
+python GitHack.py http:example.com/.git/
+git ls-files
+git ls-files -s //查看Blog对象
+git cat-file -p 该文件Blog对象的前五位字符 //通过Blog对象查案该文件</code></pre><h2 id="SVN泄露"><a href="#SVN泄露" class="headerlink" title="SVN泄露"></a>SVN泄露</h2><pre><code>当svn使用了checkout命令后就会生成.svn文件，里面存储着备份信息。svn信息泄露漏洞主要利用了里面的entrist文件，通过.svn/entrist可以下载里面的所有代码，但是只能作用在svn1.6之前的版本；第二个是作用在svn1.7后的版本，svn1.7后的版本引入一个名为wc.db的数据库数据存放文件来管理文件，通过访问.svn/wc.db可以下载到本地
+利用工具：
+dirmap,dirsearch,御剑等扫到后，利用dvcs-ripper(https://github.com/kost/dvcs-ripper)
+perl rip-svn.pl -u http://example.com/.svn/ (kali自带，其他的linux需要下载perl和svn环境)
+ls -al  //.svn是隐藏文件夹要用-al才能看到
+然后查看wc.db数据库或者进入缓存文件夹pristine文件夹中查看</code></pre><h2 id="HG泄露"><a href="#HG泄露" class="headerlink" title="HG泄露"></a>HG泄露</h2><pre><code>HG init的时候会生成.hg
+利用工具：
+dirmap,dirsearch,御剑等扫到后，利用dvcs-ripper(https://github.com/kost/dvcs-ripper)
+perl rip-hg.pl -u http://example.com/.hg/ (kali自带，其他的linux需要下载perl和svn环境)
+ls -al  //.hg是隐藏文件夹要用-al才能看到
+然后进入.hg/store/fncache用curl http://example.com/.hg/store/data/example.xxx.i或者curl http://example.com/example.xxx</code></pre><h2 id="BZR泄露"><a href="#BZR泄露" class="headerlink" title="BZR泄露"></a>BZR泄露</h2><pre><code>利用工具：
+dirmap,dirsearch,御剑等扫到后，利用dvcs-ripper(https://github.com/kost/dvcs-ripper)
+perl rip-bzr.pl -u http://example.com/.bzr/ (kali自带，其他的linux需要下载perl和svn环境)
+ls -al  //.hg是隐藏文件夹要用-al才能看到</code></pre><h2 id="WEB-INF-web-xml泄露"><a href="#WEB-INF-web-xml泄露" class="headerlink" title="WEB-INF/web.xml泄露"></a>WEB-INF/web.xml泄露</h2><pre><code>WEB-INF主要包含一下文件或目录：
+/WEB-INF/web.xml：Web应用程序配置文件，描述了 servlet 和其他的应用组件配置及命名规则
+/WEB-INF/classes/：含了站点所有用的 class 文件，包括 servlet class 和非servlet class，他们不能包含在 .jar文件中
+/WEB-INF/lib/：存放web应用需要的各种JAR文件，放置仅在这个应用中要求使用的jar文件,如数据库驱动jar文件
+/WEB-INF/src/：源码目录，按照包名结构放置各个java文件
+/WEB-INF/database.properties：数据库配置文件
+利用方式：
+通过找到web.xml文件，推断class文件的路径，最后直接class文件，在通过反编译class文件，得到网站源码。</code></pre></div><ul class="post-copyright"><li><strong>本文标题：</strong><a href="http://yoursite.com/2020/03/08/源码泄露总结/">源码泄露总结</a></li><li><strong>本文作者：</strong><a href="http://yoursite.com">mahiro</a></li><li><strong>本文链接：</strong><a href="http://yoursite.com/2020/03/08/源码泄露总结/">http://yoursite.com/2020/03/08/源码泄露总结/</a></li><li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li></ul><div><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># Related Post</span><br><span>  1.<a class="is-size-6" href="/2020/03/03/HTTP/" target="_blank">HTTP</a><br></span><span>  2.<a class="is-size-6" href="/2020/03/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%89%E5%85%A8/" target="_blank">浏览器安全</a><br></span><span>  3.<a class="is-size-6" href="/2020/02/25/BUUOJ%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" target="_blank">Web CTF 复现</a><br></span><span>  4.<a class="is-size-6" href="/2019/11/29/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_blank">web安全学习笔记</a><br></span><span>  5.<a class="is-size-6" href="/2019/11/23/sql%E6%B3%A8%E5%85%A5%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" target="_blank">sql注入小知识</a><br></span></div><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># Recommend Post</span><br><span>  1.<a class="is-size-6" href="/2020/02/25/BUUOJ%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" target="_blank">Web CTF 复现</a><br></span><span>  2.<a class="is-size-6" href="/2020/03/03/DNSLog%E8%AE%B0%E5%BD%95/" target="_blank">DNSLog记录</a><br></span><span>  3.<a class="is-size-6" href="/2020/03/03/HTTP/" target="_blank">HTTP</a><br></span><span>  4.<a class="is-size-6" href="/2019/11/23/sql%E6%B3%A8%E5%85%A5%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" target="_blank">sql注入小知识</a><br></span><span>  5.<a class="is-size-6" href="/2020/02/27/upload-lab-%E8%AE%B0%E5%BD%95/" target="_blank">upload-lab 记录</a><br></span><span>  6.<a class="is-size-6" href="/2020/03/31/WCTF2020-WP/" target="_blank">WCTF2020 WP(WEB)</a><br></span></div></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/css/share.min.css"><div class="social-share"></div><script src="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Gefällt Ihnen der Artikel? Unterstützen Sie den Autor mit</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="/" alt="Alipay"></span></a><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="/" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/03/31/WCTF2020-WP/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">WCTF2020 WP(WEB)</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/03/03/DNSLog%E8%AE%B0%E5%BD%95/"><span class="level-item">DNSLog记录</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Kommentare</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/gitalk/1.6.0/gitalk.css"><script> $.getScript('/js/gitalk.min.js', function () { 
+            var gitalk = new Gitalk({
+            id: 'e76533fb9f6a3e40dc3035b41e443b9a',
+            repo: 'gitcomment',
+            owner: 'mahiro424',
+            clientID: 'a310e755c4962ccb6306',
+            clientSecret: 'bf1d34612319156ee83867eccc73f64e4ff37768',
+            admin: ["admin"],
+            createIssueManually: true,
+            distractionFreeMode: false,
+            perPage: 10,
+            pagerDirection: 'last',
+            
+            
+            enableHotKey: true,
+            isLocked: false
+        })
+        gitalk.render('comment-container')});</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget toc-scroll" id="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Katalog</h3><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-网站源码泄露分类" href="#网站源码泄露分类"><span>网站源码泄露分类</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-目录遍历" href="#目录遍历"><span>目录遍历</span></a></li><li><a class="is-flex toc-item" id="toc-item-PHPINFO" href="#PHPINFO"><span>PHPINFO</span></a></li><li><a class="is-flex toc-item" id="toc-item-备份文件下载" href="#备份文件下载"><span>备份文件下载</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-网站源码" href="#网站源码"><span>网站源码</span></a></li><li><a class="is-flex toc-item" id="toc-item-bak文件" href="#bak文件"><span>.bak文件</span></a></li><li><a class="is-flex toc-item" id="toc-item-vim缓存" href="#vim缓存"><span>vim缓存</span></a></li><li><a class="is-flex toc-item" id="toc-item-DS-Store" href="#DS-Store"><span>.DS_Store</span></a></li></ul></li><li><a class="is-flex toc-item" id="toc-item-Git泄露" href="#Git泄露"><span>Git泄露</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-Log" href="#Log"><span>Log</span></a></li><li><a class="is-flex toc-item" id="toc-item-Stash" href="#Stash"><span>Stash</span></a></li><li><a class="is-flex toc-item" id="toc-item-Index" href="#Index"><span>Index</span></a></li></ul></li><li><a class="is-flex toc-item" id="toc-item-SVN泄露" href="#SVN泄露"><span>SVN泄露</span></a></li><li><a class="is-flex toc-item" id="toc-item-HG泄露" href="#HG泄露"><span>HG泄露</span></a></li><li><a class="is-flex toc-item" id="toc-item-BZR泄露" href="#BZR泄露"><span>BZR泄露</span></a></li><li><a class="is-flex toc-item" id="toc-item-WEB-INF-web-xml泄露" href="#WEB-INF-web-xml泄露"><span>WEB-INF&amp;#x2F;web.xml泄露</span></a></li></ul></li></ul></div></div><script type="text/javascript" async>
+        $(document).ready(function () { //参考自 https://github.com/ppoffice/hexo-theme-icarus/pull/616/files
+            var observerTopMargin;
+            var scrollObserver;
+            var headerElems = $(".headerlink");
+            var activeTocItem;
+        
+            function initIntersectionObserver(docHeight) {
+                observerTopMargin = docHeight;
+                scrollObserver = new IntersectionObserver(scrollCallBack,
+                    {
+                        root: null,  // viewpoint
+                        rootMargin: docHeight + "px 0px -80% 0px"  // cover top 30% of viewport to the top of document
+                    })
+            }
+        
+            function scrollCallBack(entries, observer) {
+                if ($(window).scrollTop() > observerTopMargin * 0.7) { 
+                    // User somehow scroll to 70% of observerTopMargin (which is inited as 200% document height)
+                    // Observer top margin need to extend to cover all the space to the top of the document
+                    initIntersectionObserver(observerTopMargin * 2)
+                    observer.disconnect();
+                    return;
+                }
+                let toActive;
+                if (entries[0].intersectionRatio == 1) {  // enter viewed area
+                    let entry = entries.reduce((u, v) => (u.target.toc_id > v.target.toc_id ? u : v));  // get the lowest item
+                    toActive = $("#toc-item-" + $(entry.target).attr("href").substr(1));
+                } else {
+                    let entry = entries.reduce((u, v) => (u.target.toc_id < v.target.toc_id ? u : v));  // get the highest item
+                    let idx = Math.max(entry.target.toc_id - 1, 0);
+                    toActive = $("#toc-item-" + $(headerElems[idx]).attr("href").substr(1));
+                }
+                if (activeTocItem) activeTocItem.removeClass("is-current");
+                activeTocItem = toActive
+                activeTocItem.addClass("is-current");
+            }
+        
+            initIntersectionObserver($(document).height() * 2);
+            headerElems.each(function (index, obj) {
+                obj.toc_id = index;
+                scrollObserver.observe(obj);
+            })
+        });</script></div><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="is-rounded" src="/img/avatar.png" alt="mahiro"></figure><p class="title is-size-4 is-block line-height-inherit">mahiro</p><p class="is-size-6 is-block">能成为萝莉控真的是太好啦！！！！！！！</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">9</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Kategorie</p><a href="/categories"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">5</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="/" target="_blank" rel="noopener">Folgen</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/mahiro424"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Weibo" href="/"><i class="fab fa-weibo"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Email" href="/"><i class="fa fa-envelope"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Next" href="/"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
+                                $.getJSON("https://v1.hitokoto.cn/", function (data) {
+                                if(data){
+                                    $('#hitokoto').html("");
+                                    $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
+                                    "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
+                                }});}
+                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新评论</h3><span class="body_hot_comment">加载中，最新评论有1分钟延迟...</span></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">Letzte Einträge</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-31T07:59:57.000Z">2020-03-31</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/31/WCTF2020-WP/">WCTF2020 WP(WEB)</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-08T04:18:19.000Z">2020-03-08</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/08/%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2%E6%80%BB%E7%BB%93/">源码泄露总结</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/web/">web</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-03T15:55:01.000Z">2020-03-03</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/03/DNSLog%E8%AE%B0%E5%BD%95/">DNSLog记录</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-03T01:56:58.000Z">2020-03-03</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/03/HTTP/">HTTP</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/web/">web</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-02T07:59:18.000Z">2020-03-02</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%89%E5%85%A8/">浏览器安全</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/web/">web</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Kategorien</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/web/"><span class="level-start"><span class="level-item">web</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Archive</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/03/"><span class="level-start"><span class="level-item">March 2020</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/02/"><span class="level-start"><span class="level-item">February 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/11/"><span class="level-start"><span class="level-item">November 2019</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/study/"><span class="tag">study</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/web/"><span class="tag">web</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/web-study/"><span class="tag">-web -study</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ctf/"><span class="tag">ctf</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sql/"><span class="tag">sql</span><span class="tag is-grey-lightest">1</span></a></div></div></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="真寻の窝" height="28"></a><p class="size-small"><span>&copy; 2020 mahiro</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>,Modify by <a href="https://github.com/removeif/hexo-theme-amazing" target="_blank">removeif</a> <br><div class="size-small"><span id="busuanzi_container_site_uv">❤️感谢<strong> <span id="busuanzi_value_site_uv">99+</span> </strong></span>小伙伴的<strong> <span id="busuanzi_value_site_pv">99+</span> </strong>次光临！❤️</div></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/mahiro424"><i class="fab fa-github"></i></a></p></div><div class="sideMusic"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="/js/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><meting-js style="width: auto;height: 2000px;" server="netease" type="playlist" id="887934910" theme="#2980b9" loop="all" autoplay="false" order="list" storageName="aplayer-setting" lrctype="0" list-max-height="400px" fixed="true"></meting-js></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script>moment.locale("zh");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'http://yoursite.com',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="Zurück nach oben" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back-to-top.js" defer></script><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.12/js/lightgallery-all.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js" defer></script><!--!--><!--!--><!--!--><script src="/js/toc.js" defer></script><script src="/js/main.js" defer></script><script>$.getScript('/js/comment-issue-data.js',function(){loadIssueData('a310e755c4962ccb6306','bf1d34612319156ee83867eccc73f64e4ff37768','mahiro424','gitcomment',false);})</script><link rel="stylesheet" href="/css/insight.css"><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Tippen Sie etwas..."><span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script>(function (window) {
+            var INSIGHT_CONFIG = {
+                TRANSLATION: {
+                    POSTS: 'Posts',
+                    PAGES: 'Seiten',
+                    CATEGORIES: 'Kategorien',
+                    TAGS: 'Tags',
+                    UNTITLED: '(Unbenannt)',
+                },
+                CONTENT_URL: '/content.json',
+            };
+            window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+        })(window);</script><script src="/js/insight.js" defer></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script><script type="text/javascript">var pjax = new Pjax({
+            elements: "a",//代表点击链接就更新
+            selectors: [  //代表要更新的节点
+                ".section",
+                "title"
+            ],
+            cache: true,
+            cacheBust:false
+        })
+
+        function loadBusuanzi(){
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js", function () {});
+        }
+
+        // 开始 PJAX 执行的函数
+        document.addEventListener('pjax:send', function () {
+        });
+        
+        // PJAX 完成之后执行的函数，可以和上面的重载放在一起
+        document.addEventListener('pjax:complete', function () {
+            $(".section").css({opacity:1});
+            if(true){
+                $.getScript('/js/comment-issue-data.js',function(){loadIssueData('a310e755c4962ccb6306','bf1d34612319156ee83867eccc73f64e4ff37768','mahiro424','gitcomment',false);});
+            }
+            if(false){
+                loadMathJax();
+            }
+            loadMainJs(jQuery, window.moment, window.ClipboardJS, window.IcarusThemeSettings);
+            loadBackTop();
+            loadBusuanzi();
+        });</script></body></html>

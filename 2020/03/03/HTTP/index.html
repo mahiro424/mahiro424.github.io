@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>HTTP - 真寻の窝</title><meta description="菜鸡ctfer，努力想成为大佬中...(也许永远也不会吧)"><meta property="og:type" content="article"><meta property="og:title" content="HTTP"><meta property="og:url" content="http://yoursite.com/2020/03/03/HTTP/"><meta property="og:site_name" content="真寻の窝"><meta property="og:description" content="菜鸡ctfer，努力想成为大佬中...(也许永远也不会吧)"><meta property="og:locale" content="zh"><meta property="article:published_time" content="2020-03-03T01:56:58.000Z"><meta property="article:modified_time" content="2020-04-14T14:50:37.957Z"><meta property="article:author" content="mahiro"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="http://yoursite.com/img/avatar.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2020/03/03/HTTP/"},"headline":"HTTP","image":["http://yoursite.com/img/avatar.png"],"datePublished":"2020-03-03T01:56:58.000Z","dateModified":"2020-04-14T14:50:37.957Z","author":{"@type":"Person","name":"mahiro"},"description":"菜鸡ctfer，努力想成为大佬中...(也许永远也不会吧)"}</script><link rel="alternative" href="/atom.xml" title="真寻の窝" type="application/atom+xml"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css?family=Ubuntu:400,600|Source+Code+Pro|Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext|Inconsolata|Itim|Lobster.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/pace/1.0.2/pace.min.js"></script><link rel="stylesheet" href="/css/style.css"><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="/js/globalUtils.js"></script><script src="/js/md5.min.js"></script><link rel="stylesheet" href="/live2d/waifu.css"><script type="text/javascript" async src="/live2d/autoload.js"></script></head><body class="is-3-column has-navbar-fixed-top"><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="真寻の窝" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/media">影音</a><a class="navbar-item" href="/album">相册</a><a class="navbar-item" href="/friend">友链</a><a class="navbar-item" href="/self-talking">碎碎念</a><a class="navbar-item" href="/message">留言</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/mahiro424"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Katalog" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Suche" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-03-03T01:56:58.000Z">2020-03-03</time><a class="commentCountImg" href="/2020/03/03/HTTP/#comment-container"><span class="display-none-class">a4d656edae4a7c12b233e2ce29a4a82f</span><img class="not-gallery-item" src="/img/chat.svg"> <span class="commentCount" id="a4d656edae4a7c12b233e2ce29a4a82f"> 99+</span>    </a><span class="level-item">27 minutes lesen (Über 4073 Worte)</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;&nbsp;<span id="busuanzi_value_page_pv">0</span> Besuche</span></div></div><h1 class="title is-3 is-size-4-mobile">HTTP</h1><div class="content"><h2 id="超文本传输协议HTTP的定义"><a href="#超文本传输协议HTTP的定义" class="headerlink" title="超文本传输协议HTTP的定义"></a>超文本传输协议HTTP的定义</h2><pre><code>http(hypertext transfer protocol)是web系统最核心的内容，是web服务器和客户端直接进行数据传输的规则。
+http协议是用于从www服务器传输超文本到本地浏览器的传送协议，不仅保证计算机正确快速的传输超文本文档，还确定传输文档中的哪一部分，以及哪部分内容最先显示等。http是一个应用层协议，由请求和相应构成，是一个标准的客户端模型。</code></pre><h2 id="HTTP的特点"><a href="#HTTP的特点" class="headerlink" title="HTTP的特点"></a>HTTP的特点</h2><pre><code>1. 支持客户端/服务器模式，支持基本认证和安全认证
+2. 简单快速，客户端向服务器发送请求时，只需传送请求方法和路径。请求方法常用的有GET,HEAD,POST(区分大小写且可自定义请求方法)。每种方法规定了客户端与服务器联系的类型不同。
+3. 灵活，http允许传输任意类型的数据对象。正在传输的类型由content-type加以标记
+4. http0.9和1.0使用非持续连接，即限制每次连接只处理一个请求，服务器处理完客户的请求，并收到客户的应答后才断开连接。http1.1使用持续连接，即不必为每个web对象创建一个新的连接，一个连接可以传送多个对象。
+5. http是无状态协议，即对于处理事务没有记忆能力，缺少状态一位置如果后续处理需要前面的信息则它必须重传，这可能导致每次连接传送的数据量增大。</code></pre><h2 id="HTTP的请求方法"><a href="#HTTP的请求方法" class="headerlink" title="HTTP的请求方法"></a>HTTP的请求方法</h2><pre><code>1. OPTION：范湖服务器针对特定资源所支持的HTTP请求方法，也可以利用向web服务器发送&quot;*&quot;的请求来测试服务器的功能性。
+2. GET：向特定的资源发出请求。
+3. HEAD：向服务器索要与GET请求相一致的响应，只不过响应体或许不会被返回。这一方法可以在不必传输整个响应内容的情况下，就可以获取包含在响应消息中的元信息。
+4. POST：向指定资源提交数据进行处理请求(比如提交表单或者上传文件)，数据被包含在请求体中。POST请求可能会导致新的资源的建立或者已有资源的修改。
+5. PUT：向指定资源位置上传其最新内容。
+6. DELETE：请求服务器删除Request-URI所标识的资源。
+7. TRACE：回显服务器收到的请求，主要用于测试或者诊断。
+8. CONNECT： HTTP/1.1协议中预留给能给够将连接改为管道方式的代理服务器。
+大部分情况下只会用到GET和POST方法，这些方法区分大小写而且可以自定义请求方法。当某个请求所针对的资源不支持对应的请求方法的史诗，服务器应当返回状态码405，当服务器不认识或者不支持对应的请求方法的时候，应返回状态码501。</code></pre><h2 id="HTTP的工作流程"><a href="#HTTP的工作流程" class="headerlink" title="HTTP的工作流程"></a>HTTP的工作流程</h2><pre><code>http是一个无状态的协议。这意味着当一个客户端向服务器发送请求，然后服务器返回响应后连接就被关闭了，在服务器端不保留连接有关信息。http遵循请求/应答模型，客户端向服务器发送请求，服务器处理请求并返回适当的应答。所有http连接都被构造成一套请求和应答，该过程经历四个阶段，分别是建立连接，发送请求信息，发送响应信息，关闭连接，如下所示：
+    1. 客户端通过TCP三次握手与服务器建立连接
+    2. TCP建立连接成功后，向服务器发送HTTP请求
+    3. 服务器接收客户端的HTTP请求后，将返回应答，并向客户端发送数据包
+    4. 客户端通过TCP四次断开，与服务器断开TCP连接</code></pre><h2 id="HTTP的报文格式"><a href="#HTTP的报文格式" class="headerlink" title="HTTP的报文格式"></a>HTTP的报文格式</h2><pre><code>http的报文分为请求报文和应答报文</code></pre><h3 id="HTTP请求报文"><a href="#HTTP请求报文" class="headerlink" title="HTTP请求报文"></a>HTTP请求报文</h3><pre><code>&gt; http请求报文格式</code></pre><p><img src="/images/http/1.png" alt=""><br>    第一行为”请求行”，第二三四行为”请求头部”，第五行为请求空行，第六行为”请求正文”<br>    1. 请求行：由请求方法，URL，协议版本构成，中间用空格符分割，请求方法包括GET,POST等。协议版主要有HTTP/1.0和HTTP/1.1。<br>    2. 请求头部包含很多客户端环境以及请求正文的有用信息。由”关键字:值”组成<br>    3. 空行，必不可少，表示请求头部结束，下面就是请求正文<br>    4. 请求正文：可选部分，GET就没有请求正文，POST可以提交表单，数据或者上传文件。</p>
+<pre><code>&gt; http响应报文格式</code></pre><p><img src="/images/http/2.png" alt=""><br>    第一行为”状态行”，第二三四行为”响应头部”，第五行为行为空行，第六行为”响应正文”<br>    1. 状态行有3部分构成，分别是协议版本，状态码和状态码的描述，中间用空格隔开。状态码为3位数字，200-299状态码表示成功(如200表示响应成功)，300-399状态码表示资源重定向(如302表示资源重定向)，400-499状态码表示客户端请求出错(如404表示请求资源不存在)，500-599状态码表示服务器端请求出错(如500表示服务器内部错误)。<br>    2. 响应头部包含很多客户端环境以及请求正文的有用信息。由”关键字:值”组成<br>    3. 空行，必不可少，表示响应头部结束，下面就是响应正文<br>    4. 响应正文，服务器返回的文档，通常为HTML网页</p>
+<h2 id="HTTP的头域"><a href="#HTTP的头域" class="headerlink" title="HTTP的头域"></a>HTTP的头域</h2><pre><code>http的请求消息和应答消息中都包含头域，头域分为4种，其中请求头域和应答头域分别在请求消息和应答消息中出现，通用头域和实体头域则在两种消息中都可以出现，但实体头域只有当消息中包含实体数据时才会出现。</code></pre><h3 id="HTTP请求头域"><a href="#HTTP请求头域" class="headerlink" title="HTTP请求头域"></a>HTTP请求头域</h3><p><img src="/images/http/3.png" alt=""><br><img src="/images/http/4.png" alt=""></p>
+<h3 id="HTTP应答头域"><a href="#HTTP应答头域" class="headerlink" title="HTTP应答头域"></a>HTTP应答头域</h3><p><img src="/images/http/5.png" alt=""><br><img src="/images/http/6.png" alt=""></p>
+<h3 id="HTTP通用头域"><a href="#HTTP通用头域" class="headerlink" title="HTTP通用头域"></a>HTTP通用头域</h3><p><img src="/images/http/7.png" alt=""></p>
+<h3 id="HTTP实体头域"><a href="#HTTP实体头域" class="headerlink" title="HTTP实体头域"></a>HTTP实体头域</h3><p><img src="/images/http/8.png" alt=""></p>
+<h2 id="HTTP请求走私"><a href="#HTTP请求走私" class="headerlink" title="HTTP请求走私"></a>HTTP请求走私</h2><pre><code>HTTP请求走私是一种干扰网站处理从一个或多个用户接收的HTTP请求序列的方式的技术。使攻击者可以绕过安全控制，未经授权访问敏感数据并危害其他应用程序用户。</code></pre><h3 id="HTTP请求走私的成因"><a href="#HTTP请求走私的成因" class="headerlink" title="HTTP请求走私的成因"></a>HTTP请求走私的成因</h3><pre><code>前端服务器(CDN)和后端服务器接收的数据不同步，引起对客户传入的数据理解不一致，从而导致漏洞的产生。
+大多数HTTP请求走私漏洞的出现是因为HTTP规范提供了两种不同的方法来指定请求的结束位置：Content-Length标头和Transfer-Encoding标头。同时使用这两种不同的方法的时候，Content-Length就无效，而当使用多个服务器时，对客户端传入的数据理解不一致时就会出现有些服务器认为Content-Length的长度有效，有些认为Transfer-Encoding有效。而一般情况下，反向代理服务器与后端的源站度武器之间会重用TCP连接，这样长度就会拼接到下一次请求进行请求，从而导致HTTP请求走私。
+【RFC2616规范：如果接收的消息同时包含传输编码头字段(Transfer-Encoding)和内容长度头(Content-Length)字段，则必须忽略后者。】</code></pre><h3 id="HTTP请求走私实现"><a href="#HTTP请求走私实现" class="headerlink" title="HTTP请求走私实现"></a>HTTP请求走私实现</h3><pre><code>当向代理服务器发送一个比较模糊的HTTP请求的时候，由于两个服务器的实现方式不同，代理服务器认为这是一个HTTP请求，然后将其转发给了后端的源站服务器，但源站服务器经过解析处理后，只认为其中的一部分是正常请求，另一部分是走私请求，当该走私请求部分对正常用户的请求造成影响后，就实现了HTTP请求走私。完成此操作的确切方式取决于两个服务器的行为：
+    CL-TE：前端服务器使用Content-Length标头，而后端服务器使用Transfer-Encoding标头
+    TE-CL：前端服务器使用Transfer-Encoding标头，而后端服务器使用Content-Length标头
+    TE-TE：前端服务器和后端服务器都支持Transfer-Encoding标头，但是可以通过对标头进行某种方式的混淆来诱导其中一台服务器不对其进行处理。</code></pre><h3 id="HTTP请求走私的五种方式"><a href="#HTTP请求走私的五种方式" class="headerlink" title="HTTP请求走私的五种方式"></a>HTTP请求走私的五种方式</h3><pre><code>* CL不为0
+    所有不携带请求体的HTTP请求都有可能受此影响。这里用GET请求举例。
+    前端代理服务器允许GET请求携带请求体；后端服务器不允许GET请求携带请求体，它会直接忽略掉GET请求中的Content-Length头，不进行处理。这就有可能导致请求走私。
+        构造请求示例：
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">GET &#x2F; HTTP&#x2F;1.1\r\n</span><br><span class="line">Host: test.com\r\n</span><br><span class="line">Content-Length: 44\r\n</span><br><span class="line"></span><br><span class="line">GET &#x2F; secret HTTP&#x2F;1.1\r\n</span><br><span class="line">Host: test.com\r\n</span><br><span class="line">\r\n</span><br></pre></td></tr></table></figure>
+        攻击流程：
+            前端服务器收到该请求后，读取Content-Length判断这是一个完整的请求。然后转发给后端服务器，后端服务器收到后，因为它不对Content-Length进行处理，由于Pipeline的存在，后端服务器认为这是收到了两个请求，分别是：
+                <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET &#x2F; HTTP&#x2F;1.1\r\n</span><br><span class="line">Host: test.com\r\n</span><br></pre></td></tr></table></figure>
+            和
+                <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET &#x2F; secret HTTP&#x2F;1.1\r\n</span><br><span class="line">Host: test.com\r\n</span><br></pre></td></tr></table></figure>
+            从而造成请求走私。
+* CL-CL
+    【在RFC7230的第3.3.3节中的第四条中，规定当服务器收到的请求中包含两个Content-Length，而且两者的值不同时，需要返回400错误。】
+    有些服务器不会严格的实现该规范，假设中间的代理服务器和后端的源站服务器在收到类似的请求时，都不会返回400错误。
+    但是中间代理服务器按照第一个Content-Length的值对请求进行处理，而后端源站服务器按照第二个Content-Length的值进行处理。
+    构造请求示例：
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">POST &#x2F; HTTP&#x2F;1.1\r\n</span><br><span class="line">Host: test.com\r\n</span><br><span class="line">Content-Length: 8\r\n</span><br><span class="line">Content-Length: 7\r\n</span><br><span class="line"></span><br><span class="line">12345\r\n</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+    攻击流程：
+        中间代理服务器获取到的数据包长度为8，将上述整个数据包原封不动的发送给后端的源站服务器。而后端的源站服务器获取到的数据为7，当读完前7个只读后，后端服务器认为已经读取完毕，然后生成对应的响应，发送出去，而此时缓冲区还剩一个字母a，对于后端服务器来说，这个a是下一个请求的一部分，但是还没有传输完毕。如果此时有个其他正常用户对服务器进行了请求：
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET &#x2F;index.html HTTP&#x2F;1.1\r\n</span><br><span class="line">Host: test.com\r\n</span><br></pre></td></tr></table></figure>
+        因为代理服务器和源站服务器之间一般会重用TCP连接，所以正常用户的请求就拼接到了字母a后面，当后端接收完毕后，它实际处理是：
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aGET &#x2F;index.html HTTP&#x2F;1.1\r\n</span><br><span class="line">Host: test.com\r\n</span><br></pre></td></tr></table></figure>
+        这时，用户就会收到一个类似于aGET request method not found的报错。这样就实现了一次HTTP走私攻击，而且还对正常用户的行为造成了影响，而且还可以扩展成类似于CSRF的攻击方式。
+* CL-TE
+    CL-TE，就是当收到存在两个请求头的请求包时，前端代理服务器只处理Content-Length请求头，而后端服务器会遵守RFC2616的规定，忽略掉Content-Length，处理Transfer-Encoding请求头。
+    chunk传输数据(size的值由16进制表示)：[chunk size][\r\n][chunk data][\r\n][chunk size][\r\n][chunk data][\r\n][chunk size = 0][\r\n][\r\n]
+    构造请求示例：
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">POST &#x2F; HTTP&#x2F;1.1\r\n</span><br><span class="line">Host: test.com\r\n</span><br><span class="line">Connection: keep-alive\r\n</span><br><span class="line">Content-Length: 6\r\n</span><br><span class="line">Transfer-Encoding: chunked\r\n</span><br><span class="line"></span><br><span class="line">0\r\n</span><br><span class="line">\r\n</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+        连续发送几次请求就可以获得响应。
+    攻击流程：
+        由于前端服务器处理Content-Length，所以这个请求对于它来说是一个完整的请求，请求体的长度为6，也就是：
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0\r\n</span><br><span class="line">\r\n</span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+        当请求包经过代理服务器转发给后端服务器时，后端服务器处理Transfer-Encoding，当它读取到
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0\r\n</span><br><span class="line">\r\n</span><br></pre></td></tr></table></figure>
+        认为已经读取到结尾了。但剩下的字母a就被留在了缓冲区中，等待下一次请求。当我们重复发送请求后，发送的请求在后端服务器拼接成了类似下面这种请求：
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aPOST &#x2F; HTTP&#x2F;1.1\r\n</span><br><span class="line">Host: test.com\r\n</span><br></pre></td></tr></table></figure>
+        服务器在解析时就会产生报错了，从而造成HTTP请求走私。
+* TE-CL
+    TE-CL，就是当收到存在两个请求头的请求包时，前端代理服务器处理Transfer-Encoding请求头，后端服务器处理Content-Length请求头。
+    构造请求示例：
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">POST &#x2F; HTTP&#x2F;1.1\r\n</span><br><span class="line">Host: test.com\r\n</span><br><span class="line">Content-Length: 4\r\n</span><br><span class="line">Transfer-Encoding: chunked\r\n</span><br><span class="line"></span><br><span class="line">12\r\n</span><br><span class="line">aPOST &#x2F; HTTP&#x2F;1.1\r\n</span><br><span class="line"></span><br><span class="line">0\r\n</span><br><span class="line">\r\n</span><br></pre></td></tr></table></figure>
+    攻击流程：
+        前端服务器处理Transfer-Encoding，当其读取到
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0\r\n</span><br><span class="line">\r\n</span><br></pre></td></tr></table></figure>
+        认为是读取完毕了。
+        此时这个请求对代理服务器来说是一个完整的请求，然后转发给后端服务器，后端服务器处理Content-Length请求头，因为请求体的长度为4.也就是当它读取完：
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">12\r\n</span><br></pre></td></tr></table></figure>
+        就认为这个请求已经结束了。后面的数据就认为是另一个请求：
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">aPOST &#x2F; HTTP&#x2F;1.1\r\n</span><br><span class="line"></span><br><span class="line">0\r\n</span><br><span class="line">\r\n</span><br></pre></td></tr></table></figure>
+        成功报错，造成HTTP请求走私。
+* TE-TE
+TE-TE，当收到存在两个请求头的请求包时，前后端服务器都处理Transfer-Encoding请求头，确实是实现了RFC的标准。不过前后端服务器不是同一种。这就有了一种方法，我们可以对发送的请求包中的Transfer-Encoding进行某种混淆操作(如某个字符改变大小写)，从而使其中一个服务器不处理Transfer-Encoding请求头。在某种意义上这还是CL-TE或者TE-CL。
+构造请求示例：
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">POST &#x2F; HTTP&#x2F;1.1\r\n</span><br><span class="line">Host: test.com\r\n</span><br><span class="line">Content-length: 4\r\n</span><br><span class="line">Transfer-Encoding: chunked\r\n</span><br><span class="line">Transfer-encoding: cow\r\n</span><br><span class="line"></span><br><span class="line">5c\r\n</span><br><span class="line">aPOST &#x2F; HTTP&#x2F;1.1\r\n</span><br><span class="line">Content-Type: application&#x2F;x-www-form-urlencoded\r\n</span><br><span class="line">Content-Length: 15\r\n</span><br><span class="line"></span><br><span class="line">x&#x3D;1\r\n</span><br><span class="line">0\r\n</span><br><span class="line">\r\n</span><br></pre></td></tr></table></figure>
+攻击流程：
+    前端服务器处理Transfer-Encoding，当其读取到：
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0\r\n</span><br><span class="line">\r\n</span><br></pre></td></tr></table></figure>
+    认为是读取结束。
+    此时这个请求对代理服务器来说是一个完整的请求，然后转发给后端服务器处理Transfer-encoding请求头，将Transfer-Encoding隐藏在服务端的一个chain中时，它将会回退到使用Content-Length去发送请求。读取到：
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5c\r\n</span><br></pre></td></tr></table></figure>
+    认为是读取完毕了。后面的数据就认为是另一个请求：
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">aPOST &#x2F; HTTP&#x2F;1.1\r\n</span><br><span class="line">Content-Type: application&#x2F;x-www-form-urlencoded\r\n</span><br><span class="line">Content-Length: 15\r\n</span><br><span class="line"></span><br><span class="line">x&#x3D;1\r\n</span><br><span class="line">0\r\n</span><br><span class="line">\r\n</span><br></pre></td></tr></table></figure>
+    成功报错，造成HTTP请求走私。</code></pre></div><ul class="post-copyright"><li><strong>本文标题：</strong><a href="http://yoursite.com/2020/03/03/HTTP/">HTTP</a></li><li><strong>本文作者：</strong><a href="http://yoursite.com">mahiro</a></li><li><strong>本文链接：</strong><a href="http://yoursite.com/2020/03/03/HTTP/">http://yoursite.com/2020/03/03/HTTP/</a></li><li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li></ul><div><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># Related Post</span><br><span>  1.<a class="is-size-6" href="/2020/03/08/%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2%E6%80%BB%E7%BB%93/" target="_blank">源码泄露总结</a><br></span><span>  2.<a class="is-size-6" href="/2020/03/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%89%E5%85%A8/" target="_blank">浏览器安全</a><br></span><span>  3.<a class="is-size-6" href="/2020/02/25/BUUOJ%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" target="_blank">Web CTF 复现</a><br></span><span>  4.<a class="is-size-6" href="/2019/11/29/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_blank">web安全学习笔记</a><br></span><span>  5.<a class="is-size-6" href="/2019/11/23/sql%E6%B3%A8%E5%85%A5%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" target="_blank">sql注入小知识</a><br></span></div><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># Recommend Post</span><br><span>  1.<a class="is-size-6" href="/2020/02/25/BUUOJ%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" target="_blank">Web CTF 复现</a><br></span><span>  2.<a class="is-size-6" href="/2020/03/03/DNSLog%E8%AE%B0%E5%BD%95/" target="_blank">DNSLog记录</a><br></span><span>  3.<a class="is-size-6" href="/2020/03/03/HTTP/" target="_blank">HTTP</a><br></span><span>  4.<a class="is-size-6" href="/2019/11/23/sql%E6%B3%A8%E5%85%A5%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" target="_blank">sql注入小知识</a><br></span><span>  5.<a class="is-size-6" href="/2020/02/27/upload-lab-%E8%AE%B0%E5%BD%95/" target="_blank">upload-lab 记录</a><br></span><span>  6.<a class="is-size-6" href="/2020/03/31/WCTF2020-WP/" target="_blank">WCTF2020 WP(WEB)</a><br></span></div></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/css/share.min.css"><div class="social-share"></div><script src="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Gefällt Ihnen der Artikel? Unterstützen Sie den Autor mit</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="/" alt="Alipay"></span></a><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="/" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/03/03/DNSLog%E8%AE%B0%E5%BD%95/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">DNSLog记录</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/03/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%89%E5%85%A8/"><span class="level-item">浏览器安全</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Kommentare</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/gitalk/1.6.0/gitalk.css"><script> $.getScript('/js/gitalk.min.js', function () { 
+            var gitalk = new Gitalk({
+            id: 'a4d656edae4a7c12b233e2ce29a4a82f',
+            repo: 'gitcomment',
+            owner: 'mahiro424',
+            clientID: 'a310e755c4962ccb6306',
+            clientSecret: 'bf1d34612319156ee83867eccc73f64e4ff37768',
+            admin: ["admin"],
+            createIssueManually: true,
+            distractionFreeMode: false,
+            perPage: 10,
+            pagerDirection: 'last',
+            
+            
+            enableHotKey: true,
+            isLocked: false
+        })
+        gitalk.render('comment-container')});</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget toc-scroll" id="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Katalog</h3><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-超文本传输协议HTTP的定义" href="#超文本传输协议HTTP的定义"><span>超文本传输协议HTTP的定义</span></a></li><li><a class="is-flex toc-item" id="toc-item-HTTP的特点" href="#HTTP的特点"><span>HTTP的特点</span></a></li><li><a class="is-flex toc-item" id="toc-item-HTTP的请求方法" href="#HTTP的请求方法"><span>HTTP的请求方法</span></a></li><li><a class="is-flex toc-item" id="toc-item-HTTP的工作流程" href="#HTTP的工作流程"><span>HTTP的工作流程</span></a></li><li><a class="is-flex toc-item" id="toc-item-HTTP的报文格式" href="#HTTP的报文格式"><span>HTTP的报文格式</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-HTTP请求报文" href="#HTTP请求报文"><span>HTTP请求报文</span></a></li></ul></li><li><a class="is-flex toc-item" id="toc-item-HTTP的头域" href="#HTTP的头域"><span>HTTP的头域</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-HTTP请求头域" href="#HTTP请求头域"><span>HTTP请求头域</span></a></li><li><a class="is-flex toc-item" id="toc-item-HTTP应答头域" href="#HTTP应答头域"><span>HTTP应答头域</span></a></li><li><a class="is-flex toc-item" id="toc-item-HTTP通用头域" href="#HTTP通用头域"><span>HTTP通用头域</span></a></li><li><a class="is-flex toc-item" id="toc-item-HTTP实体头域" href="#HTTP实体头域"><span>HTTP实体头域</span></a></li></ul></li><li><a class="is-flex toc-item" id="toc-item-HTTP请求走私" href="#HTTP请求走私"><span>HTTP请求走私</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-HTTP请求走私的成因" href="#HTTP请求走私的成因"><span>HTTP请求走私的成因</span></a></li><li><a class="is-flex toc-item" id="toc-item-HTTP请求走私实现" href="#HTTP请求走私实现"><span>HTTP请求走私实现</span></a></li><li><a class="is-flex toc-item" id="toc-item-HTTP请求走私的五种方式" href="#HTTP请求走私的五种方式"><span>HTTP请求走私的五种方式</span></a></li></ul></li></ul></div></div><script type="text/javascript" async>
+        $(document).ready(function () { //参考自 https://github.com/ppoffice/hexo-theme-icarus/pull/616/files
+            var observerTopMargin;
+            var scrollObserver;
+            var headerElems = $(".headerlink");
+            var activeTocItem;
+        
+            function initIntersectionObserver(docHeight) {
+                observerTopMargin = docHeight;
+                scrollObserver = new IntersectionObserver(scrollCallBack,
+                    {
+                        root: null,  // viewpoint
+                        rootMargin: docHeight + "px 0px -80% 0px"  // cover top 30% of viewport to the top of document
+                    })
+            }
+        
+            function scrollCallBack(entries, observer) {
+                if ($(window).scrollTop() > observerTopMargin * 0.7) { 
+                    // User somehow scroll to 70% of observerTopMargin (which is inited as 200% document height)
+                    // Observer top margin need to extend to cover all the space to the top of the document
+                    initIntersectionObserver(observerTopMargin * 2)
+                    observer.disconnect();
+                    return;
+                }
+                let toActive;
+                if (entries[0].intersectionRatio == 1) {  // enter viewed area
+                    let entry = entries.reduce((u, v) => (u.target.toc_id > v.target.toc_id ? u : v));  // get the lowest item
+                    toActive = $("#toc-item-" + $(entry.target).attr("href").substr(1));
+                } else {
+                    let entry = entries.reduce((u, v) => (u.target.toc_id < v.target.toc_id ? u : v));  // get the highest item
+                    let idx = Math.max(entry.target.toc_id - 1, 0);
+                    toActive = $("#toc-item-" + $(headerElems[idx]).attr("href").substr(1));
+                }
+                if (activeTocItem) activeTocItem.removeClass("is-current");
+                activeTocItem = toActive
+                activeTocItem.addClass("is-current");
+            }
+        
+            initIntersectionObserver($(document).height() * 2);
+            headerElems.each(function (index, obj) {
+                obj.toc_id = index;
+                scrollObserver.observe(obj);
+            })
+        });</script></div><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="is-rounded" src="/img/avatar.png" alt="mahiro"></figure><p class="title is-size-4 is-block line-height-inherit">mahiro</p><p class="is-size-6 is-block">能成为萝莉控真的是太好啦！！！！！！！</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">9</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Kategorie</p><a href="/categories"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">5</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="/" target="_blank" rel="noopener">Folgen</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/mahiro424"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Weibo" href="/"><i class="fab fa-weibo"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Email" href="/"><i class="fa fa-envelope"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Next" href="/"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
+                                $.getJSON("https://v1.hitokoto.cn/", function (data) {
+                                if(data){
+                                    $('#hitokoto').html("");
+                                    $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
+                                    "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
+                                }});}
+                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新评论</h3><span class="body_hot_comment">加载中，最新评论有1分钟延迟...</span></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">Letzte Einträge</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-31T07:59:57.000Z">2020-03-31</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/31/WCTF2020-WP/">WCTF2020 WP(WEB)</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-08T04:18:19.000Z">2020-03-08</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/08/%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2%E6%80%BB%E7%BB%93/">源码泄露总结</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/web/">web</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-03T15:55:01.000Z">2020-03-03</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/03/DNSLog%E8%AE%B0%E5%BD%95/">DNSLog记录</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-03T01:56:58.000Z">2020-03-03</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/03/HTTP/">HTTP</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/web/">web</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-02T07:59:18.000Z">2020-03-02</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%89%E5%85%A8/">浏览器安全</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/web/">web</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Kategorien</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/web/"><span class="level-start"><span class="level-item">web</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Archive</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/03/"><span class="level-start"><span class="level-item">March 2020</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/02/"><span class="level-start"><span class="level-item">February 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/11/"><span class="level-start"><span class="level-item">November 2019</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/study/"><span class="tag">study</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/web/"><span class="tag">web</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/web-study/"><span class="tag">-web -study</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ctf/"><span class="tag">ctf</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sql/"><span class="tag">sql</span><span class="tag is-grey-lightest">1</span></a></div></div></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="真寻の窝" height="28"></a><p class="size-small"><span>&copy; 2020 mahiro</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>,Modify by <a href="https://github.com/removeif/hexo-theme-amazing" target="_blank">removeif</a> <br><div class="size-small"><span id="busuanzi_container_site_uv">❤️感谢<strong> <span id="busuanzi_value_site_uv">99+</span> </strong></span>小伙伴的<strong> <span id="busuanzi_value_site_pv">99+</span> </strong>次光临！❤️</div></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/mahiro424"><i class="fab fa-github"></i></a></p></div><div class="sideMusic"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="/js/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><meting-js style="width: auto;height: 2000px;" server="netease" type="playlist" id="887934910" theme="#2980b9" loop="all" autoplay="false" order="list" storageName="aplayer-setting" lrctype="0" list-max-height="400px" fixed="true"></meting-js></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script>moment.locale("zh");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'http://yoursite.com',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="Zurück nach oben" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back-to-top.js" defer></script><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.12/js/lightgallery-all.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js" defer></script><!--!--><!--!--><!--!--><script src="/js/toc.js" defer></script><script src="/js/main.js" defer></script><script>$.getScript('/js/comment-issue-data.js',function(){loadIssueData('a310e755c4962ccb6306','bf1d34612319156ee83867eccc73f64e4ff37768','mahiro424','gitcomment',false);})</script><link rel="stylesheet" href="/css/insight.css"><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Tippen Sie etwas..."><span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script>(function (window) {
+            var INSIGHT_CONFIG = {
+                TRANSLATION: {
+                    POSTS: 'Posts',
+                    PAGES: 'Seiten',
+                    CATEGORIES: 'Kategorien',
+                    TAGS: 'Tags',
+                    UNTITLED: '(Unbenannt)',
+                },
+                CONTENT_URL: '/content.json',
+            };
+            window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+        })(window);</script><script src="/js/insight.js" defer></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script><script type="text/javascript">var pjax = new Pjax({
+            elements: "a",//代表点击链接就更新
+            selectors: [  //代表要更新的节点
+                ".section",
+                "title"
+            ],
+            cache: true,
+            cacheBust:false
+        })
+
+        function loadBusuanzi(){
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js", function () {});
+        }
+
+        // 开始 PJAX 执行的函数
+        document.addEventListener('pjax:send', function () {
+        });
+        
+        // PJAX 完成之后执行的函数，可以和上面的重载放在一起
+        document.addEventListener('pjax:complete', function () {
+            $(".section").css({opacity:1});
+            if(true){
+                $.getScript('/js/comment-issue-data.js',function(){loadIssueData('a310e755c4962ccb6306','bf1d34612319156ee83867eccc73f64e4ff37768','mahiro424','gitcomment',false);});
+            }
+            if(false){
+                loadMathJax();
+            }
+            loadMainJs(jQuery, window.moment, window.ClipboardJS, window.IcarusThemeSettings);
+            loadBackTop();
+            loadBusuanzi();
+        });</script></body></html>

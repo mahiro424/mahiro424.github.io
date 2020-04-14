@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>浏览器安全 - 真寻の窝</title><meta description="菜鸡ctfer，努力想成为大佬中...(也许永远也不会吧)"><meta property="og:type" content="article"><meta property="og:title" content="浏览器安全"><meta property="og:url" content="http://yoursite.com/2020/03/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%89%E5%85%A8/"><meta property="og:site_name" content="真寻の窝"><meta property="og:description" content="菜鸡ctfer，努力想成为大佬中...(也许永远也不会吧)"><meta property="og:locale" content="zh"><meta property="article:published_time" content="2020-03-02T07:59:18.000Z"><meta property="article:modified_time" content="2020-04-14T14:51:08.931Z"><meta property="article:author" content="mahiro"><meta property="article:tag" content="study"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="http://yoursite.com/img/avatar.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2020/03/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%89%E5%85%A8/"},"headline":"浏览器安全","image":["http://yoursite.com/img/avatar.png"],"datePublished":"2020-03-02T07:59:18.000Z","dateModified":"2020-04-14T14:51:08.931Z","author":{"@type":"Person","name":"mahiro"},"description":"菜鸡ctfer，努力想成为大佬中...(也许永远也不会吧)"}</script><link rel="alternative" href="/atom.xml" title="真寻の窝" type="application/atom+xml"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css?family=Ubuntu:400,600|Source+Code+Pro|Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext|Inconsolata|Itim|Lobster.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/pace/1.0.2/pace.min.js"></script><link rel="stylesheet" href="/css/style.css"><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="/js/globalUtils.js"></script><script src="/js/md5.min.js"></script><link rel="stylesheet" href="/live2d/waifu.css"><script type="text/javascript" async src="/live2d/autoload.js"></script></head><body class="is-3-column has-navbar-fixed-top"><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="真寻の窝" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/media">影音</a><a class="navbar-item" href="/album">相册</a><a class="navbar-item" href="/friend">友链</a><a class="navbar-item" href="/self-talking">碎碎念</a><a class="navbar-item" href="/message">留言</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/mahiro424"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Katalog" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Suche" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-03-02T07:59:18.000Z">2020-03-02</time><a class="commentCountImg" href="/2020/03/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%89%E5%85%A8/#comment-container"><span class="display-none-class">3eb41f6761bcffce10bdb53d98a4da1e</span><img class="not-gallery-item" src="/img/chat.svg"> <span class="commentCount" id="3eb41f6761bcffce10bdb53d98a4da1e"> 99+</span>    </a><span class="level-item">16 minutes lesen (Über 2422 Worte)</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;&nbsp;<span id="busuanzi_value_page_pv">0</span> Besuche</span></div></div><h1 class="title is-3 is-size-4-mobile">浏览器安全</h1><div class="content"><h1 id="同源策略SOP-Same-Origin-Policy"><a href="#同源策略SOP-Same-Origin-Policy" class="headerlink" title="同源策略SOP(Same Origin Policy)"></a>同源策略SOP(Same Origin Policy)</h1><h2 id="源"><a href="#源" class="headerlink" title="源"></a>源</h2><pre><code>如果两个页面的协议，端口，域名相同，那么两个页面具有相同的源。</code></pre><h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><pre><code>&gt; 同源策略的定义
+    同源策略是一种约定，它是浏览器最核心也最基本的安全功能，如果缺少了同源策略，则浏览器的正常功能可能都会受到影响。可以说Web是构建在同源策略基础之上的，浏览器只是针对同源策略的一种实现。浏览器处于安全方面的考虑，只允许本域名下的接口交互，不同源的客户端脚本，在没有明确授权的情况下，不能读写对方的资源。
+&gt; 不受同源策略限制的
+    1. 页面中的链接，重定向和表单提交是不会受到限制的
+    2. 跨域引用资源是可以的，但是js不能读写加载的内容，如嵌入到页面中的&lt;script src=&quot;...&quot;&gt;&lt;/script&gt;，&lt;img&gt;，&lt;link&gt;，&lt;iframe&gt;等。
+&gt; 目的
+    保护用户数据信息的安全，防止恶意的网站窃取和篡改数据。
+&gt; 如果是非同源，以下行为会受到限制：
+    1. cookie,localstorage,indexDB无法获取
+    2. DOM无法获得
+    3. AJAX请求无法发送</code></pre><h2 id="跨域-放宽同源策略"><a href="#跨域-放宽同源策略" class="headerlink" title="跨域/放宽同源策略"></a>跨域/放宽同源策略</h2><h3 id="AJAX跨域"><a href="#AJAX跨域" class="headerlink" title="AJAX跨域"></a>AJAX跨域</h3><pre><code>&gt; JSONP
+    JSONP就是利用&lt;script&gt;标签的跨域能力实现跨域数据的访问，请求动态生成的JavaScript脚本同时带一个callback函数名作为参数。服务器收到请求后，动态生成脚本产生数据，并在代码中产生的数据为参数调用callback函数。
+
+    跨域原理：</code></pre><p><img src="https://s2.ax1x.com/2020/03/06/3qRaDJ.png" alt=""><br>        跨域流程：<br><img src="https://s2.ax1x.com/2020/03/06/3qWKxO.png" alt=""></p>
+<pre><code>&gt; CORS(Cross-Origin resource sharing)
+    CORS(跨资源共享)是一个W3C标准，可以允许浏览器向跨域资源服务器发出XMLHttpRequst请求，从而克服了AJAX只能同源使用的限制，进而读取跨域的资源。CORS允许你Web服务器通知Web浏览器应该允许那些其他来源从该Web服务器中的回复访问内容。
+
+实现原理：</code></pre><p><img src="https://s2.ax1x.com/2020/03/06/3qHiMq.png" alt=""><br>        跨域流程：<br><img src="https://s2.ax1x.com/2020/03/06/3qHJoD.png" alt=""><br>        CORS未设置Access-Control-Allow-Credentials，则浏览器发送的请求不会带有用户的身份数据（Cookie或者HTTP身份数据）：<br><img src="https://s2.ax1x.com/2020/03/06/3qHdSA.png" alt=""></p>
+<h3 id="COOKIE"><a href="#COOKIE" class="headerlink" title="COOKIE"></a>COOKIE</h3><pre><code>&gt; cookie的定义
+    HTTP协议是无状态的，即服务器无法判断用户的身份信息。那么就需要用到cookie了，cookie实际上是一小段key-value型的文本信息。当客户端向服务器发送请求的时候，如果服务器需要记录该用户的状态，就会用response向客户端浏览器发送一个cookie。客户端会把cookie保存在本地，当浏览器再次访问该网站的时候，浏览器会把请求的网站连同该cookie一同提交给服务器，服务器会检测cookie以此来辨别用户的身份。
+&gt; cookie的机制
+    客户端发送一个请求到服务器 ——&gt; 服务器发送一个HttpResponse响应到客户端，其中包含SetCookie的头部 ——&gt; 客户端保存Cookie，之后向服务器发送请求时，HttpResponse请求会包含一个Cookie的头部 ——&gt; 服务器根据认证cookie后返回响应数据
+&gt; cookie的属性项
+    NAME=VALUE:键值对，可以设置要保存的key/value
+    Expires:过期时间，在设置某个时间点后该cookie就会失效，单位为秒，MAX_VALUE表示永久有效    Domain:生成该cookie的域名
+    Path:保存该cookie的路径
+    Secure:如果设置了这个属性，那么只会在SSH连接的时候才会传回该cookie
+    HttpOnly：如果cookie中设置了HttpOnly属性，那么通过js脚本将无法读取到cookie信息，这样能有效的防止XSS攻击，窃取cookie内容，这样就增加了cookie的安全性。
+&gt; cookie的同源跨域
+    cookie是不可以跨域名的，隐私安全机制禁止网站非法获取其他网站的cookie，即只有同源的网页可以共享。
+    一般情况下同一个域名下的两个二级域名是不能交互使用cookie的，但是浏览器允许通过设置document.domain来共享cookie，如set-cookie:key=value;domain=.*****.com;path=/，这样的话二级三级域名都不用做任何设置都可共享该cookie。</code></pre><h3 id="SESSION"><a href="#SESSION" class="headerlink" title="SESSION"></a>SESSION</h3><pre><code>&gt; session的定义
+    由于HTTP协议是无状态的，所以当服务器需要记录用户的状态时，服务器会把客户端信息以某种形式记录在服务器上，这就是session，客户端浏览器再次访问的时候只需要从该session中查找该用户的状态就行了。
+&gt; session的机制
+    当用户第一次访问服务器时，服务器端会给用户创建一个独立的session，并生成一个sessionID，这个sessionID在响应客户端浏览器时会被装进cookie里，从而保存在浏览器中。
+    当用户再一次访问服务器时，请求中会携带着cookie中的sessionID去访问，服务器会根据这个sessionID去查看是否有相应的session对象，有就拿出来用没有就会重新创建。
+&gt; session的生命周期
+    为了获得更高的存取速度，服务器一般会把session放在内存里面。session在用户第一次访问服务器时自动创建，只要用户继续访问，服务器就会更新session和最后访问时间并维护该session。而为了防止内存溢出，服务器会把长时间没有活跃的session从内存中删除，这个时间就是session的生命周期。session的生命周期是一次会话。就是从用户开始请求这个application开始到application结束。</code></pre><h3 id="COOKIE和SEESION的区别"><a href="#COOKIE和SEESION的区别" class="headerlink" title="COOKIE和SEESION的区别"></a>COOKIE和SEESION的区别</h3><pre><code>1. session存放在服务端，cookie存放在客户端
+2. session的运算以来sessionID，而sessionID存放在cookie中需要借助cookie来实现。当浏览器禁用了cookie时，session也会失效，但是可以通过url重写即在url中传递sessionID来防止失效
+3. 服务端设置session会话，session在关闭浏览器时会自动注销，再次666连接时，将会重新分配。客户端设置cookie，cookie中包含sessionid(id为唯一不会重复的编号)。
+4. cookie不是很安全，可以分析存放在本地的cookie并进行cookie欺骗，安全考虑还是使用session
+5. session会在一定时间内保存在服务器上，访问增多时会占用服务器性能，减轻负担使用cookie
+6. 登陆信息通常会放到session中而其他信息存放在cookie中
+~~单个cookie在客户端的限制是3K，一个站点在客户端存放的cookie不能超过3K~~</code></pre><h2 id="内容安全策略CSP-Content-Security-Policy"><a href="#内容安全策略CSP-Content-Security-Policy" class="headerlink" title="内容安全策略CSP(Content Security Policy)"></a>内容安全策略CSP(Content Security Policy)</h2><pre><code>&gt; CSP的定义
+    csp的实质是白名单制度，开发者明确告诉客户端，哪些外部资源可以加载和执行，等同于提供白名单，它的实现和执行全部由浏览器完成，开发者只需要提供配置即可。
+&gt; CSP的目的
+    因为非白名单内容无法正常执行，可以减少甚至杜绝xss攻击以及运营商劫持的内容注入攻击
+&gt; 具体内容参考
+    https://www.zhihu.com/question/21979782</code></pre><h2 id="FLASH安全沙箱"><a href="#FLASH安全沙箱" class="headerlink" title="FLASH安全沙箱"></a>FLASH安全沙箱</h2><pre><code>&gt; flash安全沙箱分类
+    分为远程沙箱和本地沙箱
+&gt; 目的
+    为了让不可信的代码运行在一定的环境当中，从而限制了这些代码访问隔离区之外的资源，如果因为某种原因确实需要访问隔离区之外的资源，那么就必须通过指定的通道，这些通道会进行严格的内容安全检查，来判断请求的合法性。通道采取默认拒绝的策略，一般采用封装的API来实现。
+&gt; 原则
+    沙箱遵循最小权限原则，每个动作的权限都会被限制，仅仅运算而无法写入文件和从敏感区域读取文件
+    位于同一沙箱的资源始终可以相互访问，远程沙箱中的swf始终不能访问本地文件和数据
+&gt; 跨域
+    若站点根目录下存在&quot;crossdomain.xml&quot;文件则可进行跨域访问</code></pre><h2 id="恶意网址拦截"><a href="#恶意网址拦截" class="headerlink" title="恶意网址拦截"></a>恶意网址拦截</h2><pre><code>即浏览器周期性的从服务器获得一份最新恶意网址的黑名单，并在用户试图进入这些网址时进行拦截并提醒用户。
+&gt; 分类
+    1. 网站挂马:通常包含恶意的js或flash脚本，利用浏览器漏洞在用户电脑里植入木马
+    2. 钓鱼网站:模仿知名网站欺骗用用户
+&gt; 防御方法
+    1. 恶意网址黑名单一般由有实力的浏览器厂商提供
+    2. 主流浏览器都支持EVSSL证书来保障用户的网络安全，符合该证书的网站其浏览器地址栏会变为绿色，不符合的则是红色</code></pre></div><ul class="post-copyright"><li><strong>本文标题：</strong><a href="http://yoursite.com/2020/03/02/浏览器安全/">浏览器安全</a></li><li><strong>本文作者：</strong><a href="http://yoursite.com">mahiro</a></li><li><strong>本文链接：</strong><a href="http://yoursite.com/2020/03/02/浏览器安全/">http://yoursite.com/2020/03/02/浏览器安全/</a></li><li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li></ul><div><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># Related Post</span><br><span>  1.<a class="is-size-6" href="/2020/03/08/%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2%E6%80%BB%E7%BB%93/" target="_blank">源码泄露总结</a><br></span><span>  2.<a class="is-size-6" href="/2020/03/03/HTTP/" target="_blank">HTTP</a><br></span><span>  3.<a class="is-size-6" href="/2020/02/25/BUUOJ%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" target="_blank">Web CTF 复现</a><br></span><span>  4.<a class="is-size-6" href="/2019/11/29/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_blank">web安全学习笔记</a><br></span><span>  5.<a class="is-size-6" href="/2019/11/23/sql%E6%B3%A8%E5%85%A5%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" target="_blank">sql注入小知识</a><br></span></div><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># Recommend Post</span><br><span>  1.<a class="is-size-6" href="/2020/02/25/BUUOJ%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" target="_blank">Web CTF 复现</a><br></span><span>  2.<a class="is-size-6" href="/2020/03/03/DNSLog%E8%AE%B0%E5%BD%95/" target="_blank">DNSLog记录</a><br></span><span>  3.<a class="is-size-6" href="/2020/03/03/HTTP/" target="_blank">HTTP</a><br></span><span>  4.<a class="is-size-6" href="/2019/11/23/sql%E6%B3%A8%E5%85%A5%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" target="_blank">sql注入小知识</a><br></span><span>  5.<a class="is-size-6" href="/2020/02/27/upload-lab-%E8%AE%B0%E5%BD%95/" target="_blank">upload-lab 记录</a><br></span><span>  6.<a class="is-size-6" href="/2020/03/31/WCTF2020-WP/" target="_blank">WCTF2020 WP(WEB)</a><br></span></div></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/css/share.min.css"><div class="social-share"></div><script src="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Gefällt Ihnen der Artikel? Unterstützen Sie den Autor mit</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="/" alt="Alipay"></span></a><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="/" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/03/03/HTTP/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">HTTP</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/02/27/upload-lab-%E8%AE%B0%E5%BD%95/"><span class="level-item">upload-lab 记录</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Kommentare</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/gitalk/1.6.0/gitalk.css"><script> $.getScript('/js/gitalk.min.js', function () { 
+            var gitalk = new Gitalk({
+            id: '3eb41f6761bcffce10bdb53d98a4da1e',
+            repo: 'gitcomment',
+            owner: 'mahiro424',
+            clientID: 'a310e755c4962ccb6306',
+            clientSecret: 'bf1d34612319156ee83867eccc73f64e4ff37768',
+            admin: ["admin"],
+            createIssueManually: true,
+            distractionFreeMode: false,
+            perPage: 10,
+            pagerDirection: 'last',
+            
+            
+            enableHotKey: true,
+            isLocked: false
+        })
+        gitalk.render('comment-container')});</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget toc-scroll" id="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Katalog</h3><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-同源策略SOP-Same-Origin-Policy" href="#同源策略SOP-Same-Origin-Policy"><span>同源策略SOP(Same Origin Policy)</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-源" href="#源"><span>源</span></a></li><li><a class="is-flex toc-item" id="toc-item-同源策略" href="#同源策略"><span>同源策略</span></a></li><li><a class="is-flex toc-item" id="toc-item-跨域-放宽同源策略" href="#跨域-放宽同源策略"><span>跨域&amp;#x2F;放宽同源策略</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-AJAX跨域" href="#AJAX跨域"><span>AJAX跨域</span></a></li><li><a class="is-flex toc-item" id="toc-item-COOKIE" href="#COOKIE"><span>COOKIE</span></a></li><li><a class="is-flex toc-item" id="toc-item-SESSION" href="#SESSION"><span>SESSION</span></a></li><li><a class="is-flex toc-item" id="toc-item-COOKIE和SEESION的区别" href="#COOKIE和SEESION的区别"><span>COOKIE和SEESION的区别</span></a></li></ul></li><li><a class="is-flex toc-item" id="toc-item-内容安全策略CSP-Content-Security-Policy" href="#内容安全策略CSP-Content-Security-Policy"><span>内容安全策略CSP(Content Security Policy)</span></a></li><li><a class="is-flex toc-item" id="toc-item-FLASH安全沙箱" href="#FLASH安全沙箱"><span>FLASH安全沙箱</span></a></li><li><a class="is-flex toc-item" id="toc-item-恶意网址拦截" href="#恶意网址拦截"><span>恶意网址拦截</span></a></li></ul></li></ul></div></div><script type="text/javascript" async>
+        $(document).ready(function () { //参考自 https://github.com/ppoffice/hexo-theme-icarus/pull/616/files
+            var observerTopMargin;
+            var scrollObserver;
+            var headerElems = $(".headerlink");
+            var activeTocItem;
+        
+            function initIntersectionObserver(docHeight) {
+                observerTopMargin = docHeight;
+                scrollObserver = new IntersectionObserver(scrollCallBack,
+                    {
+                        root: null,  // viewpoint
+                        rootMargin: docHeight + "px 0px -80% 0px"  // cover top 30% of viewport to the top of document
+                    })
+            }
+        
+            function scrollCallBack(entries, observer) {
+                if ($(window).scrollTop() > observerTopMargin * 0.7) { 
+                    // User somehow scroll to 70% of observerTopMargin (which is inited as 200% document height)
+                    // Observer top margin need to extend to cover all the space to the top of the document
+                    initIntersectionObserver(observerTopMargin * 2)
+                    observer.disconnect();
+                    return;
+                }
+                let toActive;
+                if (entries[0].intersectionRatio == 1) {  // enter viewed area
+                    let entry = entries.reduce((u, v) => (u.target.toc_id > v.target.toc_id ? u : v));  // get the lowest item
+                    toActive = $("#toc-item-" + $(entry.target).attr("href").substr(1));
+                } else {
+                    let entry = entries.reduce((u, v) => (u.target.toc_id < v.target.toc_id ? u : v));  // get the highest item
+                    let idx = Math.max(entry.target.toc_id - 1, 0);
+                    toActive = $("#toc-item-" + $(headerElems[idx]).attr("href").substr(1));
+                }
+                if (activeTocItem) activeTocItem.removeClass("is-current");
+                activeTocItem = toActive
+                activeTocItem.addClass("is-current");
+            }
+        
+            initIntersectionObserver($(document).height() * 2);
+            headerElems.each(function (index, obj) {
+                obj.toc_id = index;
+                scrollObserver.observe(obj);
+            })
+        });</script></div><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="is-rounded" src="/img/avatar.png" alt="mahiro"></figure><p class="title is-size-4 is-block line-height-inherit">mahiro</p><p class="is-size-6 is-block">能成为萝莉控真的是太好啦！！！！！！！</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">9</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Kategorie</p><a href="/categories"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">5</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="/" target="_blank" rel="noopener">Folgen</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/mahiro424"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Weibo" href="/"><i class="fab fa-weibo"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Email" href="/"><i class="fa fa-envelope"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Next" href="/"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
+                                $.getJSON("https://v1.hitokoto.cn/", function (data) {
+                                if(data){
+                                    $('#hitokoto').html("");
+                                    $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
+                                    "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
+                                }});}
+                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新评论</h3><span class="body_hot_comment">加载中，最新评论有1分钟延迟...</span></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">Letzte Einträge</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-31T07:59:57.000Z">2020-03-31</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/31/WCTF2020-WP/">WCTF2020 WP(WEB)</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-08T04:18:19.000Z">2020-03-08</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/08/%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2%E6%80%BB%E7%BB%93/">源码泄露总结</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/web/">web</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-03T15:55:01.000Z">2020-03-03</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/03/DNSLog%E8%AE%B0%E5%BD%95/">DNSLog记录</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-03T01:56:58.000Z">2020-03-03</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/03/HTTP/">HTTP</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/web/">web</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-02T07:59:18.000Z">2020-03-02</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%89%E5%85%A8/">浏览器安全</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/web/">web</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Kategorien</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/web/"><span class="level-start"><span class="level-item">web</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Archive</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/03/"><span class="level-start"><span class="level-item">March 2020</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/02/"><span class="level-start"><span class="level-item">February 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/11/"><span class="level-start"><span class="level-item">November 2019</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/study/"><span class="tag">study</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/web/"><span class="tag">web</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/web-study/"><span class="tag">-web -study</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ctf/"><span class="tag">ctf</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sql/"><span class="tag">sql</span><span class="tag is-grey-lightest">1</span></a></div></div></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="真寻の窝" height="28"></a><p class="size-small"><span>&copy; 2020 mahiro</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>,Modify by <a href="https://github.com/removeif/hexo-theme-amazing" target="_blank">removeif</a> <br><div class="size-small"><span id="busuanzi_container_site_uv">❤️感谢<strong> <span id="busuanzi_value_site_uv">99+</span> </strong></span>小伙伴的<strong> <span id="busuanzi_value_site_pv">99+</span> </strong>次光临！❤️</div></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/mahiro424"><i class="fab fa-github"></i></a></p></div><div class="sideMusic"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="/js/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><meting-js style="width: auto;height: 2000px;" server="netease" type="playlist" id="887934910" theme="#2980b9" loop="all" autoplay="false" order="list" storageName="aplayer-setting" lrctype="0" list-max-height="400px" fixed="true"></meting-js></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script>moment.locale("zh");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'http://yoursite.com',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="Zurück nach oben" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back-to-top.js" defer></script><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.12/js/lightgallery-all.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js" defer></script><!--!--><!--!--><!--!--><script src="/js/toc.js" defer></script><script src="/js/main.js" defer></script><script>$.getScript('/js/comment-issue-data.js',function(){loadIssueData('a310e755c4962ccb6306','bf1d34612319156ee83867eccc73f64e4ff37768','mahiro424','gitcomment',false);})</script><link rel="stylesheet" href="/css/insight.css"><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Tippen Sie etwas..."><span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script>(function (window) {
+            var INSIGHT_CONFIG = {
+                TRANSLATION: {
+                    POSTS: 'Posts',
+                    PAGES: 'Seiten',
+                    CATEGORIES: 'Kategorien',
+                    TAGS: 'Tags',
+                    UNTITLED: '(Unbenannt)',
+                },
+                CONTENT_URL: '/content.json',
+            };
+            window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+        })(window);</script><script src="/js/insight.js" defer></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script><script type="text/javascript">var pjax = new Pjax({
+            elements: "a",//代表点击链接就更新
+            selectors: [  //代表要更新的节点
+                ".section",
+                "title"
+            ],
+            cache: true,
+            cacheBust:false
+        })
+
+        function loadBusuanzi(){
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js", function () {});
+        }
+
+        // 开始 PJAX 执行的函数
+        document.addEventListener('pjax:send', function () {
+        });
+        
+        // PJAX 完成之后执行的函数，可以和上面的重载放在一起
+        document.addEventListener('pjax:complete', function () {
+            $(".section").css({opacity:1});
+            if(true){
+                $.getScript('/js/comment-issue-data.js',function(){loadIssueData('a310e755c4962ccb6306','bf1d34612319156ee83867eccc73f64e4ff37768','mahiro424','gitcomment',false);});
+            }
+            if(false){
+                loadMathJax();
+            }
+            loadMainJs(jQuery, window.moment, window.ClipboardJS, window.IcarusThemeSettings);
+            loadBackTop();
+            loadBusuanzi();
+        });</script></body></html>
