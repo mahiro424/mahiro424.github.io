@@ -1,3 +1,9 @@
+* {
+  cursor: url("https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/img/cursor/normal.cur"), auto !important;
+}
+:active {
+  cursor: url("https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/img/cursor/No_Disponible.cur"), auto !important;
+}
 @-moz-keyframes spinAround {
   from {
     transform: rotate(0deg);
@@ -12202,10 +12208,4 @@ body:not(.night) .post-navigation:hover {
   position: absolute;
   right: 0;
   top: 0;
-}
-* {
-  cursor: url("https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/img/cursor/normal.cur"), auto !important;
-}
-:active {
-  cursor: url("https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/img/cursor/No_Disponible.cur"), auto !important;
 }
