@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>sqlmap学习 - 真寻の窝</title><meta description="很久没用过sqlmap了，因为做题的时候老是被ban掉了，来复习一下sqlmap的用法。"><meta property="og:type" content="article"><meta property="og:title" content="sqlmap学习"><meta property="og:url" content="http://yoursite.com/2020/04/18/sqlmap%E5%AD%A6%E4%B9%A0/"><meta property="og:site_name" content="真寻の窝"><meta property="og:description" content="很久没用过sqlmap了，因为做题的时候老是被ban掉了，来复习一下sqlmap的用法。"><meta property="og:locale" content="zh"><meta property="article:published_time" content="2020-04-18T06:41:42.000Z"><meta property="article:modified_time" content="2020-04-18T10:25:44.595Z"><meta property="article:author" content="mahiro"><meta property="article:tag" content="categories-java"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="http://yoursite.com/img/avatar.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2020/04/18/sqlmap%E5%AD%A6%E4%B9%A0/"},"headline":"sqlmap学习","image":["http://yoursite.com/img/avatar.png"],"datePublished":"2020-04-18T06:41:42.000Z","dateModified":"2020-04-18T10:25:44.595Z","author":{"@type":"Person","name":"mahiro"},"description":"很久没用过sqlmap了，因为做题的时候老是被ban掉了，来复习一下sqlmap的用法。"}</script><link rel="alternative" href="/atom.xml" title="真寻の窝" type="application/atom+xml"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css?family=Ubuntu:400,600|Source+Code+Pro|Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext|Inconsolata|Itim|Lobster.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/pace/1.0.2/pace.min.js"></script><link rel="stylesheet" href="/css/style.css"><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="/js/globalUtils.js"></script><script src="/js/md5.min.js"></script><script src="/js/src/hititle.js"></script><link rel="stylesheet" href="/live2d/waifu.css"><script type="text/javascript" async src="/live2d/autoload.js"></script></head><body class="is-3-column has-navbar-fixed-top"><script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/noSomeKey.js"></script><script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/sakura.js"></script><script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/canvas-nest.min.js"></script><script src="/js/src/activate-power-mode.js"></script><script>POWERMODE.colorful = true; // make power mode colorful POWERMODE.shake = true; // turn off shake document.body.addEventListener(&#039;input&#039;, POWERMODE);</script><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="真寻の窝" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/album">相册</a><a class="navbar-item" href="/friend">友链</a><a class="navbar-item" href="/message">留言</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/mahiro424"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><script src="/js/src/click.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-04-18T06:41:42.000Z">2020-04-18</time><a class="commentCountImg" href="/2020/04/18/sqlmap%E5%AD%A6%E4%B9%A0/#comment-container"><span class="display-none-class">e7ed7d8cd7589f2f499feae7d9366190</span><img class="not-gallery-item" src="/img/chat.svg"> <span class="commentCount" id="e7ed7d8cd7589f2f499feae7d9366190"> 99+</span>    </a><span class="level-item">36 minutes read (About 5413 words)</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;&nbsp;<span id="busuanzi_value_page_pv">0</span> Besuche</span></div></div><h1 class="title is-3 is-size-4-mobile">sqlmap学习</h1><div class="content"><p>很久没用过sqlmap了，因为做题的时候老是被ban掉了，来复习一下sqlmap的用法。</p>
+<a id="more"></a>
+
+<h1 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h1><h2 id="sqlmap的作用"><a href="#sqlmap的作用" class="headerlink" title="sqlmap的作用"></a>sqlmap的作用</h2><ol>
+<li>判断可注入的参数</li>
+<li>判断可以用哪种sql注入技术来注入</li>
+<li>识别出哪钟数据库</li>
+<li>根据用户选择读取哪些数据</li>
+</ol>
+<h2 id="注入模式"><a href="#注入模式" class="headerlink" title="注入模式"></a>注入模式</h2><ul>
+<li>基于布尔的盲注：根据返回页面判断条件真假的注入。</li>
+<li>基于时间的盲注：不能根据返回页面判断任何信息，用条件语句查看时间延迟语句是否执行来判断。</li>
+<li>基于报错注入：根据页面返回错误信息或者把错误的语句结果直接返回在页面上。</li>
+<li>基于联合查询注入：根据union是否可以使用的情况下的注入。</li>
+<li>基于堆查询注入：可以同时执行多条语句的执行时的注入。</li>
+</ul>
+<h2 id="支持注入的数据库类型"><a href="#支持注入的数据库类型" class="headerlink" title="支持注入的数据库类型"></a>支持注入的数据库类型</h2><ul>
+<li>MySQL</li>
+<li>Oracle</li>
+<li>PostgreSQL</li>
+<li>Microsoft SQL Sever</li>
+<li>Microsoft Acess</li>
+<li>IBM DB2</li>
+<li>SQLite</li>
+<li>Firebird</li>
+<li>Sybase</li>
+<li>SAP MaxDB</li>
+</ul>
+<h2 id="参数设置"><a href="#参数设置" class="headerlink" title="参数设置"></a>参数设置</h2><h3 id="数据显示"><a href="#数据显示" class="headerlink" title="数据显示"></a>数据显示</h3><pre><code>-v参数，共有7个等级，默认为1，最好为3</code></pre><ul>
+<li>-v 0：只显示python错误及严重的信息</li>
+<li>-v 1：同时显示基本信息和警告信息</li>
+<li>-v 2：同时显示debug信息</li>
+<li>-v 3：同时显示注入的payload</li>
+<li>-v 4：同时显示HTTP请求</li>
+<li>-v 5：同时显示HTTP响应头</li>
+<li>-v 6：同时显示HTTP响应页面</li>
+</ul>
+<h3 id="获取目标方式"><a href="#获取目标方式" class="headerlink" title="获取目标方式"></a>获取目标方式</h3><blockquote>
+<p>直接连到数据库</p>
+<ul>
+<li>参数：-d，直接连接数据库，该参数后面跟一个表示数据库的字符串<ul>
+<li>python sqlmap.py -d “mysql://admin//admin@127.0.0.1:3306/db”</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>目标url</p>
+<ul>
+<li>参数：-u或者–url，指定一个url作为目标，该参数后面跟一个表示url的字符串，可以是http协议也可以是https协议，还可以指定端口<ul>
+<li>python sqlmap.py -u “http(s)://127.0.0.1/index.php?id=1”</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>从burp或者webscarab代理日志中解析目标</p>
+<ul>
+<li>参数：-l，sqlmap将从日志文件中解析出可能的攻击目标，并逐个尝试进行注入。该参数后面跟一个表示日志文件的路径<ul>
+<li>python sqlmap.py -l ../proxy.log</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>从站点地图文件中解析目标</p>
+<ul>
+<li>参数：-x，为了方便搜索引擎搜索，许多站点专门为了搜索引擎生成了xml格式的站点地图，sqlmap可以直接解析xml式的站点地图，从中提取攻击目标，对一个网站全方位无死角的进行注入检测。<ul>
+<li>python sqlmap.py -x “http(s)://127.0.0.1/sitemap.xml”</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>从文本文件中解析目标</p>
+<ul>
+<li>参数：-m，通常是将多个url以一行一行的格式保存在一个文本文件中，然后用sqlmap进行解析，该参数后面跟着一个文本路径。<ul>
+<li>python sqlmap.py -m url.txt</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>从文件载入HTTP请求</p>
+<ul>
+<li>参数：-r，将一个HTTP请求保存在文件中，然后使用参数-r加载该文件，sqlmap会对该文件进行解析测试。<ul>
+<li>python sqlmap.py -r http.txt</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>从配置文件中载入攻击目标</p>
+<ul>
+<li>参数：-c<ul>
+<li>python sqlmap.py -c test.config</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h2><h3 id="HTTP方法"><a href="#HTTP方法" class="headerlink" title="HTTP方法"></a>HTTP方法</h3><pre><code>参数：--mothod，可以指定方法，如&quot;-method=PUT&quot;</code></pre><h3 id="POST数据"><a href="#POST数据" class="headerlink" title="POST数据"></a>POST数据</h3><pre><code>参数：--data，该参数指定的数据会被当做POST数据提交，sqlmap也会检测该参数指定的数据是否存在sql漏洞，如 python sqlmap.py -u &quot;http(s)://127.0.0.1/index.php&quot; --data=&quot;id=1&quot;</code></pre><h3 id="指定分隔符"><a href="#指定分隔符" class="headerlink" title="指定分隔符"></a>指定分隔符</h3><pre><code>参数：--param-del，如 python sqlmap.py -u &quot;http(s)://127.0.0.1/index.php&quot; --data=&quot;id=0;name=werner&quot; --param-del=&quot;;&quot;</code></pre><h3 id="COOKIE"><a href="#COOKIE" class="headerlink" title="COOKIE"></a>COOKIE</h3><pre><code>参数；--cookie、--cookie-del、--drop-set-cookie和--load-cookies，当页面只有在登录的状态下才会使用这个参数，也可以用来检测是否存在cookie注入
+常用的是--cookie，后面几个也不常用，--cookie-del是指定cookie里的分隔符，--drop-set-cookie是让sqlmap忽略http响应头中的&quot;Set-Cookie&quot;字段，--load-cookies用来从文件中载入wget格式的cookie
+如 python sqlmap.py -u &quot;http(s)://127.0.0.1/index.php&quot; --cookie=&quot;JSESSIONID=E5D6C8C81;NAME=werner;&quot; --cookie-del=&quot;;&quot;</code></pre><h3 id="User-Agent"><a href="#User-Agent" class="headerlink" title="User-Agent"></a>User-Agent</h3><pre><code>参数：--user-agent和--random-agent。使用参数“–user-agent”可以指定一个User-Agent值。但正常的User-Agent值长什么样我们可能并不记得，所以有了参数“–random-agent”，使用该参数，Sqlmap会从文件user-agents.txt中随机地取一个User-Agent。注意，在一次会话中只有使用同一个User-Agent，并不是每发一个HTTP请求包，都随机一个User-Agent。
+如 python sqlmap.py -u &quot;http(s)://127.0.0.1/index.php?id=1&quot; --random-agent user-agent.txt</code></pre><h3 id="Host"><a href="#Host" class="headerlink" title="Host"></a>Host</h3><pre><code>参数：--host，使用该参数指定HTTP头中的host值。</code></pre><h3 id="Referer"><a href="#Referer" class="headerlink" title="Referer"></a>Referer</h3><pre><code>参数：-referer，使用该参数指定HTTP头中的referer值。</code></pre><h3 id="添加额外的HTTP头"><a href="#添加额外的HTTP头" class="headerlink" title="添加额外的HTTP头"></a>添加额外的HTTP头</h3><pre><code>参数：--headers，使用该参数可以在Sqlmap发送的HTTP请求报文头部添加字段，若添加多个字段，用“\n”分隔。如 python sqlmap.py -u &quot;http(s)://127.0.0.1/index.php?id=1&quot; --headers &quot;X-A:A\nX-B:B&quot;</code></pre><h3 id="身份认证"><a href="#身份认证" class="headerlink" title="身份认证"></a>身份认证</h3><pre><code>参数：--auth-type和-auth-cred，&quot;--auth-type&quot;用于指定认证方式，&quot;--auth-cred&quot;用于给出身份认证的凭证，如 python sqlmap.py -u &quot;http(s)://127.0.0.1/index.php&quot; -auth-type Basic --auth-cred &quot;username:password&quot;</code></pre><h3 id="基于证书的身份认证"><a href="#基于证书的身份认证" class="headerlink" title="基于证书的身份认证"></a>基于证书的身份认证</h3><pre><code>参数：--auth-file，若Web服务器要求客户端提供证书则可以使用此参数指定一个PEM格式的证书文件。我们知道SSL协议的客户端认证是可选的，实践中一般都只用服务器端提供自己的证书供客户端验证，很少要求客户端提供自己的证书。</code></pre><h3 id="忽略401"><a href="#忽略401" class="headerlink" title="忽略401"></a>忽略401</h3><pre><code>参数：--ignore-401</code></pre><h3 id="使用代理"><a href="#使用代理" class="headerlink" title="使用代理"></a>使用代理</h3><pre><code>--proxy、--proxy-cred、--proxy-file和--ignore-proxy，&quot;–proxy&quot;来设置一个http(s)代理，若代理需要认证，&quot;–proxy-cred&quot;来提供认证凭证，&quot;–proxy-file&quot;指定一个存储着代理列表的文件，Sqlmap会依次使用文件中的代理，当某个代理有任何连接问题时就会被弃用而换下一个代理。&quot;–ignore-proxy&quot;忽略本地代理设置。</code></pre><h3 id="添加延迟"><a href="#添加延迟" class="headerlink" title="添加延迟"></a>添加延迟</h3><pre><code>参数：--delay，用于指定http请求之间的延迟，默认无延迟</code></pre><h3 id="超时设置"><a href="#超时设置" class="headerlink" title="超时设置"></a>超时设置</h3><pre><code>参数：--timeout，用于设置指定超时时间，超时默认时间30s </code></pre><h3 id="超时后最大重试次数"><a href="#超时后最大重试次数" class="headerlink" title="超时后最大重试次数"></a>超时后最大重试次数</h3><pre><code>参数：--retries，用设置指定最大重试次数，最大重试次数默认为3</code></pre><h3 id="随机化参数值"><a href="#随机化参数值" class="headerlink" title="随机化参数值"></a>随机化参数值</h3><pre><code>参数：--randomize，随机生成每次HTTP请求中参数的值，值的类型和长度依照于原始值。</code></pre><h3 id="用正则过滤代理日志"><a href="#用正则过滤代理日志" class="headerlink" title="用正则过滤代理日志"></a>用正则过滤代理日志</h3><pre><code>参数：--scope，指定一个Python正则表达式对代理日志进行过滤，只测试符合正则表达式的目标，如：python sqlmap.py -l burp.log --scope=&quot;(www)?\.target\.(com|net|org)&quot;</code></pre><h3 id="避免错误请求过多而被屏蔽"><a href="#避免错误请求过多而被屏蔽" class="headerlink" title="避免错误请求过多而被屏蔽"></a>避免错误请求过多而被屏蔽</h3><pre><code>参数：–-safe-url、–-safe-post、–-safe-req和–-safe-freq，有时服务器检测到某个客户端错误请求过多会对其进行屏蔽，而sqlmap的测试往往会产生大量错误请求，为避免被屏蔽，可以时不时的产生几个正常请求以迷惑服务器。
+–safe-url: 隔一会就访问一下的安全URL
+–safe-post: 访问安全URL时携带的POST数据
+–safe-req: 从文件中载入安全HTTP请求
+–safe-freq: 每次测试请求之后都会访问一下的安全URL</code></pre><h3 id="关闭URL编码"><a href="#关闭URL编码" class="headerlink" title="关闭URL编码"></a>关闭URL编码</h3><pre><code>参数：--skip-urlencode</code></pre><h3 id="绕过CSRF保护"><a href="#绕过CSRF保护" class="headerlink" title="绕过CSRF保护"></a>绕过CSRF保护</h3><pre><code>参数：–csrf-token和–csrf-url，现在有很多网站通过在表单中添加值为随机生成的token的隐藏字段来防止CSRF攻击，sqlmap会自动识别出这种保护方式并绕过。但自动识别有可能失效，&quot;–csrf-toke&quot;用于指定包含token的隐藏字段名，若这个字段名不是常见的防止csrf攻击的字段名sqlmap可能不能自动识别出，需要手动指定。如Django中该字段名为“csrfmiddlewaretoken”，明显与CSRF攻击有关。&quot;–csrf-url&quot;用于从任意的url中回收token值。有漏洞的目标url中没有包含token值而又要求在其他地址提取token值时该参数就很有用。</code></pre><h3 id="强制使用SSL"><a href="#强制使用SSL" class="headerlink" title="强制使用SSL"></a>强制使用SSL</h3><pre><code>参数：–force-ssl</code></pre><h3 id="在每次请求前执行特定Python代码"><a href="#在每次请求前执行特定Python代码" class="headerlink" title="在每次请求前执行特定Python代码"></a>在每次请求前执行特定Python代码</h3><pre><code>参数：–eval，如  python sqlmap.py -u &quot;http(s)://127.0.0.1/index.php?id=1&amp;hash=c4ca4238a0b923820dcc509a6f75849b&quot; --eval=&quot;import hashlib;hash=hashlib.md5(id).hexdigest()&quot;</code></pre><h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><blockquote>
+<p>一键优化</p>
+<ul>
+<li>参数：-o<ul>
+<li>相当于同时添加 –keep-alive、–null-connection和–threads=3这三个参数</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>http长连接</p>
+<ul>
+<li>参数：–keep-alive<ul>
+<li>与参数–proxy矛盾</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>http空连接</p>
+<ul>
+<li>参数：–null-connection<ul>
+<li>与参数–text-only矛盾</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>http并发</p>
+<ul>
+<li>–threads<ul>
+<li>最大不要超过10</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="注入"><a href="#注入" class="headerlink" title="注入"></a>注入</h2><ol>
+<li><p>注入测试点</p>
+<blockquote>
+<p>参数：-p和-skip</p>
+<ul>
+<li>只想测试GET参数的id和User-Agent<ul>
+<li>-p “id,user-agent”</li>
+</ul>
+</li>
+<li>在level 5下不想测试参数User-Agent和Referer<ul>
+<li>–level=5 –skip=”user-agent,referer”</li>
+</ul>
+</li>
+<li>测试伪静态网页<ul>
+<li>python sqlmap.py -u “http(s)://127.0.0.1/index/1*/“</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p>指定数据库</p>
+<blockquote>
+<p>参数：-dbms</p>
+</blockquote>
+</li>
+<li><p>指定运行数据库的操作系统</p>
+<blockquote>
+<p>参数：-os</p>
+</blockquote>
+</li>
+<li><p>生成无效参数值时强制使用最大数</p>
+<blockquote>
+<p>参数：–invalid-bignum</p>
+<ul>
+<li>有时在注入测试时需要生成无效参数，一般情况下Sqlmap会取已有参数（如：id=13）的相反数（如：id=-13）作为无效参数。但若添加“–invalid-bignum”，Sqlmap就会取大数（如：id=99999999）作为无效参数。</li>
+</ul>
+</blockquote>
+</li>
+<li><p>生成无效参数值时强制使用逻辑操作符</p>
+<blockquote>
+<p>参数：–invalid-logical</p>
+<ul>
+<li>有时在注入测试时需要生成无效参数，一般情况下Sqlmap会取已有参数（如：id=13）的相反数（如：id=-13）作为无效参数。但若添加“–invalid-logical”，Sqlmap就会使用逻辑操作符（如：id=13 AND 18=19）作为无效参数。</li>
+</ul>
+</blockquote>
+</li>
+<li><p>生成无效参数值时强制使用字符串</p>
+<blockquote>
+<p>参数：–invalid-string</p>
+<ul>
+<li>有时在注入测试时需要生成无效参数，一般情况下Sqlmap会取已有参数（如：id=13）的相反数（如：id=-13）作为无效参数。但若添加“–invalid-logical”，Sqlmap就会使用字符串（如：id=akewmc）作为无效参数。</li>
+</ul>
+</blockquote>
+</li>
+<li><p>关闭payload转换</p>
+<blockquote>
+<p>参数：–no-cast</p>
+<ul>
+<li>在检索结果时Sqlmap会将所有输入转换为字符串类型，若遇到空值（NULL）则将其替换为空白字符。</li>
+</ul>
+</blockquote>
+</li>
+<li><p>关闭字符串编码</p>
+<blockquote>
+<p>参数：–no-escape</p>
+<ul>
+<li>有时Sqlmap会使用用单引号括起来的字符串值作为payload，默认地这些值会被编码，payload的内容又可以在后台服务器使用类似magic_quote或mysql_real_escape_string这样的转义函数的情况下字符串不受影响。</li>
+</ul>
+</blockquote>
+</li>
+<li><p>定制payload</p>
+<blockquote>
+<p>参数：–prefix和–suffix</p>
+</blockquote>
+</li>
+<li><p>修改注入数据</p>
+<blockquote>
+<p>参数；–tamper</p>
+<ul>
+<li>除了用CHAR()编码字符串外Sqlmap没有对payload进行任何混淆。该参数后跟一个tamper脚本的名字。若该tamper脚本位于sqlmap的安装目录的tamper/目录中，就可以省略路径和后缀名，只写文件名。多个tamper脚本之间用空格隔开。</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<h2 id="检测"><a href="#检测" class="headerlink" title="检测"></a>检测</h2><h3 id="检测级别"><a href="#检测级别" class="headerlink" title="检测级别"></a>检测级别</h3><pre><code>参数：--level，用于指定检测级别，有1~5共5级。默认为1，表示做最少的检测，相应的，5级表示做最多的检测。检测级别大于等于2时会检测cookie是否有注入，检测级别大于等于3时会检测User-Agent和Referer是否有注入。</code></pre><h3 id="风险等级"><a href="#风险等级" class="headerlink" title="风险等级"></a>风险等级</h3><pre><code>参数：--risk
+此参数用于指定风险等级，有1~4共4级。默认风险等级为1，此等级在大多数情况下对测试目标无害。风险等级2添加了基于时间的注入测试，等级3添加了OR测试。</code></pre><h3 id="页面对比"><a href="#页面对比" class="headerlink" title="页面对比"></a>页面对比</h3><blockquote>
+<p>参数：–string、–not-string和–regexp，默认情况下在布尔型注入中Sqlmap通过比较返回页面内容来判断True或False。但有时页面每次刷新都会不同，如页面中有动态广告。Sqlmap会尽力判断出页面中动态的部分来，但并不总能成功。用户可以用参数“–string”指出代表True的页面会包含而代表False的页面不会包含的字符串以供Sqlmap判断True或False，若这样的字符串是变动的还可以用参数“–regexp”指定一个正则表达式去匹配这样的字符串。或者用参数“–not-string”指出代表False的页面会包含而代表True的页面不会包含的字符串。</p>
+</blockquote>
+<blockquote>
+<p>参数：–code，若是用户知道代表True的页面HTTP状态码为200而代表False的页面HTTP状态码不为200比如是401，可以用“–code”参数告诉告诉Sqlmap这一信息，如“–code=200”。</p>
+</blockquote>
+<blockquote>
+<p>参数：–title，若是用户知道代表True的页面title和代表False的页面title不同，如代表True的页面title为“Welcome”，代表False的页面title为“Forbidden”，就可以使用参数“–titles”让Sqlmap依据title来判断True或False。</p>
+</blockquote>
+<blockquote>
+<p>参数：–text-only，若是HTTP响应体中有许多诸如JavaScript之类的活动内容，可以使用参数“–text-only”让Sqlmap只专注于纯文本内容。</p>
+</blockquote>
+<h2 id="注入技术"><a href="#注入技术" class="headerlink" title="注入技术"></a>注入技术</h2><ol>
+<li>检测时所用技术<blockquote>
+<p>参数：–technique，此参数用于指定检测注入时所用技术。默认情况下Sqlmap会使用自己支持的全部技术进行检测。此参数后跟表示检测技术的大写字母，其值为B、E、U、S、T或Q,可以用“–technique ES”来指定使用两种检测技术。“–technique BEUSTQ”与默认情况等效，含义如下：</p>
+<ul>
+<li>B：Boolean-based blind（布尔型注入）</li>
+<li>E：Error-based（报错型注入）</li>
+<li>U：Union query-based（可联合查询注入）</li>
+<li>S：Stacked queries（可多语句查询注入）</li>
+<li>T：Time-based blind（基于时间延迟注入）</li>
+<li>Q：Inline queries（嵌套查询注入）</li>
+</ul>
+</blockquote>
+</li>
+<li>基于时间延迟注入设计延时<blockquote>
+<p>参数：–time-sec，默认是5秒</p>
+</blockquote>
+</li>
+<li>联合查询注入中列数设置<blockquote>
+<p>参数：–union-cols，范围1-10，当level值较高时范围上限会扩大到50</p>
+</blockquote>
+</li>
+<li>联合查询中注入字符设置<blockquote>
+<p>参数：–-union-char，默认情况下Sqlmap进行联合查询注入时使用空字符（NULL）。但当level值较高时Sqlmap会生成随机数用于联合查询注入。</p>
+</blockquote>
+</li>
+<li>DNS泄露攻击<blockquote>
+<p>参数：–dns-domain</p>
+</blockquote>
+</li>
+<li>二阶注入攻击<blockquote>
+<p>参数：–second-order，有时注入结果显示在别的页面，此时需要用此参数指明显示注入结果的页面，该参数后跟一个URL。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="指纹"><a href="#指纹" class="headerlink" title="指纹"></a>指纹</h2><pre><code>参数：-f或--fingerprint，执行更广泛的数据库管理系统指纹识别
+参数：-b或--banner，得到更精确的指纹识别结果</code></pre><h2 id="暴力破解"><a href="#暴力破解" class="headerlink" title="暴力破解"></a>暴力破解</h2><ol>
+<li>暴力破解表名<blockquote>
+<p>参数：-common-tables，有些情况下用“–columns”不能列出数据表中列名来，如：</p>
+<ul>
+<li>版本小于5.0的MySQL没有information_schema表</li>
+<li>微软Access的MSysObjects表默认不可读</li>
+<li>数据库用户权限过低无法读取列名</li>
+</ul>
+</blockquote>
+</li>
+<li>暴力破解列名<blockquote>
+<p>参数：-common-columns，有些情况下用“–columns”不能列出数据表中列名来，如：</p>
+<ul>
+<li>版本小于5.0的MySQL没有information_schema表</li>
+<li>微软Access的MSysObjects表默认不可读</li>
+<li>数据库用户权限过低无法读取列名</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<h2 id="列举数据"><a href="#列举数据" class="headerlink" title="列举数据"></a>列举数据</h2><h3 id="一键列举数据"><a href="#一键列举数据" class="headerlink" title="一键列举数据"></a>一键列举数据</h3><pre><code>参数：-all</code></pre><h3 id="列出数据库信息"><a href="#列出数据库信息" class="headerlink" title="列出数据库信息"></a>列出数据库信息</h3><pre><code>参数：-b或者--banner</code></pre><h3 id="列举当前用户"><a href="#列举当前用户" class="headerlink" title="列举当前用户"></a>列举当前用户</h3><pre><code>参数：--current-user</code></pre><h3 id="列举当前数据库"><a href="#列举当前数据库" class="headerlink" title="列举当前数据库"></a>列举当前数据库</h3><pre><code>参数：--current-db</code></pre><h3 id="列举服务器主机名"><a href="#列举服务器主机名" class="headerlink" title="列举服务器主机名"></a>列举服务器主机名</h3><pre><code>参数：--hostname</code></pre><h3 id="检测当前用户是否是管理员"><a href="#检测当前用户是否是管理员" class="headerlink" title="检测当前用户是否是管理员"></a>检测当前用户是否是管理员</h3><pre><code>参数：--is-dba</code></pre><h3 id="列举数据库系统中的用户"><a href="#列举数据库系统中的用户" class="headerlink" title="列举数据库系统中的用户"></a>列举数据库系统中的用户</h3><pre><code>参数：--users</code></pre><h3 id="列举并破解数据库系统用户密码Hash值"><a href="#列举并破解数据库系统用户密码Hash值" class="headerlink" title="列举并破解数据库系统用户密码Hash值"></a>列举并破解数据库系统用户密码Hash值</h3><pre><code>参数：–-passwords</code></pre><h3 id="列举数据库系统的用户权限"><a href="#列举数据库系统的用户权限" class="headerlink" title="列举数据库系统的用户权限"></a>列举数据库系统的用户权限</h3><pre><code>参数：--privileges</code></pre><h3 id="列举数据库系统的用户角色"><a href="#列举数据库系统的用户角色" class="headerlink" title="列举数据库系统的用户角色"></a>列举数据库系统的用户角色</h3><pre><code>参数：--roles</code></pre><h3 id="列举数据库系统中的所有数据"><a href="#列举数据库系统中的所有数据" class="headerlink" title="列举数据库系统中的所有数据"></a>列举数据库系统中的所有数据</h3><pre><code>参数：--dbs</code></pre><h3 id="列举数据库系统的所有表"><a href="#列举数据库系统的所有表" class="headerlink" title="列举数据库系统的所有表"></a>列举数据库系统的所有表</h3><pre><code>参数：--tables、--excluse-sysdbs和-D</code></pre><p>###列举数据库系统的所有列<br>    参数：–columns、-C、-T和-D</p>
+<h3 id="列举数据库系统的模式"><a href="#列举数据库系统的模式" class="headerlink" title="列举数据库系统的模式"></a>列举数据库系统的模式</h3><pre><code>参数：--schema和--exclude-sysdbs</code></pre><h3 id="列举数据库系统中的数据条数"><a href="#列举数据库系统中的数据条数" class="headerlink" title="列举数据库系统中的数据条数"></a>列举数据库系统中的数据条数</h3><pre><code>参数：--count</code></pre><h3 id="列举数据库中表中的数据"><a href="#列举数据库中表中的数据" class="headerlink" title="列举数据库中表中的数据"></a>列举数据库中表中的数据</h3><pre><code>参数：--dump、-C、-T、-D</code></pre><h3 id="列举所有数据库系统所有表中所有数据"><a href="#列举所有数据库系统所有表中所有数据" class="headerlink" title="列举所有数据库系统所有表中所有数据"></a>列举所有数据库系统所有表中所有数据</h3><pre><code>参数：-–dump-all和–-exclude-sysdbs</code></pre><h3 id="在数据库系统、表、列中搜索"><a href="#在数据库系统、表、列中搜索" class="headerlink" title="在数据库系统、表、列中搜索"></a>在数据库系统、表、列中搜索</h3><pre><code>参数：–-search、-C、-T和-D</code></pre><h3 id="运行自定义的SQL语句"><a href="#运行自定义的SQL语句" class="headerlink" title="运行自定义的SQL语句"></a>运行自定义的SQL语句</h3><pre><code>参数：–-sql-query和–-sql-shell</code></pre><h2 id="UDF注入"><a href="#UDF注入" class="headerlink" title="UDF注入"></a>UDF注入</h2><pre><code>参数：参数：–-udf-inject，可以编译MySQL或PostgreSQL的共享库、DLL（Windows）和共享对象（Linux/Unix）并将这些文件在本机上的路径提供给Sqlmap来进行UDF注入。Sqlmap会先问一些问题然后上传UDF文件并创建UDF最后根据问题答案执行UDF。完成UDF注入后，Sqlmap会删除上传的UDF文件。
+参数：--shared-lib，添加此参数Sqlmap会在运行时询问共享库文件路径。</code></pre><h2 id="访问文件系统"><a href="#访问文件系统" class="headerlink" title="访问文件系统"></a>访问文件系统</h2><pre><code>参数：–-file-read，读取文件
+参数：--file-write和--file-dest，写入(上传)文件</code></pre><h1 id="不常用"><a href="#不常用" class="headerlink" title="不常用"></a>不常用</h1><h2 id="操作系统控制"><a href="#操作系统控制" class="headerlink" title="操作系统控制"></a>操作系统控制</h2><pre><code>-–os-cmd=OSCMD      执行操作系统命令
+–-os-shell          用于交互式操作系统shell的提示
+-–os-pwn            显示OOB shell, Meterpreter or或者VNC
+–-os-shell      One click prompt for an OOB shell, Meterpreter or VNC
+–-os-bof            存储过程缓冲区溢出开发
+-–priv-esc          数据库进程用户权限升级
+–-msf-path=MSFPATH  本地路径在metasploit框架安装
+–-tmp-path=TMPPATH  临时文件目录的远程绝对路径</code></pre><h2 id="注册表访问"><a href="#注册表访问" class="headerlink" title="注册表访问"></a>注册表访问</h2><pre><code>–-reg-read          读取一个窗口注册表项
+-–reg-add          写一个窗口注册表项的数据
+–-reg-del          删除一个注册表项
+–-reg-key=REGKEY    Windows注册表
+-–reg-value=REGVAL  注册表项的关键值
+-–reg-data=REGDATA  注册表键值数据
+-–reg-type=REGTYPE  注册表键值类型</code></pre><h2 id="常规"><a href="#常规" class="headerlink" title="常规"></a>常规</h2><pre><code>-s SESSIONFILE      从存储加载会话（sqlite）文件
+-t TRAFFICFILE      Log all HTTP traffic into a textual file
+-–batch            Never ask for user input, use the default behaviour
+-–binary-fields=..  Result fields having binary values (e.g. “digest”)
+-–charset=CHARSET  用于数据检索的力字符编码
+-–crawl=CRAWLDEPTH  从目标网址开始抓取网站
+-–crawl-exclude=..  正则表达式从爬行排除页 (e.g. “logout”)
+-–csv-del=CSVDEL    限定使用CSV输出特性 (default “,”)
+-–dump-format=DU..  转储数据格式 (CSV (default), HTML or SQLITE)
+-–eta              显示为每个输出估计的到达时间
+-–flush-session    当前目标的刷新会话文件
+-–forms          目标网址的解析和测试形式
+-–fresh-queries    忽略存储在会话文件中的查询结果
+–-hex              使用数据库管理系统的十六进制函数（S）进行数据检索
+-–output-dir=OUT..  自定义输出目录路径
+-–parse-errors      解析和显示响应中的数据库管理系统错误消息
+-–save=SAVECONFIG  保存选项来配置INI文件
+-–scope=SCOPE      正则表达式过滤提供代理日志目标
+-–test-filter=TE..  选择测试的有效载荷和/或头文件(e.g. ROW)
+-–test-skip=TEST..  跳过试验载荷和/或标题 (e.g. BENCHMARK)
+-–update          更新sqlmap</code></pre><h2 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h2><pre><code>-z MNEMONICS        短期记忆(e.g. “flu,bat,ban,tec=EU”)
+-–alert=ALERT      运行主机操作系统命令（s）时，SQL注入是发现
+-–answers=ANSWERS  漏洞答案集(e.g. “quit=N,follow=N”)
+-–beep              当有注入点被发现的时候报警
+-–cleanup          清理数据库从sqlmap具体UDF和表
+-–dependencies      检查没有的（非核心）sqlmap依赖包
+-–disable-coloring  禁用控制台输出着色
+-–gpage=GOOGLEPAGE 使用谷歌这一结果从指定的页码
+-–identify-waf      使一个WAF／IPS / IDS保护全面测试
+-–mobile          模仿智能手机通过HTTP用户代理标头
+-–offline          在脱机模式下工作（只使用会话数据）
+-–page-rank        显示网页排名（PR）为谷歌这一结果
+-–purge-output      安全地删除输出目录中的所有内容
+-–skip-waf        跳过WAF／IPS / IDS保护启发式检测
+-–smart            只有积极的启发式（S）进行彻底的测试
+-–sqlmap-shell      提示一个互动的sqlmap shell
+-–tmp-dir=TMPDIR    用于存储临时文件的本地目录
+-–wizard          为初学者用户提供简单的向导界面</code></pre></div><ul class="post-copyright"><li><strong>本文标题：</strong><a href="http://yoursite.com/2020/04/18/sqlmap学习/">sqlmap学习</a></li><li><strong>本文作者：</strong><a href="http://yoursite.com">mahiro</a></li><li><strong>本文链接：</strong><a href="http://yoursite.com/2020/04/18/sqlmap学习/">http://yoursite.com/2020/04/18/sqlmap学习/</a></li><li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li></ul><div><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># Related Post</span><br><span>  1.<a class="is-size-6" href="/2020/04/15/%E7%A7%98%E5%AF%86%E3%81%AE%E3%81%B2%E3%81%BF%E3%81%A4/" target="_blank">秘密のひみつ</a><br></span><span>  2.<a class="is-size-6" href="/2020/03/31/WCTF2020-WP/" target="_blank">WCTF2020 WP(WEB)</a><br></span><span>  3.<a class="is-size-6" href="/2020/03/03/DNSLog%E8%AE%B0%E5%BD%95/" target="_blank">DNSLog记录</a><br></span><span>  4.<a class="is-size-6" href="/2020/02/27/upload-lab-%E8%AE%B0%E5%BD%95/" target="_blank">upload-lab 记录</a><br></span></div><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># Recommend Post</span><br><span>  1.<a class="is-size-6" href="/2020/02/25/BUUOJ%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" target="_blank">Web CTF 复现</a><br></span><span>  2.<a class="is-size-6" href="/2020/03/03/DNSLog%E8%AE%B0%E5%BD%95/" target="_blank">DNSLog记录</a><br></span><span>  3.<a class="is-size-6" href="/2020/03/03/HTTP/" target="_blank">HTTP</a><br></span><span>  4.<a class="is-size-6" href="/2019/11/23/sql%E6%B3%A8%E5%85%A5%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" target="_blank">sql注入小知识</a><br></span><span>  5.<a class="is-size-6" href="/2020/02/27/upload-lab-%E8%AE%B0%E5%BD%95/" target="_blank">upload-lab 记录</a><br></span><span>  6.<a class="is-size-6" href="/2020/03/31/WCTF2020-WP/" target="_blank">WCTF2020 WP(WEB)</a><br></span></div></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/css/share.min.css"><div class="social-share"></div><script src="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Suka dengan artikel ini? Bantu penulis dengan donasi melalui</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="/img/QRcode.png" alt="Alipay"></span></a><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="/img/QRcode.png" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/04/15/%E7%A7%98%E5%AF%86%E3%81%AE%E3%81%B2%E3%81%BF%E3%81%A4/"><span class="level-item">秘密のひみつ</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Commentaires</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/gitalk/1.6.0/gitalk.css"><script> $.getScript('/js/gitalk.min.js', function () { 
+            var gitalk = new Gitalk({
+            id: 'e7ed7d8cd7589f2f499feae7d9366190',
+            repo: 'gitcomment',
+            owner: 'mahiro424',
+            clientID: 'a310e755c4962ccb6306',
+            clientSecret: 'bf1d34612319156ee83867eccc73f64e4ff37768',
+            admin: ["mahiro424"],
+            createIssueManually: true,
+            distractionFreeMode: false,
+            perPage: 10,
+            pagerDirection: 'last',
+            
+            
+            enableHotKey: true,
+            isLocked: false
+        })
+        gitalk.render('comment-container')});</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget toc-scroll" id="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-常用" href="#常用"><span>常用</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-sqlmap的作用" href="#sqlmap的作用"><span>sqlmap的作用</span></a></li><li><a class="is-flex toc-item" id="toc-item-注入模式" href="#注入模式"><span>注入模式</span></a></li><li><a class="is-flex toc-item" id="toc-item-支持注入的数据库类型" href="#支持注入的数据库类型"><span>支持注入的数据库类型</span></a></li><li><a class="is-flex toc-item" id="toc-item-参数设置" href="#参数设置"><span>参数设置</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-数据显示" href="#数据显示"><span>数据显示</span></a></li><li><a class="is-flex toc-item" id="toc-item-获取目标方式" href="#获取目标方式"><span>获取目标方式</span></a></li></ul></li><li><a class="is-flex toc-item" id="toc-item-请求" href="#请求"><span>请求</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-HTTP方法" href="#HTTP方法"><span>HTTP方法</span></a></li><li><a class="is-flex toc-item" id="toc-item-POST数据" href="#POST数据"><span>POST数据</span></a></li><li><a class="is-flex toc-item" id="toc-item-指定分隔符" href="#指定分隔符"><span>指定分隔符</span></a></li><li><a class="is-flex toc-item" id="toc-item-COOKIE" href="#COOKIE"><span>COOKIE</span></a></li><li><a class="is-flex toc-item" id="toc-item-User-Agent" href="#User-Agent"><span>User-Agent</span></a></li><li><a class="is-flex toc-item" id="toc-item-Host" href="#Host"><span>Host</span></a></li><li><a class="is-flex toc-item" id="toc-item-Referer" href="#Referer"><span>Referer</span></a></li><li><a class="is-flex toc-item" id="toc-item-添加额外的HTTP头" href="#添加额外的HTTP头"><span>添加额外的HTTP头</span></a></li><li><a class="is-flex toc-item" id="toc-item-身份认证" href="#身份认证"><span>身份认证</span></a></li><li><a class="is-flex toc-item" id="toc-item-基于证书的身份认证" href="#基于证书的身份认证"><span>基于证书的身份认证</span></a></li><li><a class="is-flex toc-item" id="toc-item-忽略401" href="#忽略401"><span>忽略401</span></a></li><li><a class="is-flex toc-item" id="toc-item-使用代理" href="#使用代理"><span>使用代理</span></a></li><li><a class="is-flex toc-item" id="toc-item-添加延迟" href="#添加延迟"><span>添加延迟</span></a></li><li><a class="is-flex toc-item" id="toc-item-超时设置" href="#超时设置"><span>超时设置</span></a></li><li><a class="is-flex toc-item" id="toc-item-超时后最大重试次数" href="#超时后最大重试次数"><span>超时后最大重试次数</span></a></li><li><a class="is-flex toc-item" id="toc-item-随机化参数值" href="#随机化参数值"><span>随机化参数值</span></a></li><li><a class="is-flex toc-item" id="toc-item-用正则过滤代理日志" href="#用正则过滤代理日志"><span>用正则过滤代理日志</span></a></li><li><a class="is-flex toc-item" id="toc-item-避免错误请求过多而被屏蔽" href="#避免错误请求过多而被屏蔽"><span>避免错误请求过多而被屏蔽</span></a></li><li><a class="is-flex toc-item" id="toc-item-关闭URL编码" href="#关闭URL编码"><span>关闭URL编码</span></a></li><li><a class="is-flex toc-item" id="toc-item-绕过CSRF保护" href="#绕过CSRF保护"><span>绕过CSRF保护</span></a></li><li><a class="is-flex toc-item" id="toc-item-强制使用SSL" href="#强制使用SSL"><span>强制使用SSL</span></a></li><li><a class="is-flex toc-item" id="toc-item-在每次请求前执行特定Python代码" href="#在每次请求前执行特定Python代码"><span>在每次请求前执行特定Python代码</span></a></li></ul></li><li><a class="is-flex toc-item" id="toc-item-优化" href="#优化"><span>优化</span></a></li><li><a class="is-flex toc-item" id="toc-item-注入" href="#注入"><span>注入</span></a></li><li><a class="is-flex toc-item" id="toc-item-检测" href="#检测"><span>检测</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-检测级别" href="#检测级别"><span>检测级别</span></a></li><li><a class="is-flex toc-item" id="toc-item-风险等级" href="#风险等级"><span>风险等级</span></a></li><li><a class="is-flex toc-item" id="toc-item-页面对比" href="#页面对比"><span>页面对比</span></a></li></ul></li><li><a class="is-flex toc-item" id="toc-item-注入技术" href="#注入技术"><span>注入技术</span></a></li><li><a class="is-flex toc-item" id="toc-item-指纹" href="#指纹"><span>指纹</span></a></li><li><a class="is-flex toc-item" id="toc-item-暴力破解" href="#暴力破解"><span>暴力破解</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据" href="#列举数据"><span>列举数据</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-一键列举数据" href="#一键列举数据"><span>一键列举数据</span></a></li><li><a class="is-flex toc-item" id="toc-item-列出数据库信息" href="#列出数据库信息"><span>列出数据库信息</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举当前用户" href="#列举当前用户"><span>列举当前用户</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举当前数据库" href="#列举当前数据库"><span>列举当前数据库</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举服务器主机名" href="#列举服务器主机名"><span>列举服务器主机名</span></a></li><li><a class="is-flex toc-item" id="toc-item-检测当前用户是否是管理员" href="#检测当前用户是否是管理员"><span>检测当前用户是否是管理员</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库系统中的用户" href="#列举数据库系统中的用户"><span>列举数据库系统中的用户</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举并破解数据库系统用户密码Hash值" href="#列举并破解数据库系统用户密码Hash值"><span>列举并破解数据库系统用户密码Hash值</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库系统的用户权限" href="#列举数据库系统的用户权限"><span>列举数据库系统的用户权限</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库系统的用户角色" href="#列举数据库系统的用户角色"><span>列举数据库系统的用户角色</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库系统中的所有数据" href="#列举数据库系统中的所有数据"><span>列举数据库系统中的所有数据</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库系统的所有表" href="#列举数据库系统的所有表"><span>列举数据库系统的所有表</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库系统的模式" href="#列举数据库系统的模式"><span>列举数据库系统的模式</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库系统中的数据条数" href="#列举数据库系统中的数据条数"><span>列举数据库系统中的数据条数</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库中表中的数据" href="#列举数据库中表中的数据"><span>列举数据库中表中的数据</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举所有数据库系统所有表中所有数据" href="#列举所有数据库系统所有表中所有数据"><span>列举所有数据库系统所有表中所有数据</span></a></li><li><a class="is-flex toc-item" id="toc-item-在数据库系统、表、列中搜索" href="#在数据库系统、表、列中搜索"><span>在数据库系统、表、列中搜索</span></a></li><li><a class="is-flex toc-item" id="toc-item-运行自定义的SQL语句" href="#运行自定义的SQL语句"><span>运行自定义的SQL语句</span></a></li></ul></li><li><a class="is-flex toc-item" id="toc-item-UDF注入" href="#UDF注入"><span>UDF注入</span></a></li><li><a class="is-flex toc-item" id="toc-item-访问文件系统" href="#访问文件系统"><span>访问文件系统</span></a></li></ul></li><li><a class="is-flex toc-item" id="toc-item-不常用" href="#不常用"><span>不常用</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-操作系统控制" href="#操作系统控制"><span>操作系统控制</span></a></li><li><a class="is-flex toc-item" id="toc-item-注册表访问" href="#注册表访问"><span>注册表访问</span></a></li><li><a class="is-flex toc-item" id="toc-item-常规" href="#常规"><span>常规</span></a></li><li><a class="is-flex toc-item" id="toc-item-杂项" href="#杂项"><span>杂项</span></a></li></ul></li></ul></div></div><script type="text/javascript" async>
+        $(document).ready(function () { //参考自 https://github.com/ppoffice/hexo-theme-icarus/pull/616/files
+            var observerTopMargin;
+            var scrollObserver;
+            var headerElems = $(".headerlink");
+            var activeTocItem;
+        
+            function initIntersectionObserver(docHeight) {
+                observerTopMargin = docHeight;
+                scrollObserver = new IntersectionObserver(scrollCallBack,
+                    {
+                        root: null,  // viewpoint
+                        rootMargin: docHeight + "px 0px -80% 0px"  // cover top 30% of viewport to the top of document
+                    })
+            }
+        
+            function scrollCallBack(entries, observer) {
+                if ($(window).scrollTop() > observerTopMargin * 0.7) { 
+                    // User somehow scroll to 70% of observerTopMargin (which is inited as 200% document height)
+                    // Observer top margin need to extend to cover all the space to the top of the document
+                    initIntersectionObserver(observerTopMargin * 2)
+                    observer.disconnect();
+                    return;
+                }
+                let toActive;
+                if (entries[0].intersectionRatio == 1) {  // enter viewed area
+                    let entry = entries.reduce((u, v) => (u.target.toc_id > v.target.toc_id ? u : v));  // get the lowest item
+                    toActive = $("#toc-item-" + $(entry.target).attr("href").substr(1));
+                } else {
+                    let entry = entries.reduce((u, v) => (u.target.toc_id < v.target.toc_id ? u : v));  // get the highest item
+                    let idx = Math.max(entry.target.toc_id - 1, 0);
+                    toActive = $("#toc-item-" + $(headerElems[idx]).attr("href").substr(1));
+                }
+                if (activeTocItem) activeTocItem.removeClass("is-current");
+                activeTocItem = toActive
+                activeTocItem.addClass("is-current");
+            }
+        
+            initIntersectionObserver($(document).height() * 2);
+            headerElems.each(function (index, obj) {
+                obj.toc_id = index;
+                scrollObserver.observe(obj);
+            })
+        });</script></div><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="is-rounded" src="/img/avatar.png" alt="mahiro"></figure><p class="title is-size-4 is-block line-height-inherit">mahiro</p><p class="is-size-6 is-block">能成为萝莉控真的是太好啦！！！！！！！</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>花丸幼儿园</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Articles</p><a href="/archives"><p class="title">11</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Catégorie</p><a href="/categories"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">5</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="/" target="_blank" rel="noopener">SUIVRE</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/mahiro424"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Weibo" href="/"><i class="fab fa-weibo"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Email" href="/"><i class="fa fa-envelope"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Next" href="/"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
+                                $.getJSON("https://v1.hitokoto.cn/", function (data) {
+                                if(data){
+                                    $('#hitokoto').html("");
+                                    $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
+                                    "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
+                                }});}
+                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新评论</h3><span class="body_hot_comment">加载中，最新评论有1分钟延迟...</span></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">Récents</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-04-18T06:41:42.000Z">2020-04-18</time></p><p class="title is-6"><a class="link-muted" href="/2020/04/18/sqlmap%E5%AD%A6%E4%B9%A0/">sqlmap学习</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-31T07:59:57.000Z">2020-03-31</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/31/WCTF2020-WP/">WCTF2020 WP(WEB)</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-08T04:18:19.000Z">2020-03-08</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/08/%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2%E6%80%BB%E7%BB%93/">源码泄露总结</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/web/">web</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-03T15:55:01.000Z">2020-03-03</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/03/DNSLog%E8%AE%B0%E5%BD%95/">DNSLog记录</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-03T01:56:58.000Z">2020-03-03</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/03/HTTP/">HTTP</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/web/">web</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Catégories</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/web/"><span class="level-start"><span class="level-item">web</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/04/"><span class="level-start"><span class="level-item">April 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/03/"><span class="level-start"><span class="level-item">March 2020</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/02/"><span class="level-start"><span class="level-item">February 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/11/"><span class="level-start"><span class="level-item">November 2019</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/study/"><span class="tag">study</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/web/"><span class="tag">web</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/web-study/"><span class="tag">-web -study</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ctf/"><span class="tag">ctf</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sql/"><span class="tag">sql</span><span class="tag is-grey-lightest">1</span></a></div></div></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe to Updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=mahiro424FeedsId&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="mahiro424FeedsId" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button is-primary" type="submit" value="Subscribe"></div></div><p class="help">输入邮箱开始订阅，更博后邮件通知！</p></form></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="真寻の窝" height="28"></a><p class="size-small"><span>&copy; 2020 mahiro</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>,Modify by <a href="https://github.com/removeif/hexo-theme-amazing" target="_blank">removeif</a> <br><div class="size-small"><span id="busuanzi_container_site_uv">❤️感谢<strong> <span id="busuanzi_value_site_uv">99+</span> </strong></span>小伙伴的<strong> <span id="busuanzi_value_site_pv">99+</span> </strong>次光临！❤️</div></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/mahiro424"><i class="fab fa-github"></i></a></p></div><div class="sideMusic"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="/js/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/js/hititle.js"></script><meting-js style="width: auto;height: 2000px;" server="netease" type="playlist" id="887934910" theme="#2980b9" loop="all" autoplay="false" order="list" storageName="aplayer-setting" lrctype="0" list-max-height="400px" fixed="true"></meting-js></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script>moment.locale("zh");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'http://yoursite.com',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="Kembali ke atas" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back-to-top.js" defer></script><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.12/js/lightgallery-all.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js" defer></script><!--!--><!--!--><!--!--><script src="/js/toc.js" defer></script><script src="/js/main.js" defer></script><script>$.getScript('/js/comment-issue-data.js',function(){loadIssueData('a310e755c4962ccb6306','bf1d34612319156ee83867eccc73f64e4ff37768','mahiro424','gitcomment',false);})</script><link rel="stylesheet" href="/css/insight.css"><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Type something..."><span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script src="/js/src/activate-power-mode.js"></script><script>POWERMODE.colorful = true; // 火花各种颜色 POWERMODE.shake = true; // 关闭打字屏幕颤抖效果 document.body.addEventListener(&#039;input&#039;, POWERMODE);</script><script>(function (window) {
+            var INSIGHT_CONFIG = {
+                TRANSLATION: {
+                    POSTS: 'Articles',
+                    PAGES: 'Pages',
+                    CATEGORIES: 'Catégories',
+                    TAGS: 'Tags',
+                    UNTITLED: '(Untitled)',
+                },
+                CONTENT_URL: '/content.json',
+            };
+            window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+        })(window);</script><script src="/js/insight.js" defer></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script><script type="text/javascript">var pjax = new Pjax({
+            elements: "a",//代表点击链接就更新
+            selectors: [  //代表要更新的节点
+                ".section",
+                "title"
+            ],
+            cache: true,
+            cacheBust:false
+        })
+
+        function loadBusuanzi(){
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js", function () {});
+        }
+
+        // 开始 PJAX 执行的函数
+        document.addEventListener('pjax:send', function () {
+        });
+        
+        // PJAX 完成之后执行的函数，可以和上面的重载放在一起
+        document.addEventListener('pjax:complete', function () {
+            $(".section").css({opacity:1});
+            if(true){
+                $.getScript('/js/comment-issue-data.js',function(){loadIssueData('a310e755c4962ccb6306','bf1d34612319156ee83867eccc73f64e4ff37768','mahiro424','gitcomment',false);});
+            }
+            if(false){
+                loadMathJax();
+            }
+            loadMainJs(jQuery, window.moment, window.ClipboardJS, window.IcarusThemeSettings);
+            loadBackTop();
+            loadBusuanzi();
+        });</script></body></html>
