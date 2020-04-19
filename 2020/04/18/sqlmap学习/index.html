@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>sqlmap学习 - 真寻の窝</title><meta description="很久没用过sqlmap了，因为做题的时候老是被ban掉了，来复习一下sqlmap的用法。"><meta property="og:type" content="article"><meta property="og:title" content="sqlmap学习"><meta property="og:url" content="http://yoursite.com/2020/04/18/sqlmap%E5%AD%A6%E4%B9%A0/"><meta property="og:site_name" content="真寻の窝"><meta property="og:description" content="很久没用过sqlmap了，因为做题的时候老是被ban掉了，来复习一下sqlmap的用法。"><meta property="og:locale" content="zh"><meta property="article:published_time" content="2020-04-18T06:41:42.000Z"><meta property="article:modified_time" content="2020-04-18T10:25:44.595Z"><meta property="article:author" content="mahiro"><meta property="article:tag" content="categories-java"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="http://yoursite.com/img/avatar.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2020/04/18/sqlmap%E5%AD%A6%E4%B9%A0/"},"headline":"sqlmap学习","image":["http://yoursite.com/img/avatar.png"],"datePublished":"2020-04-18T06:41:42.000Z","dateModified":"2020-04-18T10:25:44.595Z","author":{"@type":"Person","name":"mahiro"},"description":"很久没用过sqlmap了，因为做题的时候老是被ban掉了，来复习一下sqlmap的用法。"}</script><link rel="alternative" href="/atom.xml" title="真寻の窝" type="application/atom+xml"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css?family=Ubuntu:400,600|Source+Code+Pro|Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext|Inconsolata|Itim|Lobster.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/pace/1.0.2/pace.min.js"></script><link rel="stylesheet" href="/css/style.css"><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="/js/globalUtils.js"></script><script src="/js/md5.min.js"></script><script src="/js/src/hititle.js"></script><link rel="stylesheet" href="/live2d/waifu.css"><script type="text/javascript" async src="/live2d/autoload.js"></script></head><body class="is-3-column has-navbar-fixed-top"><script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/noSomeKey.js"></script><script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/sakura.js"></script><script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/canvas-nest.min.js"></script><script src="/js/src/activate-power-mode.js"></script><script>POWERMODE.colorful = true; // make power mode colorful POWERMODE.shake = true; // turn off shake document.body.addEventListener(&#039;input&#039;, POWERMODE);</script><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="真寻の窝" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/album">相册</a><a class="navbar-item" href="/friend">友链</a><a class="navbar-item" href="/message">留言</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/mahiro424"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><script src="/js/src/click.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-04-18T06:41:42.000Z">2020-04-18</time><a class="commentCountImg" href="/2020/04/18/sqlmap%E5%AD%A6%E4%B9%A0/#comment-container"><span class="display-none-class">e7ed7d8cd7589f2f499feae7d9366190</span><img class="not-gallery-item" src="/img/chat.svg"> <span class="commentCount" id="e7ed7d8cd7589f2f499feae7d9366190"> 99+</span>    </a><span class="level-item">36 minutes read (About 5413 words)</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;&nbsp;<span id="busuanzi_value_page_pv">0</span> Besuche</span></div></div><h1 class="title is-3 is-size-4-mobile">sqlmap学习</h1><div class="content"><p>很久没用过sqlmap了，因为做题的时候老是被ban掉了，来复习一下sqlmap的用法。</p>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>sqlmap学习 - 真寻の窝</title><meta description="很久没用过sqlmap了，因为做题的时候老是被ban掉了，来复习一下sqlmap的用法。"><meta property="og:type" content="article"><meta property="og:title" content="sqlmap学习"><meta property="og:url" content="http://yoursite.com/2020/04/18/sqlmap%E5%AD%A6%E4%B9%A0/"><meta property="og:site_name" content="真寻の窝"><meta property="og:description" content="很久没用过sqlmap了，因为做题的时候老是被ban掉了，来复习一下sqlmap的用法。"><meta property="og:locale" content="zh"><meta property="article:published_time" content="2020-04-18T06:41:42.000Z"><meta property="article:modified_time" content="2020-04-19T09:02:05.220Z"><meta property="article:author" content="mahiro"><meta property="article:tag" content="categories-java"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="http://yoursite.com/img/avatar.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2020/04/18/sqlmap%E5%AD%A6%E4%B9%A0/"},"headline":"sqlmap学习","image":["http://yoursite.com/img/avatar.png"],"datePublished":"2020-04-18T06:41:42.000Z","dateModified":"2020-04-19T09:02:05.220Z","author":{"@type":"Person","name":"mahiro"},"description":"很久没用过sqlmap了，因为做题的时候老是被ban掉了，来复习一下sqlmap的用法。"}</script><link rel="alternative" href="/atom.xml" title="真寻の窝" type="application/atom+xml"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css?family=Ubuntu:400,600|Source+Code+Pro|Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext|Inconsolata|Itim|Lobster.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/pace/1.0.2/pace.min.js"></script><link rel="stylesheet" href="/css/style.css"><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="/js/globalUtils.js"></script><script src="/js/md5.min.js"></script><script src="/js/src/hititle.js"></script><link rel="stylesheet" href="/live2d/waifu.css"><script type="text/javascript" async src="/live2d/autoload.js"></script></head><body class="is-3-column has-navbar-fixed-top"><script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/noSomeKey.js"></script><script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/sakura.js"></script><script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/canvas-nest.min.js"></script><script src="/js/src/activate-power-mode.js"></script><script>POWERMODE.colorful = true; // make power mode colorful POWERMODE.shake = true; // turn off shake document.body.addEventListener(&#039;input&#039;, POWERMODE);</script><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="真寻の窝" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/album">相册</a><a class="navbar-item" href="/friend">友链</a><a class="navbar-item" href="/message">留言</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/mahiro424"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><script src="/js/src/click.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-04-18T06:41:42.000Z">2020-04-18</time><a class="commentCountImg" href="/2020/04/18/sqlmap%E5%AD%A6%E4%B9%A0/#comment-container"><span class="display-none-class">e7ed7d8cd7589f2f499feae7d9366190</span><img class="not-gallery-item" src="/img/chat.svg"> <span class="commentCount" id="e7ed7d8cd7589f2f499feae7d9366190"> 99+</span>    </a><span class="level-item">an hour read (About 6893 words)</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;&nbsp;<span id="busuanzi_value_page_pv">0</span> visits</span></div></div><h1 class="title is-3 is-size-4-mobile">sqlmap学习</h1><div class="content"><p>很久没用过sqlmap了，因为做题的时候老是被ban掉了，来复习一下sqlmap的用法。</p>
 <a id="more"></a>
 
 <h1 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h1><h2 id="sqlmap的作用"><a href="#sqlmap的作用" class="headerlink" title="sqlmap的作用"></a>sqlmap的作用</h2><ol>
@@ -297,7 +297,459 @@
 <h2 id="列举数据"><a href="#列举数据" class="headerlink" title="列举数据"></a>列举数据</h2><h3 id="一键列举数据"><a href="#一键列举数据" class="headerlink" title="一键列举数据"></a>一键列举数据</h3><pre><code>参数：-all</code></pre><h3 id="列出数据库信息"><a href="#列出数据库信息" class="headerlink" title="列出数据库信息"></a>列出数据库信息</h3><pre><code>参数：-b或者--banner</code></pre><h3 id="列举当前用户"><a href="#列举当前用户" class="headerlink" title="列举当前用户"></a>列举当前用户</h3><pre><code>参数：--current-user</code></pre><h3 id="列举当前数据库"><a href="#列举当前数据库" class="headerlink" title="列举当前数据库"></a>列举当前数据库</h3><pre><code>参数：--current-db</code></pre><h3 id="列举服务器主机名"><a href="#列举服务器主机名" class="headerlink" title="列举服务器主机名"></a>列举服务器主机名</h3><pre><code>参数：--hostname</code></pre><h3 id="检测当前用户是否是管理员"><a href="#检测当前用户是否是管理员" class="headerlink" title="检测当前用户是否是管理员"></a>检测当前用户是否是管理员</h3><pre><code>参数：--is-dba</code></pre><h3 id="列举数据库系统中的用户"><a href="#列举数据库系统中的用户" class="headerlink" title="列举数据库系统中的用户"></a>列举数据库系统中的用户</h3><pre><code>参数：--users</code></pre><h3 id="列举并破解数据库系统用户密码Hash值"><a href="#列举并破解数据库系统用户密码Hash值" class="headerlink" title="列举并破解数据库系统用户密码Hash值"></a>列举并破解数据库系统用户密码Hash值</h3><pre><code>参数：–-passwords</code></pre><h3 id="列举数据库系统的用户权限"><a href="#列举数据库系统的用户权限" class="headerlink" title="列举数据库系统的用户权限"></a>列举数据库系统的用户权限</h3><pre><code>参数：--privileges</code></pre><h3 id="列举数据库系统的用户角色"><a href="#列举数据库系统的用户角色" class="headerlink" title="列举数据库系统的用户角色"></a>列举数据库系统的用户角色</h3><pre><code>参数：--roles</code></pre><h3 id="列举数据库系统中的所有数据"><a href="#列举数据库系统中的所有数据" class="headerlink" title="列举数据库系统中的所有数据"></a>列举数据库系统中的所有数据</h3><pre><code>参数：--dbs</code></pre><h3 id="列举数据库系统的所有表"><a href="#列举数据库系统的所有表" class="headerlink" title="列举数据库系统的所有表"></a>列举数据库系统的所有表</h3><pre><code>参数：--tables、--excluse-sysdbs和-D</code></pre><p>###列举数据库系统的所有列<br>    参数：–columns、-C、-T和-D</p>
 <h3 id="列举数据库系统的模式"><a href="#列举数据库系统的模式" class="headerlink" title="列举数据库系统的模式"></a>列举数据库系统的模式</h3><pre><code>参数：--schema和--exclude-sysdbs</code></pre><h3 id="列举数据库系统中的数据条数"><a href="#列举数据库系统中的数据条数" class="headerlink" title="列举数据库系统中的数据条数"></a>列举数据库系统中的数据条数</h3><pre><code>参数：--count</code></pre><h3 id="列举数据库中表中的数据"><a href="#列举数据库中表中的数据" class="headerlink" title="列举数据库中表中的数据"></a>列举数据库中表中的数据</h3><pre><code>参数：--dump、-C、-T、-D</code></pre><h3 id="列举所有数据库系统所有表中所有数据"><a href="#列举所有数据库系统所有表中所有数据" class="headerlink" title="列举所有数据库系统所有表中所有数据"></a>列举所有数据库系统所有表中所有数据</h3><pre><code>参数：-–dump-all和–-exclude-sysdbs</code></pre><h3 id="在数据库系统、表、列中搜索"><a href="#在数据库系统、表、列中搜索" class="headerlink" title="在数据库系统、表、列中搜索"></a>在数据库系统、表、列中搜索</h3><pre><code>参数：–-search、-C、-T和-D</code></pre><h3 id="运行自定义的SQL语句"><a href="#运行自定义的SQL语句" class="headerlink" title="运行自定义的SQL语句"></a>运行自定义的SQL语句</h3><pre><code>参数：–-sql-query和–-sql-shell</code></pre><h2 id="UDF注入"><a href="#UDF注入" class="headerlink" title="UDF注入"></a>UDF注入</h2><pre><code>参数：参数：–-udf-inject，可以编译MySQL或PostgreSQL的共享库、DLL（Windows）和共享对象（Linux/Unix）并将这些文件在本机上的路径提供给Sqlmap来进行UDF注入。Sqlmap会先问一些问题然后上传UDF文件并创建UDF最后根据问题答案执行UDF。完成UDF注入后，Sqlmap会删除上传的UDF文件。
 参数：--shared-lib，添加此参数Sqlmap会在运行时询问共享库文件路径。</code></pre><h2 id="访问文件系统"><a href="#访问文件系统" class="headerlink" title="访问文件系统"></a>访问文件系统</h2><pre><code>参数：–-file-read，读取文件
-参数：--file-write和--file-dest，写入(上传)文件</code></pre><h1 id="不常用"><a href="#不常用" class="headerlink" title="不常用"></a>不常用</h1><h2 id="操作系统控制"><a href="#操作系统控制" class="headerlink" title="操作系统控制"></a>操作系统控制</h2><pre><code>-–os-cmd=OSCMD      执行操作系统命令
+参数：--file-write和--file-dest，写入(上传)文件</code></pre><h2 id="Tamper"><a href="#Tamper" class="headerlink" title="Tamper"></a>Tamper</h2><table>
+<thead>
+<tr>
+<th>支持的数据库</th>
+<th>编号</th>
+<th>脚本名称</th>
+<th>作用</th>
+<th>实现方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ALL</td>
+<td>1</td>
+<td>apostrophemask.py</td>
+<td>用utf8代替</td>
+<td>(“1 AND ‘1’=’1”)被替代’1 AND %EF%BC%871%EF%BC%87=%EF%BC%871’</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td>2</td>
+<td>base64encode.py</td>
+<td>用base64编码代替</td>
+<td>(“1’ AND SLEEP(5)#”)被替代’MScgQU5EIFNMRUVQKDUpIw==’</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td>3</td>
+<td>multiplespaces.py</td>
+<td>围绕SQL关键字添加多个空格</td>
+<td>(‘1 UNION SELECT foobar’)被替代’1    UNION     SELECT   foobar’</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td>4</td>
+<td>space2plus.py</td>
+<td>用+替换空格</td>
+<td>(‘SELECT id FROM users’)被替代’SELECT+id+FROM+users’</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td>5</td>
+<td>nonrecursivereplacement.py</td>
+<td>双写替代关键字</td>
+<td>(‘1 UNION SELECT 2–’)被替代’1 UNIOUNIONN SELESELECTCT 2–’</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td>6</td>
+<td>space2randomblank.py</td>
+<td>从一个随机的空白字符代替空格字符</td>
+<td>(‘SELECT id FROM users’)被替代’SELECT%0Did%0DFROM%0Ausers’</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td>7</td>
+<td>unionalltounion.py</td>
+<td>替换UNION ALL SELECT UNION SELECT</td>
+<td>(‘-1 UNION ALL SELECT’)被替代’-1 UNION SELECT’</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td>8</td>
+<td>securesphere.py</td>
+<td>追加特制的字符串</td>
+<td>(‘1 AND 1=1’)被替代”1 AND 1=1 and ‘0having’=’0having’”</td>
+</tr>
+<tr>
+<td>—</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>MSSQL</td>
+<td>1</td>
+<td>space2hash.py</td>
+<td>绕过过滤’=’替换空格字符(‘’),(‘ - ‘)后跟一个破折号注释，一个随机字符串和一个新行</td>
+<td>‘1 AND 9227=9227’被替代’1–nVNaVoPYeva%0AAND–ngNvzqu%0A9227=9227’</td>
+</tr>
+<tr>
+<td>MSSQL</td>
+<td>2</td>
+<td>equaltolike.py</td>
+<td>like 代替等号</td>
+<td>SELECT * FROM users WHERE id=1被替代SELECT * FROM users WHERE id LIKE 1</td>
+</tr>
+<tr>
+<td>MSSQL</td>
+<td>3</td>
+<td>space2mssqlblank.py</td>
+<td>空格替换为其它空符号</td>
+<td>SELECT id FROM users被替代SELECT%08id%02FROM%0Fusers</td>
+</tr>
+<tr>
+<td>MSSQL</td>
+<td>4</td>
+<td>space2mssqlhash.py</td>
+<td>替换空格</td>
+<td>(‘1 AND 9227=9227’)被替代’1%23%0AAND%23%0A9227=9227’</td>
+</tr>
+<tr>
+<td>MSSQL</td>
+<td>5</td>
+<td>between.py</td>
+<td>用between替换大于号&gt;</td>
+<td>(‘1 AND A &gt; B–’)被替代’1 AND A NOT BETWEEN 0 AND B–’</td>
+</tr>
+<tr>
+<td>MSSQL</td>
+<td>6</td>
+<td>percentage.py</td>
+<td>asp允许每个字符前面添加一个%号</td>
+<td>SELECT FIELD FROM TABLE被替代%S%E%L%E%C%T %F%I%E%L%D %F%R%O%M %T%A%B%L%E</td>
+</tr>
+<tr>
+<td>MSSQL</td>
+<td>7</td>
+<td>sp_password.py</td>
+<td>追加sp_password从DBMS日志的自动模糊处理的有效载荷的末尾</td>
+<td>(‘1 AND 9227=9227– ‘)被替代’1 AND 9227=9227– sp_password’</td>
+</tr>
+<tr>
+<td>MSSQL</td>
+<td>8</td>
+<td>charencode.py</td>
+<td>url编码</td>
+<td>SELECT FIELD FROM%20TABLE被替代%53%45%4c%45%43%54%20%46%49%45%4c</td>
+</tr>
+<tr>
+<td>MSSQL</td>
+<td>9</td>
+<td>randomcase.py</td>
+<td>随机大小写</td>
+<td>INSERT被替代InsERt</td>
+</tr>
+<tr>
+<td>MSSQL</td>
+<td>10</td>
+<td>charunicodeencode.py</td>
+<td>字符串 unicode 编码</td>
+<td>SELECT FIELD%20FROM TABLE被替代%u0053%u0045%u004c%u0045%u0043%u0054%u0020%u0046%u0049%u0045%u004c%u0044%u0020%u0046%u0052%u004f%u004d%u0020%u0054%u0041%u0042%u004c%u05′</td>
+</tr>
+<tr>
+<td>MSSQL</td>
+<td>11</td>
+<td>space2comment.py</td>
+<td>空格替换成/**/</td>
+<td>SELECT id FROM users被替代SELECT/<strong>/id/</strong>/FROM/**/users</td>
+</tr>
+<tr>
+<td>—</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>MYSQL</td>
+<td>1</td>
+<td>equaltolike.py</td>
+<td>like 代替等号</td>
+<td>SELECT * FROM users WHERE id=1被替代SELECT * FROM users WHERE id LIKE 1</td>
+</tr>
+<tr>
+<td>MYSQL</td>
+<td>2</td>
+<td>greatest.py</td>
+<td>绕过过滤&gt;,用GREATEST替换大于号</td>
+<td>(‘1 AND A &gt; B’)被替代’1 AND GREATEST(A,B+1)=A’</td>
+</tr>
+<tr>
+<td>MYSQL</td>
+<td>3</td>
+<td>apostrophenullencode.py</td>
+<td>绕过过滤双引号,替换字符和双引号</td>
+<td>(“1 AND ‘1’=’1”)被替代’1 AND %00%271%00%27=%00%271’</td>
+</tr>
+<tr>
+<td>MYSQL</td>
+<td>4</td>
+<td>ifnull2ifisnull.py</td>
+<td>绕过对 IFNULL 过滤</td>
+<td>(‘IFNULL(1, 2)’)被替代’IF(ISNULL(1),2,1)’</td>
+</tr>
+<tr>
+<td>MYSQL</td>
+<td>5</td>
+<td>space2mssqlhash.py</td>
+<td>url编码替换空格</td>
+<td>(‘1 AND 9227=9227’)被替代’1%23%0AAND%23%0A9227=9227’</td>
+</tr>
+<tr>
+<td>MYSQL</td>
+<td>6</td>
+<td>modsecurityversioned.py</td>
+<td>过滤空格,包含完整的查询版本注释</td>
+<td>(‘1 AND 2&gt;1–’)被替代’1 /<em>!30874AND 2&gt;1</em>/–’</td>
+</tr>
+<tr>
+<td>MYSQL</td>
+<td>7</td>
+<td>space2mysqlblank.py</td>
+<td>空格替换其它空白符号</td>
+<td>SELECT id FROM users被替代SELECT%0Bid%0BFROM%A0users</td>
+</tr>
+<tr>
+<td>MYSQL</td>
+<td>8</td>
+<td>between.py</td>
+<td>用between替换大于号&gt;</td>
+<td>(‘1 AND A &gt; B–’)被替代’1 AND A NOT BETWEEN 0 AND B–’</td>
+</tr>
+<tr>
+<td>MYSQL</td>
+<td>9</td>
+<td>modsecurityzeroversioned.py</td>
+<td>包含了完整的查询与零版本注释</td>
+<td>(‘1 AND 2&gt;1–’)被替代’1 /<em>!00000AND 2&gt;1</em>/–’</td>
+</tr>
+<tr>
+<td>MYSQL</td>
+<td>10</td>
+<td>bluecoat.py</td>
+<td>空白符代替空格然后替换=为like</td>
+<td>(‘SELECT id FROM users where id = 1’)被替代’SELECT%09id FROM users where id LIKE 1’</td>
+</tr>
+<tr>
+<td>MYSQL</td>
+<td>11</td>
+<td>percentage.py</td>
+<td>asp允许每个字符前面添加一个%号SELECT FIELD FROM TABLE被替代%S%E%L%E%C%T %F%I%E%L%D %F%R%O%M %T%A%B%L%E</td>
+<td></td>
+</tr>
+<tr>
+<td>MYSQL</td>
+<td>12</td>
+<td>charencode.py</td>
+<td>url编码</td>
+<td>SELECT FIELD FROM%20TABLE被替代%53%45%4c%45%43%54%20%46%49%45%4c%44%20%46%52%4f%4d%20%54%41%42%4c%45</td>
+</tr>
+<tr>
+<td>MYSQL</td>
+<td>13</td>
+<td>randomcase.py</td>
+<td>随机大小写</td>
+<td>INSERT被替代InsERt</td>
+</tr>
+<tr>
+<td>MYSQL</td>
+<td>14</td>
+<td>versionedkeywords.py</td>
+<td>注释绕过</td>
+<td>1 UNION ALL SELECT NULL, NULL, CONCAT(CHAR(58,104,116,116,58),IFNULL(CAST(CURRENT_USER() AS CHAR),CHAR(32)),CHAR(58,100,114,117,58))#被替代1/<em>!UNION<strong>!ALL</strong>!SELECT**!NULL</em>/,/<em>!NULL</em>/,CONCAT(CHAR(58,104,116,116,58),IFNULL(CAST(CURRENT_USER()/<em>!AS**!CHAR</em>/),CHAR(32)),CHAR(58,100,114,117,58))#</td>
+</tr>
+<tr>
+<td>MYSQL</td>
+<td>15</td>
+<td>space2comment.py</td>
+<td>空格替换成/**/</td>
+<td>SELECT id FROM users被替代SELECT/<strong>/id/</strong>/FROM/**/users</td>
+</tr>
+<tr>
+<td>MYSQL</td>
+<td>16</td>
+<td>charunicodeencode.py</td>
+<td>字符串 unicode 编码</td>
+<td>SELECT FIELD%20FROM TABLE被替代’%u0053%u0045%u004c%u0045%u0043%u0054%u0020%u0046%u0049%u0045%u004c%u0044%u0020%u0046%u0052%u004f%u004d%u0020%u0054%u0041%u0042%u004c%u0045’</td>
+</tr>
+<tr>
+<td>MYSQL</td>
+<td>17</td>
+<td>versionedmorekeywords.py</td>
+<td>更多注释绕过</td>
+<td>1 UNION ALL SELECT NULL, NULL, CONCAT(CHAR(58,122,114,115,58),IFNULL(CAST(CURRENT_USER() AS CHAR),CHAR(32)),CHAR(58,115,114,121,58))#被替代1/<em>!UNION<strong>!ALL</strong>!SELECT**!NULL</em>/,/<em>!NULL</em>/,/<em>!CONCAT</em>/(/<em>!CHAR</em>/(58,122,114,115,58),/<em>!IFNULL</em>/(CAST(/<em>!CURRENT_USER</em>/()/<em>!AS**!CHAR</em>/),/<em>!CHAR</em>/(32)),/<em>!CHAR</em>/(58,115,114,121,58))#</td>
+</tr>
+<tr>
+<td>MYSQL&lt;5.1</td>
+<td>18</td>
+<td>halfversionedmorekeywords.py</td>
+<td>关键字前加注释</td>
+<td>value’ UNION ALL SELECT CONCAT(CHAR(58,107,112,113,58),IFNULL(CAST(CURRENT_USER() AS CHAR),CHAR(32)),CHAR(58,97,110,121,58)), NULL, NULL# AND ‘QDWa’=’QDWa被替代value’/<em>!0UNION/</em>!0ALL/<em>!0SELECT/</em>!0CONCAT(/<em>!0CHAR(58,107,112,113,58),/</em>!0IFNULL(CAST(/<em>!0CURRENT_USER()/</em>!0AS/<em>!0CHAR),/</em>!0CHAR(32)),/<em>!0CHAR(58,97,110,121,58)), NULL, NULL#/</em>!0AND ‘QDWa’=’QDWa</td>
+</tr>
+<tr>
+<td>MYSQL&gt;=5.1</td>
+<td>19</td>
+<td>space2morehash.py</td>
+<td>空格替换为 #号 以及更多随机字符串 换行符</td>
+<td>1 AND 9227=9227被替代1%23PTTmJopxdWJ%0AAND%23cWfcVRPV%0A9227=9227</td>
+</tr>
+<tr>
+<td>—</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Oracle</td>
+<td>1</td>
+<td>greatest.py</td>
+<td>绕过过滤&gt;,用GREATEST替换大于号</td>
+<td>(‘1 AND A &gt; B’)被替代’1 AND GREATEST(A,B+1)=A’</td>
+</tr>
+<tr>
+<td>Oracle</td>
+<td>2</td>
+<td>apostrophenullencode.py</td>
+<td>绕过过滤双引号,替换字符和双引号</td>
+<td>(“1 AND ‘1’=’1”)被替代’1 AND %00%271%00%27=%00%271’</td>
+</tr>
+<tr>
+<td>Oracle</td>
+<td>3</td>
+<td>between.py</td>
+<td>用between替换大于号&gt;</td>
+<td>(‘1 AND A &gt; B–’)被替代’1 AND A NOT BETWEEN 0 AND B–’</td>
+</tr>
+<tr>
+<td>Oracle</td>
+<td>4</td>
+<td>charencode.py</td>
+<td>url编码</td>
+<td>SELECT FIELD FROM%20TABLE被替代%53%45%4c%45%43%54%20%46%49%45%4c%44%20%46%52%4f%4d%20%54%41%42%4c%45</td>
+</tr>
+<tr>
+<td>Oracle</td>
+<td>5</td>
+<td>randomcase.py</td>
+<td>随机大小写</td>
+<td>INSERT被替代InsERt</td>
+</tr>
+<tr>
+<td>Oracle</td>
+<td>6</td>
+<td>charunicodeencode.py</td>
+<td>字符串 unicode 编码</td>
+<td>SELECT FIELD%20FROM TABLE被替代’%u0053%u0045%u004c%u0045%u0043%u0054%u0020%u0046%u0049%u0045%u004c%u0044%u0020%u0046%u0052%u004f%u004d%u0020%u0054%u0041%u0042%u004c%u0045’</td>
+</tr>
+<tr>
+<td>Oracle</td>
+<td>7</td>
+<td>space2comment.py</td>
+<td>空格替换成/**/</td>
+<td>SELECT id FROM users被替代SELECT/<strong>/id/</strong>/FROM/**/users</td>
+</tr>
+<tr>
+<td>—</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td>1</td>
+<td>greatest.py</td>
+<td>绕过过滤&gt;,用GREATEST替换大于号</td>
+<td>(‘1 AND A &gt; B’)被替代’1 AND GREATEST(A,B+1)=A’</td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td>2</td>
+<td>apostrophenullencode.py</td>
+<td>绕过过滤双引号,替换字符和双引号</td>
+<td>(“1 AND ‘1’=’1”)被替代’1 AND %00%271%00%27=%00%271’</td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td>3</td>
+<td>between.py</td>
+<td>用between替换大于号&gt;</td>
+<td>(‘1 AND A &gt; B–’)被替代’1 AND A NOT BETWEEN 0 AND B–’</td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td>4</td>
+<td>percentage.py</td>
+<td>asp允许每个字符前面添加一个%号</td>
+<td>SELECT FIELD FROM TABLE被替代%S%E%L%E%C%T %F%I%E%L%D %F%R%O%M %T%A%B%L%E</td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td>5</td>
+<td>charencode.py</td>
+<td>url编码</td>
+<td>SELECT FIELD FROM%20TABLE被替代%53%45%4c%45%43%54%20%46%49%45%4c%44%20%46%52%4f%4d%20%54%41%42%4c%45</td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td>6</td>
+<td>randomcase.py</td>
+<td>随机大小写</td>
+<td>INSERT被替代InsERt</td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td>7</td>
+<td>charunicodeencode.py</td>
+<td>字符串 unicode 编码</td>
+<td>SELECT FIELD%20FROM TABLE被替代’%u0053%u0045%u004c%u0045%u0043%u0054%u0020%u0046%u0049%u0045%u004c%u0044%u0020%u0046%u0052%u004f%u004d%u0020%u0054%u0041%u0042%u004c%u0045’</td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td>8</td>
+<td>space2comment.py</td>
+<td>空格替换成/**/</td>
+<td>SELECT id FROM users被替代SELECT/<strong>/id/</strong>/FROM/**/users</td>
+</tr>
+<tr>
+<td>—</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Microsoft Access</td>
+<td>1</td>
+<td>appendnullbyte.py</td>
+<td>在有效负荷结束位置加载零字节字符编码</td>
+<td>(‘1 AND 1=1’)被替代’1 AND 1=1%00’</td>
+</tr>
+<tr>
+<td>—</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>其他</td>
+<td>1</td>
+<td>chardoubleencode.py</td>
+<td>双url编码(不处理以编码的)</td>
+<td>SELECT FIELD FROM%20TABLE被替代%2553%2545%254c%2545%2543%2554%2520%2546%2549%2545%254c%2544%2520%2546%2552%254f%254d%2520%2554%2541%2542%254c%2545</td>
+</tr>
+<tr>
+<td>其他</td>
+<td>2</td>
+<td>unmagicquotes.py</td>
+<td>宽字符绕过 GPC  addslashes</td>
+<td>1’ AND 1=1- 被替代1%bf%27 AND 1=1–%20</td>
+</tr>
+<tr>
+<td>其他</td>
+<td>3</td>
+<td>randomcomments.py</td>
+<td>用/**/分割sql关键字</td>
+<td>‘INSERT’被替代’IN/<strong>/S/</strong>/ERT’</td>
+</tr>
+</tbody></table>
+<h1 id="不常用"><a href="#不常用" class="headerlink" title="不常用"></a>不常用</h1><h2 id="操作系统控制"><a href="#操作系统控制" class="headerlink" title="操作系统控制"></a>操作系统控制</h2><pre><code>-–os-cmd=OSCMD      执行操作系统命令
 –-os-shell          用于交互式操作系统shell的提示
 -–os-pwn            显示OOB shell, Meterpreter or或者VNC
 –-os-shell      One click prompt for an OOB shell, Meterpreter or VNC
@@ -347,7 +799,7 @@
 -–smart            只有积极的启发式（S）进行彻底的测试
 -–sqlmap-shell      提示一个互动的sqlmap shell
 -–tmp-dir=TMPDIR    用于存储临时文件的本地目录
--–wizard          为初学者用户提供简单的向导界面</code></pre></div><ul class="post-copyright"><li><strong>本文标题：</strong><a href="http://yoursite.com/2020/04/18/sqlmap学习/">sqlmap学习</a></li><li><strong>本文作者：</strong><a href="http://yoursite.com">mahiro</a></li><li><strong>本文链接：</strong><a href="http://yoursite.com/2020/04/18/sqlmap学习/">http://yoursite.com/2020/04/18/sqlmap学习/</a></li><li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li></ul><div><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># Related Post</span><br><span>  1.<a class="is-size-6" href="/2020/04/15/%E7%A7%98%E5%AF%86%E3%81%AE%E3%81%B2%E3%81%BF%E3%81%A4/" target="_blank">秘密のひみつ</a><br></span><span>  2.<a class="is-size-6" href="/2020/03/31/WCTF2020-WP/" target="_blank">WCTF2020 WP(WEB)</a><br></span><span>  3.<a class="is-size-6" href="/2020/03/03/DNSLog%E8%AE%B0%E5%BD%95/" target="_blank">DNSLog记录</a><br></span><span>  4.<a class="is-size-6" href="/2020/02/27/upload-lab-%E8%AE%B0%E5%BD%95/" target="_blank">upload-lab 记录</a><br></span></div><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># Recommend Post</span><br><span>  1.<a class="is-size-6" href="/2020/02/25/BUUOJ%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" target="_blank">Web CTF 复现</a><br></span><span>  2.<a class="is-size-6" href="/2020/03/03/DNSLog%E8%AE%B0%E5%BD%95/" target="_blank">DNSLog记录</a><br></span><span>  3.<a class="is-size-6" href="/2020/03/03/HTTP/" target="_blank">HTTP</a><br></span><span>  4.<a class="is-size-6" href="/2019/11/23/sql%E6%B3%A8%E5%85%A5%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" target="_blank">sql注入小知识</a><br></span><span>  5.<a class="is-size-6" href="/2020/02/27/upload-lab-%E8%AE%B0%E5%BD%95/" target="_blank">upload-lab 记录</a><br></span><span>  6.<a class="is-size-6" href="/2020/03/31/WCTF2020-WP/" target="_blank">WCTF2020 WP(WEB)</a><br></span></div></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/css/share.min.css"><div class="social-share"></div><script src="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Suka dengan artikel ini? Bantu penulis dengan donasi melalui</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="/img/QRcode.png" alt="Alipay"></span></a><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="/img/QRcode.png" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/04/15/%E7%A7%98%E5%AF%86%E3%81%AE%E3%81%B2%E3%81%BF%E3%81%A4/"><span class="level-item">秘密のひみつ</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Commentaires</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/gitalk/1.6.0/gitalk.css"><script> $.getScript('/js/gitalk.min.js', function () { 
+-–wizard          为初学者用户提供简单的向导界面</code></pre></div><ul class="post-copyright"><li><strong>本文标题：</strong><a href="http://yoursite.com/2020/04/18/sqlmap学习/">sqlmap学习</a></li><li><strong>本文作者：</strong><a href="http://yoursite.com">mahiro</a></li><li><strong>本文链接：</strong><a href="http://yoursite.com/2020/04/18/sqlmap学习/">http://yoursite.com/2020/04/18/sqlmap学习/</a></li><li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li></ul><div><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># Related Post</span><br><span>  1.<a class="is-size-6" href="/2020/04/15/%E7%A7%98%E5%AF%86%E3%81%AE%E3%81%B2%E3%81%BF%E3%81%A4/" target="_blank">秘密のひみつ</a><br></span><span>  2.<a class="is-size-6" href="/2020/03/31/WCTF2020-WP/" target="_blank">WCTF2020 WP(WEB)</a><br></span><span>  3.<a class="is-size-6" href="/2020/03/03/DNSLog%E8%AE%B0%E5%BD%95/" target="_blank">DNSLog记录</a><br></span><span>  4.<a class="is-size-6" href="/2020/02/27/upload-lab-%E8%AE%B0%E5%BD%95/" target="_blank">upload-lab 记录</a><br></span></div><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># Recommend Post</span><br><span>  1.<a class="is-size-6" href="/2020/02/25/BUUOJ%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" target="_blank">BUUOJ刷题记录</a><br></span><span>  2.<a class="is-size-6" href="/2020/03/03/DNSLog%E8%AE%B0%E5%BD%95/" target="_blank">DNSLog记录</a><br></span><span>  3.<a class="is-size-6" href="/2020/03/03/HTTP/" target="_blank">HTTP</a><br></span><span>  4.<a class="is-size-6" href="/2019/11/23/sql%E6%B3%A8%E5%85%A5%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" target="_blank">sql注入小知识</a><br></span><span>  5.<a class="is-size-6" href="/2020/02/27/upload-lab-%E8%AE%B0%E5%BD%95/" target="_blank">upload-lab 记录</a><br></span><span>  6.<a class="is-size-6" href="/2020/03/31/WCTF2020-WP/" target="_blank">WCTF2020 WP(WEB)</a><br></span></div></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/css/share.min.css"><div class="social-share"></div><script src="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Like this article? Support the author with</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="/img/QRcode.png" alt="Alipay"></span></a><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="/img/QRcode.png" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/04/15/%E7%A7%98%E5%AF%86%E3%81%AE%E3%81%B2%E3%81%BF%E3%81%A4/"><span class="level-item">秘密のひみつ</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/gitalk/1.6.0/gitalk.css"><script> $.getScript('/js/gitalk.min.js', function () { 
             var gitalk = new Gitalk({
             id: 'e7ed7d8cd7589f2f499feae7d9366190',
             repo: 'gitcomment',
@@ -364,7 +816,7 @@
             enableHotKey: true,
             isLocked: false
         })
-        gitalk.render('comment-container')});</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget toc-scroll" id="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-常用" href="#常用"><span>常用</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-sqlmap的作用" href="#sqlmap的作用"><span>sqlmap的作用</span></a></li><li><a class="is-flex toc-item" id="toc-item-注入模式" href="#注入模式"><span>注入模式</span></a></li><li><a class="is-flex toc-item" id="toc-item-支持注入的数据库类型" href="#支持注入的数据库类型"><span>支持注入的数据库类型</span></a></li><li><a class="is-flex toc-item" id="toc-item-参数设置" href="#参数设置"><span>参数设置</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-数据显示" href="#数据显示"><span>数据显示</span></a></li><li><a class="is-flex toc-item" id="toc-item-获取目标方式" href="#获取目标方式"><span>获取目标方式</span></a></li></ul></li><li><a class="is-flex toc-item" id="toc-item-请求" href="#请求"><span>请求</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-HTTP方法" href="#HTTP方法"><span>HTTP方法</span></a></li><li><a class="is-flex toc-item" id="toc-item-POST数据" href="#POST数据"><span>POST数据</span></a></li><li><a class="is-flex toc-item" id="toc-item-指定分隔符" href="#指定分隔符"><span>指定分隔符</span></a></li><li><a class="is-flex toc-item" id="toc-item-COOKIE" href="#COOKIE"><span>COOKIE</span></a></li><li><a class="is-flex toc-item" id="toc-item-User-Agent" href="#User-Agent"><span>User-Agent</span></a></li><li><a class="is-flex toc-item" id="toc-item-Host" href="#Host"><span>Host</span></a></li><li><a class="is-flex toc-item" id="toc-item-Referer" href="#Referer"><span>Referer</span></a></li><li><a class="is-flex toc-item" id="toc-item-添加额外的HTTP头" href="#添加额外的HTTP头"><span>添加额外的HTTP头</span></a></li><li><a class="is-flex toc-item" id="toc-item-身份认证" href="#身份认证"><span>身份认证</span></a></li><li><a class="is-flex toc-item" id="toc-item-基于证书的身份认证" href="#基于证书的身份认证"><span>基于证书的身份认证</span></a></li><li><a class="is-flex toc-item" id="toc-item-忽略401" href="#忽略401"><span>忽略401</span></a></li><li><a class="is-flex toc-item" id="toc-item-使用代理" href="#使用代理"><span>使用代理</span></a></li><li><a class="is-flex toc-item" id="toc-item-添加延迟" href="#添加延迟"><span>添加延迟</span></a></li><li><a class="is-flex toc-item" id="toc-item-超时设置" href="#超时设置"><span>超时设置</span></a></li><li><a class="is-flex toc-item" id="toc-item-超时后最大重试次数" href="#超时后最大重试次数"><span>超时后最大重试次数</span></a></li><li><a class="is-flex toc-item" id="toc-item-随机化参数值" href="#随机化参数值"><span>随机化参数值</span></a></li><li><a class="is-flex toc-item" id="toc-item-用正则过滤代理日志" href="#用正则过滤代理日志"><span>用正则过滤代理日志</span></a></li><li><a class="is-flex toc-item" id="toc-item-避免错误请求过多而被屏蔽" href="#避免错误请求过多而被屏蔽"><span>避免错误请求过多而被屏蔽</span></a></li><li><a class="is-flex toc-item" id="toc-item-关闭URL编码" href="#关闭URL编码"><span>关闭URL编码</span></a></li><li><a class="is-flex toc-item" id="toc-item-绕过CSRF保护" href="#绕过CSRF保护"><span>绕过CSRF保护</span></a></li><li><a class="is-flex toc-item" id="toc-item-强制使用SSL" href="#强制使用SSL"><span>强制使用SSL</span></a></li><li><a class="is-flex toc-item" id="toc-item-在每次请求前执行特定Python代码" href="#在每次请求前执行特定Python代码"><span>在每次请求前执行特定Python代码</span></a></li></ul></li><li><a class="is-flex toc-item" id="toc-item-优化" href="#优化"><span>优化</span></a></li><li><a class="is-flex toc-item" id="toc-item-注入" href="#注入"><span>注入</span></a></li><li><a class="is-flex toc-item" id="toc-item-检测" href="#检测"><span>检测</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-检测级别" href="#检测级别"><span>检测级别</span></a></li><li><a class="is-flex toc-item" id="toc-item-风险等级" href="#风险等级"><span>风险等级</span></a></li><li><a class="is-flex toc-item" id="toc-item-页面对比" href="#页面对比"><span>页面对比</span></a></li></ul></li><li><a class="is-flex toc-item" id="toc-item-注入技术" href="#注入技术"><span>注入技术</span></a></li><li><a class="is-flex toc-item" id="toc-item-指纹" href="#指纹"><span>指纹</span></a></li><li><a class="is-flex toc-item" id="toc-item-暴力破解" href="#暴力破解"><span>暴力破解</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据" href="#列举数据"><span>列举数据</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-一键列举数据" href="#一键列举数据"><span>一键列举数据</span></a></li><li><a class="is-flex toc-item" id="toc-item-列出数据库信息" href="#列出数据库信息"><span>列出数据库信息</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举当前用户" href="#列举当前用户"><span>列举当前用户</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举当前数据库" href="#列举当前数据库"><span>列举当前数据库</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举服务器主机名" href="#列举服务器主机名"><span>列举服务器主机名</span></a></li><li><a class="is-flex toc-item" id="toc-item-检测当前用户是否是管理员" href="#检测当前用户是否是管理员"><span>检测当前用户是否是管理员</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库系统中的用户" href="#列举数据库系统中的用户"><span>列举数据库系统中的用户</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举并破解数据库系统用户密码Hash值" href="#列举并破解数据库系统用户密码Hash值"><span>列举并破解数据库系统用户密码Hash值</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库系统的用户权限" href="#列举数据库系统的用户权限"><span>列举数据库系统的用户权限</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库系统的用户角色" href="#列举数据库系统的用户角色"><span>列举数据库系统的用户角色</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库系统中的所有数据" href="#列举数据库系统中的所有数据"><span>列举数据库系统中的所有数据</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库系统的所有表" href="#列举数据库系统的所有表"><span>列举数据库系统的所有表</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库系统的模式" href="#列举数据库系统的模式"><span>列举数据库系统的模式</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库系统中的数据条数" href="#列举数据库系统中的数据条数"><span>列举数据库系统中的数据条数</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库中表中的数据" href="#列举数据库中表中的数据"><span>列举数据库中表中的数据</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举所有数据库系统所有表中所有数据" href="#列举所有数据库系统所有表中所有数据"><span>列举所有数据库系统所有表中所有数据</span></a></li><li><a class="is-flex toc-item" id="toc-item-在数据库系统、表、列中搜索" href="#在数据库系统、表、列中搜索"><span>在数据库系统、表、列中搜索</span></a></li><li><a class="is-flex toc-item" id="toc-item-运行自定义的SQL语句" href="#运行自定义的SQL语句"><span>运行自定义的SQL语句</span></a></li></ul></li><li><a class="is-flex toc-item" id="toc-item-UDF注入" href="#UDF注入"><span>UDF注入</span></a></li><li><a class="is-flex toc-item" id="toc-item-访问文件系统" href="#访问文件系统"><span>访问文件系统</span></a></li></ul></li><li><a class="is-flex toc-item" id="toc-item-不常用" href="#不常用"><span>不常用</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-操作系统控制" href="#操作系统控制"><span>操作系统控制</span></a></li><li><a class="is-flex toc-item" id="toc-item-注册表访问" href="#注册表访问"><span>注册表访问</span></a></li><li><a class="is-flex toc-item" id="toc-item-常规" href="#常规"><span>常规</span></a></li><li><a class="is-flex toc-item" id="toc-item-杂项" href="#杂项"><span>杂项</span></a></li></ul></li></ul></div></div><script type="text/javascript" async>
+        gitalk.render('comment-container')});</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget toc-scroll" id="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-常用" href="#常用"><span>常用</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-sqlmap的作用" href="#sqlmap的作用"><span>sqlmap的作用</span></a></li><li><a class="is-flex toc-item" id="toc-item-注入模式" href="#注入模式"><span>注入模式</span></a></li><li><a class="is-flex toc-item" id="toc-item-支持注入的数据库类型" href="#支持注入的数据库类型"><span>支持注入的数据库类型</span></a></li><li><a class="is-flex toc-item" id="toc-item-参数设置" href="#参数设置"><span>参数设置</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-数据显示" href="#数据显示"><span>数据显示</span></a></li><li><a class="is-flex toc-item" id="toc-item-获取目标方式" href="#获取目标方式"><span>获取目标方式</span></a></li></ul></li><li><a class="is-flex toc-item" id="toc-item-请求" href="#请求"><span>请求</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-HTTP方法" href="#HTTP方法"><span>HTTP方法</span></a></li><li><a class="is-flex toc-item" id="toc-item-POST数据" href="#POST数据"><span>POST数据</span></a></li><li><a class="is-flex toc-item" id="toc-item-指定分隔符" href="#指定分隔符"><span>指定分隔符</span></a></li><li><a class="is-flex toc-item" id="toc-item-COOKIE" href="#COOKIE"><span>COOKIE</span></a></li><li><a class="is-flex toc-item" id="toc-item-User-Agent" href="#User-Agent"><span>User-Agent</span></a></li><li><a class="is-flex toc-item" id="toc-item-Host" href="#Host"><span>Host</span></a></li><li><a class="is-flex toc-item" id="toc-item-Referer" href="#Referer"><span>Referer</span></a></li><li><a class="is-flex toc-item" id="toc-item-添加额外的HTTP头" href="#添加额外的HTTP头"><span>添加额外的HTTP头</span></a></li><li><a class="is-flex toc-item" id="toc-item-身份认证" href="#身份认证"><span>身份认证</span></a></li><li><a class="is-flex toc-item" id="toc-item-基于证书的身份认证" href="#基于证书的身份认证"><span>基于证书的身份认证</span></a></li><li><a class="is-flex toc-item" id="toc-item-忽略401" href="#忽略401"><span>忽略401</span></a></li><li><a class="is-flex toc-item" id="toc-item-使用代理" href="#使用代理"><span>使用代理</span></a></li><li><a class="is-flex toc-item" id="toc-item-添加延迟" href="#添加延迟"><span>添加延迟</span></a></li><li><a class="is-flex toc-item" id="toc-item-超时设置" href="#超时设置"><span>超时设置</span></a></li><li><a class="is-flex toc-item" id="toc-item-超时后最大重试次数" href="#超时后最大重试次数"><span>超时后最大重试次数</span></a></li><li><a class="is-flex toc-item" id="toc-item-随机化参数值" href="#随机化参数值"><span>随机化参数值</span></a></li><li><a class="is-flex toc-item" id="toc-item-用正则过滤代理日志" href="#用正则过滤代理日志"><span>用正则过滤代理日志</span></a></li><li><a class="is-flex toc-item" id="toc-item-避免错误请求过多而被屏蔽" href="#避免错误请求过多而被屏蔽"><span>避免错误请求过多而被屏蔽</span></a></li><li><a class="is-flex toc-item" id="toc-item-关闭URL编码" href="#关闭URL编码"><span>关闭URL编码</span></a></li><li><a class="is-flex toc-item" id="toc-item-绕过CSRF保护" href="#绕过CSRF保护"><span>绕过CSRF保护</span></a></li><li><a class="is-flex toc-item" id="toc-item-强制使用SSL" href="#强制使用SSL"><span>强制使用SSL</span></a></li><li><a class="is-flex toc-item" id="toc-item-在每次请求前执行特定Python代码" href="#在每次请求前执行特定Python代码"><span>在每次请求前执行特定Python代码</span></a></li></ul></li><li><a class="is-flex toc-item" id="toc-item-优化" href="#优化"><span>优化</span></a></li><li><a class="is-flex toc-item" id="toc-item-注入" href="#注入"><span>注入</span></a></li><li><a class="is-flex toc-item" id="toc-item-检测" href="#检测"><span>检测</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-检测级别" href="#检测级别"><span>检测级别</span></a></li><li><a class="is-flex toc-item" id="toc-item-风险等级" href="#风险等级"><span>风险等级</span></a></li><li><a class="is-flex toc-item" id="toc-item-页面对比" href="#页面对比"><span>页面对比</span></a></li></ul></li><li><a class="is-flex toc-item" id="toc-item-注入技术" href="#注入技术"><span>注入技术</span></a></li><li><a class="is-flex toc-item" id="toc-item-指纹" href="#指纹"><span>指纹</span></a></li><li><a class="is-flex toc-item" id="toc-item-暴力破解" href="#暴力破解"><span>暴力破解</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据" href="#列举数据"><span>列举数据</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-一键列举数据" href="#一键列举数据"><span>一键列举数据</span></a></li><li><a class="is-flex toc-item" id="toc-item-列出数据库信息" href="#列出数据库信息"><span>列出数据库信息</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举当前用户" href="#列举当前用户"><span>列举当前用户</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举当前数据库" href="#列举当前数据库"><span>列举当前数据库</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举服务器主机名" href="#列举服务器主机名"><span>列举服务器主机名</span></a></li><li><a class="is-flex toc-item" id="toc-item-检测当前用户是否是管理员" href="#检测当前用户是否是管理员"><span>检测当前用户是否是管理员</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库系统中的用户" href="#列举数据库系统中的用户"><span>列举数据库系统中的用户</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举并破解数据库系统用户密码Hash值" href="#列举并破解数据库系统用户密码Hash值"><span>列举并破解数据库系统用户密码Hash值</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库系统的用户权限" href="#列举数据库系统的用户权限"><span>列举数据库系统的用户权限</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库系统的用户角色" href="#列举数据库系统的用户角色"><span>列举数据库系统的用户角色</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库系统中的所有数据" href="#列举数据库系统中的所有数据"><span>列举数据库系统中的所有数据</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库系统的所有表" href="#列举数据库系统的所有表"><span>列举数据库系统的所有表</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库系统的模式" href="#列举数据库系统的模式"><span>列举数据库系统的模式</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库系统中的数据条数" href="#列举数据库系统中的数据条数"><span>列举数据库系统中的数据条数</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举数据库中表中的数据" href="#列举数据库中表中的数据"><span>列举数据库中表中的数据</span></a></li><li><a class="is-flex toc-item" id="toc-item-列举所有数据库系统所有表中所有数据" href="#列举所有数据库系统所有表中所有数据"><span>列举所有数据库系统所有表中所有数据</span></a></li><li><a class="is-flex toc-item" id="toc-item-在数据库系统、表、列中搜索" href="#在数据库系统、表、列中搜索"><span>在数据库系统、表、列中搜索</span></a></li><li><a class="is-flex toc-item" id="toc-item-运行自定义的SQL语句" href="#运行自定义的SQL语句"><span>运行自定义的SQL语句</span></a></li></ul></li><li><a class="is-flex toc-item" id="toc-item-UDF注入" href="#UDF注入"><span>UDF注入</span></a></li><li><a class="is-flex toc-item" id="toc-item-访问文件系统" href="#访问文件系统"><span>访问文件系统</span></a></li><li><a class="is-flex toc-item" id="toc-item-Tamper" href="#Tamper"><span>Tamper</span></a></li></ul></li><li><a class="is-flex toc-item" id="toc-item-不常用" href="#不常用"><span>不常用</span></a><ul class="menu-list toc"><li><a class="is-flex toc-item" id="toc-item-操作系统控制" href="#操作系统控制"><span>操作系统控制</span></a></li><li><a class="is-flex toc-item" id="toc-item-注册表访问" href="#注册表访问"><span>注册表访问</span></a></li><li><a class="is-flex toc-item" id="toc-item-常规" href="#常规"><span>常规</span></a></li><li><a class="is-flex toc-item" id="toc-item-杂项" href="#杂项"><span>杂项</span></a></li></ul></li></ul></div></div><script type="text/javascript" async>
         $(document).ready(function () { //参考自 https://github.com/ppoffice/hexo-theme-icarus/pull/616/files
             var observerTopMargin;
             var scrollObserver;
@@ -407,14 +859,14 @@
                 obj.toc_id = index;
                 scrollObserver.observe(obj);
             })
-        });</script></div><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="is-rounded" src="/img/avatar.png" alt="mahiro"></figure><p class="title is-size-4 is-block line-height-inherit">mahiro</p><p class="is-size-6 is-block">能成为萝莉控真的是太好啦！！！！！！！</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>花丸幼儿园</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Articles</p><a href="/archives"><p class="title">11</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Catégorie</p><a href="/categories"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">5</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="/" target="_blank" rel="noopener">SUIVRE</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/mahiro424"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Weibo" href="/"><i class="fab fa-weibo"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Email" href="/"><i class="fa fa-envelope"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Next" href="/"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
+        });</script></div><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="is-rounded" src="/img/avatar.png" alt="mahiro"></figure><p class="title is-size-4 is-block line-height-inherit">mahiro</p><p class="is-size-6 is-block">能成为萝莉控真的是太好啦！！！！！！！</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>花丸幼儿园</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">11</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Category</p><a href="/categories"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">5</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="/" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/mahiro424"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Weibo" href="/"><i class="fab fa-weibo"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Email" href="/"><i class="fa fa-envelope"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Next" href="/"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
                                 $.getJSON("https://v1.hitokoto.cn/", function (data) {
                                 if(data){
                                     $('#hitokoto').html("");
                                     $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
                                     "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
                                 }});}
-                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新评论</h3><span class="body_hot_comment">加载中，最新评论有1分钟延迟...</span></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">Récents</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-04-18T06:41:42.000Z">2020-04-18</time></p><p class="title is-6"><a class="link-muted" href="/2020/04/18/sqlmap%E5%AD%A6%E4%B9%A0/">sqlmap学习</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-31T07:59:57.000Z">2020-03-31</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/31/WCTF2020-WP/">WCTF2020 WP(WEB)</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-08T04:18:19.000Z">2020-03-08</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/08/%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2%E6%80%BB%E7%BB%93/">源码泄露总结</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/web/">web</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-03T15:55:01.000Z">2020-03-03</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/03/DNSLog%E8%AE%B0%E5%BD%95/">DNSLog记录</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-03T01:56:58.000Z">2020-03-03</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/03/HTTP/">HTTP</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/web/">web</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Catégories</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/web/"><span class="level-start"><span class="level-item">web</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/04/"><span class="level-start"><span class="level-item">April 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/03/"><span class="level-start"><span class="level-item">March 2020</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/02/"><span class="level-start"><span class="level-item">February 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/11/"><span class="level-start"><span class="level-item">November 2019</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/study/"><span class="tag">study</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/web/"><span class="tag">web</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/web-study/"><span class="tag">-web -study</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ctf/"><span class="tag">ctf</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sql/"><span class="tag">sql</span><span class="tag is-grey-lightest">1</span></a></div></div></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe to Updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=mahiro424FeedsId&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="mahiro424FeedsId" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button is-primary" type="submit" value="Subscribe"></div></div><p class="help">输入邮箱开始订阅，更博后邮件通知！</p></form></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="真寻の窝" height="28"></a><p class="size-small"><span>&copy; 2020 mahiro</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>,Modify by <a href="https://github.com/removeif/hexo-theme-amazing" target="_blank">removeif</a> <br><div class="size-small"><span id="busuanzi_container_site_uv">❤️感谢<strong> <span id="busuanzi_value_site_uv">99+</span> </strong></span>小伙伴的<strong> <span id="busuanzi_value_site_pv">99+</span> </strong>次光临！❤️</div></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/mahiro424"><i class="fab fa-github"></i></a></p></div><div class="sideMusic"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="/js/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/js/hititle.js"></script><meting-js style="width: auto;height: 2000px;" server="netease" type="playlist" id="887934910" theme="#2980b9" loop="all" autoplay="false" order="list" storageName="aplayer-setting" lrctype="0" list-max-height="400px" fixed="true"></meting-js></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script>moment.locale("zh");</script><script>var IcarusThemeSettings = {
+                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新评论</h3><span class="body_hot_comment">加载中，最新评论有1分钟延迟...</span></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">Recent</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-04-18T06:41:42.000Z">2020-04-18</time></p><p class="title is-6"><a class="link-muted" href="/2020/04/18/sqlmap%E5%AD%A6%E4%B9%A0/">sqlmap学习</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-31T07:59:57.000Z">2020-03-31</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/31/WCTF2020-WP/">WCTF2020 WP(WEB)</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-08T04:18:19.000Z">2020-03-08</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/08/%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2%E6%80%BB%E7%BB%93/">源码泄露总结</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/web/">web</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-03T15:55:01.000Z">2020-03-03</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/03/DNSLog%E8%AE%B0%E5%BD%95/">DNSLog记录</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-03-03T01:56:58.000Z">2020-03-03</time></p><p class="title is-6"><a class="link-muted" href="/2020/03/03/HTTP/">HTTP</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/web/">web</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/web/"><span class="level-start"><span class="level-item">web</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/04/"><span class="level-start"><span class="level-item">April 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/03/"><span class="level-start"><span class="level-item">March 2020</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/02/"><span class="level-start"><span class="level-item">February 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/11/"><span class="level-start"><span class="level-item">November 2019</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/study/"><span class="tag">study</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/web/"><span class="tag">web</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/web-study/"><span class="tag">-web -study</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ctf/"><span class="tag">ctf</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sql/"><span class="tag">sql</span><span class="tag is-grey-lightest">1</span></a></div></div></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe to Updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=mahiro424FeedsId&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="mahiro424FeedsId" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button is-primary" type="submit" value="Subscribe"></div></div><p class="help">输入邮箱开始订阅，更博后邮件通知！</p></form></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="真寻の窝" height="28"></a><p class="size-small"><span>&copy; 2020 mahiro</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>,Modify by <a href="https://github.com/removeif/hexo-theme-amazing" target="_blank">removeif</a> <br><div class="size-small"><span id="busuanzi_container_site_uv">❤️感谢<strong> <span id="busuanzi_value_site_uv">99+</span> </strong></span>小伙伴的<strong> <span id="busuanzi_value_site_pv">99+</span> </strong>次光临！❤️</div></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/mahiro424"><i class="fab fa-github"></i></a></p></div><div class="sideMusic"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="/js/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/js/hititle.js"></script><meting-js style="width: auto;height: 2000px;" server="netease" type="playlist" id="887934910" theme="#2980b9" loop="all" autoplay="false" order="list" storageName="aplayer-setting" lrctype="0" list-max-height="400px" fixed="true"></meting-js></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script>moment.locale("zh");</script><script>var IcarusThemeSettings = {
             site: {
                 url: 'http://yoursite.com',
                 external_link: {"enable":true,"exclude":[]}
@@ -425,12 +877,12 @@
                     fold: 'unfolded'
                 }
             }
-        };</script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="Kembali ke atas" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back-to-top.js" defer></script><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.12/js/lightgallery-all.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js" defer></script><!--!--><!--!--><!--!--><script src="/js/toc.js" defer></script><script src="/js/main.js" defer></script><script>$.getScript('/js/comment-issue-data.js',function(){loadIssueData('a310e755c4962ccb6306','bf1d34612319156ee83867eccc73f64e4ff37768','mahiro424','gitcomment',false);})</script><link rel="stylesheet" href="/css/insight.css"><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Type something..."><span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script src="/js/src/activate-power-mode.js"></script><script>POWERMODE.colorful = true; // 火花各种颜色 POWERMODE.shake = true; // 关闭打字屏幕颤抖效果 document.body.addEventListener(&#039;input&#039;, POWERMODE);</script><script>(function (window) {
+        };</script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to Top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back-to-top.js" defer></script><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.12/js/lightgallery-all.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js" defer></script><!--!--><!--!--><!--!--><script src="/js/toc.js" defer></script><script src="/js/main.js" defer></script><script>$.getScript('/js/comment-issue-data.js',function(){loadIssueData('a310e755c4962ccb6306','bf1d34612319156ee83867eccc73f64e4ff37768','mahiro424','gitcomment',false);})</script><link rel="stylesheet" href="/css/insight.css"><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Type something..."><span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script src="/js/src/activate-power-mode.js"></script><script>POWERMODE.colorful = true; // 火花各种颜色 POWERMODE.shake = true; // 关闭打字屏幕颤抖效果 document.body.addEventListener(&#039;input&#039;, POWERMODE);</script><script>(function (window) {
             var INSIGHT_CONFIG = {
                 TRANSLATION: {
-                    POSTS: 'Articles',
+                    POSTS: 'Posts',
                     PAGES: 'Pages',
-                    CATEGORIES: 'Catégories',
+                    CATEGORIES: 'Categories',
                     TAGS: 'Tags',
                     UNTITLED: '(Untitled)',
                 },
